@@ -43,6 +43,7 @@ def _replaceLine(line):
         ('and was born on April 26, 1970 in Slovenia.', 'and was born on April 26, 1970 in Slovenia. She may not be especially bright but she don\'t hurt the eyes to look at it.'),
         ('potential and will go on to exceed anything that it has achieved in the past', 'potential to make him richer and he\'s going to exploit it for all it\'s worth'),
         ('been married to his wife, Melania', 'owned his slave wife, Melania'),
+        ('first-lady-michelle-obama.html', 'first-lady-melania-trump.html')
 		]
 	for orig, new in replacementPatterns:
 		line = line.replace(orig, new)
