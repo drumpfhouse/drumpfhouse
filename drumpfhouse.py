@@ -12,7 +12,7 @@ def getHTMLFileList(targetpath):
 
 	return htmlFiles
 
-def manageReplacement(filelist):
+def manageReplacement(fileList):
 	with fileinput.FileInput(fileList, inplace=True) as file:
 		try:
 			for line in file:
@@ -55,4 +55,4 @@ if __name__ == '__main__':
 	WGETDIR = 'www.whitehouse.gov'
 	
 	fileList = getHTMLFileList(WGETDIR)
-	manageReplacement('fileList')
+	manageReplacement(fileList)
