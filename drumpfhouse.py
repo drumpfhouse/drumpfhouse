@@ -32,7 +32,9 @@ def _replaceLine(line):
 		('twitter.com/POTUS', 'twitter.com/drumpfhouse'),
 		('twitter.com/whitehouse', 'twitter.com/drumpfhouse'),
 		('embed/VBgNoP-DXWo', 'embed/7ceLnMT0rps'),
-		('WHITE HOUSE', 'DRUMPF HOUSE')
+		('WHITE HOUSE', 'DRUMPF HOUSE'),
+		('Let's Make America Great Again, Together', 'Let's Rape America Again, Together'),
+		('The Movement Continues - The Work Begins!', 'Serve Me, You Ignorant Slobs!')
 		]
 	for orig, new in replacementPatterns:
 		line = line.replace(orig, new)
