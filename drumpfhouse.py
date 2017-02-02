@@ -1,7 +1,6 @@
-# torify wget -E -k -p --no-clobber -m --domains www.whitehouse.gov https://www.whitehouse.gov/blog
-
-import os
+# torify wget -E -k -p --no-clobber -m --domains www.whitehouse.gov https://www.whitehouse.gov
 import fileinput
+import os
 
 def getHTMLFileList(targetpath):
 	htmlFiles = []
@@ -38,7 +37,7 @@ def _replaceLine(line):
         ('What\'s Happening', 'How We\'re Screwing You Over'),
         ('/profiles/forall/modules/custom/gov_whitehouse_www/images/icons/wh_logo_seal.png', '/dhAssets/WHlogo_trumpdoor.jpg'),
         ('../sites/whitehouse.gov/files/45/POTUS_Speech2.jpg', '/dhAssets/thisWide.jpg'),
-        ('../sites/whitehouse.gov/files/45/FLOTUS_Melania1.jpg', '/dhAssets/melania-furBlanket.jpg'),
+        ('../sites/whitehouse.gov/files/45/FLOTUS_Melania1.jpg', '/dhAssets/melaniaAdminMain.jpg'),
         ('The Cabinet includes the Vice President and the heads of 15 executive departments', 'The Cabinet includes Vladimir Putin, the Vice President and the heads of 15 executive departments'),
         ('and was born on April 26, 1970 in Slovenia.', 'and was born on April 26, 1970 in Slovenia. She may not be especially bright but she don\'t hurt the eyes to look at it.'),
         ('potential and will go on to exceed anything that it has achieved in the past', 'potential to make him richer and he\'s going to exploit it for all it\'s worth'),

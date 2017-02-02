@@ -1,0 +1,59 @@
+diff --git a/docs/contact/submit-questions-and-comments.html b/docs/contact/submit-questions-and-comments.html
+index 2420dee..dbd56f0 100644
+--- a/docs/contact/submit-questions-and-comments.html
++++ b/docs/contact/submit-questions-and-comments.html
+@@ -257,38 +257,28 @@
+       
+   
+   <div class="field field-name-field-forall-basic-page-summary field-type-text-long field-label-hidden forall-summary"><div class="field-items"><div class="field-item even"><p>
+-	<img alt="President Donald J. Drumpf" height="351" src="../sites/whitehouse.gov/files/45/POTUS_45header.jpeg" width="1043" /></p>
++	<img alt="President Donald J. Drumpf" height="351" src="/dhAssets/resistBanner-cropped.png" width="1043" /></p>
+ 
+-<p>
+-	&nbsp;</p>
+ </div></div></div>
+   
+   </div>
+-<div class="panel-pane pane-fieldable-panels-pane pane-fpid-551 pane-bundle-forall-iframe-embed" >
+-  
+-      
+-  
+-  
+-<div class="iframe-wrapper">
+-    <div id="forall-iframe-embed-1"></div>
+-  </div>
+ 
+-  
+-  </div>
+-<div class="panel-pane pane-entity-field pane-node-field-forall-basic-page-body" >
+-  
+-      
+-  
+-  <div class="field field-name-field-forall-basic-page-body field-type-text-long field-label-hidden forall-body"><div class="field-items"><div class="field-item even"><hr />
+-<p>
+-	&nbsp;</p>
++<div class="panel-pane pane-entity-field pane-node-field-forall-basic-page-body forall-body" >
++ <h2>Like Drumpf House?</h2>
++ <p>Help us out by contributing code or content on our <a href="https://github.com/drumpfhouse/drumpfhouse" target="_blank">Github repo</a> or just sending some love on <a href="https://twitter.com/drumpfhouse" target=_blank>Twitter</a> </p>
++
++ <h2>Want to do even more?</h2>
++ <p>Why not support one of these worthy organizations? With Drumpf in office, we're going to need these folks around.</p>
++ <div>
++ <a href="https://www.aclu.org/" target="_blank"><img src="/dhAssets/acluLogo.png"></a>
++ </div>
++   <div>
++ <a href="https://www.eff.org/" target="_blank"><img src="/dhAssets/effLogo.png"></a>
++ </div> 
++   <div>
++ <a href="https://www.torproject.org/" target="_blank"><img src="/dhAssets/torLogo.jpg"></a>
++ </div>   
+ 
+-<p>
+-	&nbsp;</p>
+-</div></div></div>
+-  
+-  </div>
+-      </div>
+ 
+       
+           </div>
