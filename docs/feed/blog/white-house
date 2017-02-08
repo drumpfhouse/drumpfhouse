@@ -1,9 +1,64 @@
-<?xml version="1.0" encoding="utf-8" ?><rss version="2.0" xml:base="https://www.whitehouse.gov/blog-daily-listings-rss" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom">
+<?xml version="1.0" encoding="utf-8" ?><rss version="2.0" xml:base="https://www.whitehouse.gov/blog-daily-listings-rss" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:og="http://ogp.me/ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:sioc="http://rdfs.org/sioc/ns#" xmlns:sioct="http://rdfs.org/sioc/types#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
   <channel>
     <title>Blog Daily Listings RSS</title>
     <link>https://www.whitehouse.gov/blog-daily-listings-rss</link>
     <description></description>
     <language>en</language>
      <atom:link href="https://www.whitehouse.gov/feed/blog/white-house" rel="self" type="application/rss+xml" />
-      </channel>
+    <item>
+  <title>Vice President Pence Casts Historic Vote to Confirm Betsy DeVos</title>
+  <link>https://www.whitehouse.gov/blog/2017/02/07/vice-president-pence-casts-historic-vote-confirm-betsy-devos</link>
+  <description><![CDATA[<p>
+	<img alt="Betsy DeVos" src="/sites/whitehouse.gov/files/images/20170207_ADM_nominees_web_devos.png" /></p>
+
+<p>
+	Friends,<br />
+	<br />
+	Today, I cast the tie-breaking vote in the Senate to confirm President Donald Trump’s nominee for Secretary of Education: Betsy DeVos.<br />
+	<br />
+	The vote the President asked me to cast wasn’t just for Betsy – it was also for America’s future.<br />
+	<br />
+	Our nation’s success depends on the education of our students. In Betsy DeVos, we have one of America’s foremost advocates for educational opportunity and excellence.<br />
+	<br />
+	For nearly three decades she has devoted her time, her talent, and her treasure to ensure that every child in America has the best shot at a better life. Countless students have benefitted from her efforts to promote an educational marketplace defined by innovation, opportunity, and real, meaningful choice.<br />
+	<br />
+	The President and I agree that our children’s futures should not be determined by their zip code. Students should not be trapped in a system that puts the status quo ahead of a child’s success.<br />
+	<br />
+	Betsy DeVos will have great impact as Secretary of Education. It doesn’t matter whether it’s a public school, a private school, a parochial school, a charter school, or any other kind of school – she will help ensure that every student has access to a good school.<br />
+	<br />
+	We are grateful to Senate Majority Leader McConnell and all the Republican Senators who stood with us on this important vote.<br />
+	<br />
+	The President is fully committed to this mission. Today’s vote was the first of its kind in our nation’s history, but the real history will be made through our unwavering dedication to America’s children – and to America’s future.<br />
+	<br />
+	Thank you for all your help and support.<br />
+	<br />
+	Sincerely,<br />
+	<br />
+	Michael R. Pence<br />
+	Vice President of the United States&nbsp;</p>
+]]></description>
+   <pubDate>Tue, 07 Feb 2017 16:20:16 -0500</pubDate>
+ <dc:creator>Vice President Mike Pence</dc:creator>
+ <guid isPermaLink="false">whr-318641</guid>
+</item>
+<item>
+  <title>Happy Birthday President Reagan</title>
+  <link>https://www.whitehouse.gov/blog/2017/02/06/happy-birthday-president-ronald-reagan</link>
+  <description><![CDATA[<p>
+	<img alt="President Ronald Reagan" src="/sites/whitehouse.gov/files/images/Untitled-1.png" /></p>
+
+<p>
+	One of the greatest Presidents in U.S. history was born on February 6, 1911. Today we honor the legacy and remember the man who served as our 40th President, Ronald Reagan.</p>
+
+<p>
+	President Reagan inspired a generation to believe in America once again and build a better future for their country. Below is his second inaugural address to the Nation.</p>
+
+<p>
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/MeMXt_BOOCU" frameborder="0" allowfullscreen></iframe></p>
+]]></description>
+   <pubDate>Mon, 06 Feb 2017 09:16:41 -0500</pubDate>
+ <dc:creator>The White House</dc:creator>
+ <guid isPermaLink="false">whr-318501</guid>
+</item>
+  </channel>
 </rss>
