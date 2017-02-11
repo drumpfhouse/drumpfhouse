@@ -2,16 +2,16 @@
 import fileinput
 import os
 import subprocess
-
+import sys
 
 def setup():
     try:
         subprocess.call(['torify wget -E -k -p --no-clobber -m --exclude-directories=videos --domains www.whitehouse.gov https://www.whitehouse.gov'],
                         shell=True);
     except Exception as err:
-        print(type(err))  # the exception instance
-        print(err.args)  # arguments stored in .args
-        print(err)  # __str__ allows args to be printed directly,
+        sys.stderr.write(type(err))  # the exception instance
+        sys.stderr.write(err.args)  # arguments stored in .args
+        sys.stderr.write(err)  # __str__ allows args to be printed directly,
 
 
 def getHTMLFileList(targetpath):
@@ -30,12 +30,15 @@ def manageReplacement(fileList):
             for line in file:
                 print(_replaceLine(line), end='')
         except Exception as err:
-            print(err)
+            sys.stderr.write("Oops.  I shit the bed.")
             pass
 
 
 def _replaceLine(line):
     replacementPatterns = [
+        ('Trump Speaks', 'Drumpf Lies'),
+        ('Trump Makes Remarks', 'Drumpf Lies'),
+        ('White House Press Briefing', 'Spicering the Press'),
         ('Trump', 'Drumpf'),
         ('whitehouse.gov</title>', 'drumpfhouse.gov</title>'),
         ('https://www.whitehouse.gov', 'http://www.drumpfhouse.com'),
@@ -50,7 +53,7 @@ def _replaceLine(line):
         ('The Movement Continues - The Work Begins!', 'Serve Me, You Ignorant Slobs!'),
         ('What\'s Happening', 'How We\'re Screwing You Over'),
         ('/profiles/forall/modules/custom/gov_whitehouse_www/images/icons/wh_logo_seal.png',
-         '/dhAssets/WHlogo_trumpdoor.jpg'),
+         '/dhAssets/WHlogo_trumpdoor.png'),
         ('../sites/whitehouse.gov/files/45/POTUS_Speech2.jpg', '/dhAssets/thisWide.jpg'),
         ('../sites/whitehouse.gov/files/45/FLOTUS_Melania1.jpg', '/dhAssets/melaniaAdminMain.jpg'),
         ('The Cabinet includes the Vice President and the heads of 15 executive departments',
