@@ -40,6 +40,7 @@ def manageReplacement(fileList):
 
 def _replaceLine(line):
     replacementPatterns = [
+        # Persistent
         ('Trump', 'Drumpf'),
         ('whitehouse.gov</title>', 'drumpfhouse.gov</title>'),
         ('The White House', 'The Drumpf House'),
@@ -49,6 +50,9 @@ def _replaceLine(line):
         ('twitter.com/whitehouse', 'twitter.com/drumpfhouse'),
         ('wp-content/themes/whitehouse/assets/img/white-house-logo-footer-sm.png', 'dhAssets/WHlogo_trumpdoor.png'),
         ('wp-content/themes/whitehouse/assets/img/white-house-logo-sm-bl.png', 'dhAssets/WHlogo_trumpdoor.png'),
+        ('href="https://www.whitehouse.gov/live/"', 'href="https://www.youtube.com/watch?v=oEwrsf02L_c" target=_blank'),
+
+        # Transient
         ('A new National Security Strategy for a New Era', 'A new National Security Strategy for a New Era: Piss everyone off'),
         ('National Security', 'National inSecurity'),
         ('The Closing Argument for Tax Reform', 'Fuck the poor. Vive la rich!'),
