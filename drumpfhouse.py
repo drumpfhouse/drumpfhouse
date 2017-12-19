@@ -82,7 +82,7 @@ def _replaceLine(line):
         ('https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/white-house-logo-sm-bl.png', '/dhAssets/WHlogo_trumpdoor.png'),
         ('href="https://www.whitehouse.gov/live/"', 'href="https://www.youtube.com/watch?v=oEwrsf02L_c" target=_blank'),
         ('https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/white-house-logo-sm-wh.png', '/dhAssets/WHlogo_trumpdoor.png'),
-        ('Filed Under', 'Filed Under Lies About'),
+        ('Filed Under', 'Lies About'),
     ]
     for orig, new in replacementPatterns:
         line = line.replace(orig, new)
