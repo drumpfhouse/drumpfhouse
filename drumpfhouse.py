@@ -6,7 +6,7 @@ import sys
 
 def setup():
     try:
-        subprocess.call(['torify wget -E -k -p -r -l 1 --exclude-directories=wp-content/uploads,wp-content/themes,live https://www.whitehouse.gov'],
+        subprocess.call(['torify wget -E -k -p -r -l 1 --exclude-directories=wp-content/uploads,live https://www.whitehouse.gov'],
                         shell=True);
     except Exception as err:
         sys.stderr.write(type(err))  # the exception instance
@@ -78,10 +78,10 @@ def _replaceLine(line):
         ('https://www.whitehouse.gov/wp-content/uploads/2017/12/cropped-WH.gov_favicon_512X512-1-192x192.png', 'http://www.drumpfhouse.com/dhAssets/WHlogo_trumpdoor.png'),
         ('https://www.whitehouse.gov/wp-content/uploads/2017/12/cropped-WH.gov_favicon_512X512-1-180x180.png', 'http://www.drumpfhouse.com/dhAssets/WHlogo_trumpdoor.png'),
         ('https://www.whitehouse.gov/wp-content/uploads/2017/12/cropped-WH.gov_favicon_512X512-1-270x270.png', 'http://www.drumpfhouse.com/dhAssets/WHlogo_trumpdoor.png'),
-        ('https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/white-house-logo-footer-sm.png', '/dhAssets/WHlogo_trumpdoor.png'),
-        ('https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/white-house-logo-sm-bl.png', '/dhAssets/WHlogo_trumpdoor.png'),
+        ('wp-content/themes/whitehouse/assets/img/white-house-logo-footer-sm.png', '/dhAssets/WHlogo_trumpdoor.png'),
+        ('wp-content/themes/whitehouse/assets/img/white-house-logo-sm-bl.png', '/dhAssets/WHlogo_trumpdoor.png'),
         ('href="https://www.whitehouse.gov/live/"', 'href="https://www.youtube.com/watch?v=oEwrsf02L_c" target=_blank'),
-        ('https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/white-house-logo-sm-wh.png', '/dhAssets/WHlogo_trumpdoor.png'),
+        ('../../wp-content/themes/whitehouse/assets/img/white-house-logo-sm-wh.png', '/dhAssets/WHlogo_trumpdoor.png'),
         ('Filed Under', 'Lies About'),
     ]
     for orig, new in replacementPatterns:
