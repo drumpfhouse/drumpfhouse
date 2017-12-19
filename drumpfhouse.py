@@ -51,7 +51,8 @@ def _replaceLine(line):
         ('Budget That Puts America First', 'Budget That Puts Money in His Pockets'),
         ('pay respect to 200 years of holiday traditions at the White House',
          'pay respect to 200 years of white privilege'),
-        ('getting #2059more back in the pockets of everyday Americans', 'selling out everyday Americans'),
+        ('Stocks and the economy have a long way to go after the Tax Cut Bill is totally understood and appreciated in scope and size. Immediate expensing will have a big impact. Biggest Tax Cuts and Reform EVER passed. Enjoy, and create many beautiful JOBS',
+         'Get out the lube, working class. Me and the @GOP are about to stump you in the pooper'),
 
         # Immigration page
         ('an immigration system that serves the national interest', 'an immigration system that keeps brown people out'),
