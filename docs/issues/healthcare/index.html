@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#" class="no-js">
+<head>
+	<script>
+		document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/, 'js');
+		document.createElement('picture');
+	</script>
+	<meta charset="UTF-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Healthcare | The Drumpf House</title>
+
+<!-- This site is optimized with the Yoast SEO Premium plugin v5.9.4 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Healthcare | The Drumpf House" />
+<meta property="og:url" content="https://www.whitehouse.gov/issues/healthcare/" />
+<meta property="og:site_name" content="The Drumpf House" />
+<meta property="article:publisher" content="https://facebook.com/whitehouse" />
+<meta property="og:image" content="https://www.whitehouse.gov/wp-content/uploads/2017/11/Healthcare.jpg" />
+<meta property="og:image:secure_url" content="https://www.whitehouse.gov/wp-content/uploads/2017/11/Healthcare.jpg" />
+<meta property="og:image:width" content="1250" />
+<meta property="og:image:height" content="648" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Healthcare | The Drumpf House" />
+<meta name="twitter:site" content="@drumpfhouse" />
+<meta name="twitter:image" content="https://www.whitehouse.gov/wp-content/uploads/2017/11/Healthcare.jpg" />
+<meta name="twitter:creator" content="@drumpfhouse" />
+<meta name="twitter:image:alt" content="Healthcare" />
+<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"https:\/\/www.whitehouse.gov\/","name":"The Drumpf House","alternateName":"White House","potentialAction":{"@type":"SearchAction","target":"https:\/\/www.whitehouse.gov\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"Organization","url":"https:\/\/www.whitehouse.gov\/issues\/healthcare\/","sameAs":["https:\/\/facebook.com\/whitehouse","https:\/\/instagram.com\/whitehouse","https:\/\/www.youtube.com\/user\/whitehouse","https:\/\/twitter.com\/whitehouse"],"@id":"#organization","name":"The Drumpf House","logo":"https:\/\/www.whitehouse.gov\/wp-content\/uploads\/2017\/12\/cropped-WH.gov_favicon_512X512.png"}</script>
+<!-- / Yoast SEO Premium plugin. -->
+
+<!-- This site uses the Google Analytics by MonsterInsights plugin v6.2.6 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+<script type="text/javascript" data-cfasync="false">
+		var disableStr = 'ga-disable-UA-12099831-10';
+
+	/* Function to detect opted out users */
+	function __gaTrackerIsOptedOut() {
+		return document.cookie.indexOf(disableStr + '=true') > -1;
+	}
+
+	/* Disable tracking if the opt-out cookie exists. */
+	if ( __gaTrackerIsOptedOut() ) {
+		window[disableStr] = true;
+	}
+
+	/* Opt-out function */
+	function __gaTrackerOptout() {
+	  document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+	  window[disableStr] = true;
+	}
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','__gaTracker');
+
+	__gaTracker('create', 'UA-12099831-10', 'auto');
+	__gaTracker('set', 'forceSSL', true);
+	__gaTracker('require', 'displayfeatures');
+	__gaTracker('require', 'linkid', 'linkid.js');
+	__gaTracker('send','pageview');
+</script>
+<!-- / Google Analytics by MonsterInsights -->
+<link rel='stylesheet' id='google-fonts-css'  href='https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i|Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i&#038;subset=latin-ext' type='text/css' media='screen' />
+<link rel='stylesheet' id='animate-css-css'  href='https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/vendor/animate.css/animate.min.css?ver=1513126535' type='text/css' media='screen' />
+<link rel='stylesheet' id='site-css'  href='https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/dist/site.css?ver=1513664315' type='text/css' media='screen' />
+<script type='text/javascript'>
+/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","is_debug_mode":"false","download_extensions":"doc,exe,js,pdf,ppt,tgz,zip,xls,jpg,jpeg","inbound_paths":"","home_url":"https:\/\/www.whitehouse.gov","track_download_as":"event","internal_label":"int","hash_tracking":"false"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="../../wp-content/cache/minify/9d086.js"></script>
+
+
+
+<link rel="icon" href="https://www.whitehouse.gov/wp-content/uploads/2017/12/cropped-WH.gov_favicon_512X512-1-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://www.whitehouse.gov/wp-content/uploads/2017/12/cropped-WH.gov_favicon_512X512-1-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="https://www.whitehouse.gov/wp-content/uploads/2017/12/cropped-WH.gov_favicon_512X512-1-180x180.png" />
+<meta name="msapplication-TileImage" content="https://www.whitehouse.gov/wp-content/uploads/2017/12/cropped-WH.gov_favicon_512X512-1-270x270.png" />
+</head>
+
+<body class="issue-template-default single single-issue postid-518 has-transparent-header has-featured-image">
+<a class="skip-link" href="index.html#main-content"><span>Skip to content</span></a>
+
+<div class="body-overflow">
+
+
+<header class="header header--has-share">
+	<div class="header__container">
+		<div class="header__inner">
+			<a href="index.html#" class="header__hamburger">
+				<b class="svg svg--hamburger" data-svg-url="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/hamburger.svg" data-img-url="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/hamburger.png" data-icon="hamburger"><svg aria-label="Open Menu" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 14"><path d="M.64,12H16.36c.36,0,.64.43.64,1s-.28,1-.64,1H.64C.28,14,0,13.57,0,13s.28-1,.64-1M23.1,2H.9A.94.94,0,0,1,0,1,.94.94,0,0,1,.9,0H23.1A.94.94,0,0,1,24,1a.94.94,0,0,1-.9,1M.9,8A.94.94,0,0,1,0,7,.94.94,0,0,1,.9,6H23.1A.94.94,0,0,1,24,7a.94.94,0,0,1-.9,1Z" fill="#a98860"/></svg><title>open-menu</title></b>			</a>
+			<div class="header__wrap">
+				<div class="header__logo">
+					<a href="../../index.html">
+						<img src="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/white-house-logo-sm-wh.png" srcset="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/white-house-logo-sm-wh.png 1x, https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/white-house-logo-md-wh.png 2x, https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/white-house-logo-lg-wh.png 3x" alt="White House Logo" class="logo--white" />
+						<img src="dhAssets/WHlogo_trumpdoor.png" srcset="dhAssets/WHlogo_trumpdoor.png 1x, https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/white-house-logo-md-bl.png 2x, https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/white-house-logo-lg-bl.png 3x" alt="White House Logo" class="logo--blue" />
+												<span class="visually-hidden">White House Logo</span>
+					</a>
+				</div>
+
+								<div class="header__share">
+					<a class="header__share--copy" data-clipboard-text="https://www.whitehouse.gov/issues/healthcare/?utm_source=link" href="https://www.whitehouse.gov/issues/healthcare/?utm_source=link">
+						<b class="svg svg--share-link" data-svg-url="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/share-link.svg" data-icon="share-link"><svg aria-label="Copy this url to the clipboard" role="img" width="17px" height="15px" viewBox="0 0 17 15"><title>copy-this-url-to-the-clipboard</title>
+	<g transform="translate(-324.000000, -1439.000000)" fill-rule="nonzero" fill="#30669B">
+		<g transform="translate(114.000000, 1437.000000)">
+			<g transform="translate(210.000000, 2.000000)">
+				<path d="M3.95921053,9.64583333 C4.80921053,10.4375 5.95,10.875 7.15789474,10.875 C8.36578947,10.875 9.50657895,10.4375 10.3565789,9.64583333 L11.2960526,8.77083333 C11.6539474,8.4375 11.6539474,7.91666667 11.2960526,7.58333333 C10.9381579,7.25 10.3789474,7.25 10.0210526,7.58333333 L9.08157895,8.45833333 C8.56710526,8.9375 7.87368421,9.20833333 7.15789474,9.20833333 C6.41973684,9.20833333 5.74868421,8.9375 5.23421053,8.45833333 L2.66184211,6.08333333 C1.58815789,5.08333333 1.58815789,3.47916667 2.66184211,2.47916667 C2.66184211,2.47916667 2.66184211,2.47916667 2.66184211,2.47916667 C3.73552632,1.5 5.45789474,1.5 6.50921053,2.47916667 L7.33684211,3.25 C7.69473684,3.58333333 8.25394737,3.58333333 8.61184211,3.25 C8.96973684,2.91666667 8.96973684,2.39583333 8.61184211,2.0625 L7.78421053,1.29166667 C6.01710526,-0.354166667 3.15394737,-0.354166667 1.38684211,1.29166667 C1.38684211,1.29166667 1.38684211,1.29166667 1.38684211,1.29166667 C-0.357894737,2.9375 -0.357894737,5.60416667 1.38684211,7.22916667 L3.95921053,9.64583333 Z" id="Shape"></path>
+				<path d="M5.70394737,6.25 C5.34605263,6.58333333 5.34605263,7.10416667 5.70394737,7.4375 C6.06184211,7.77083333 6.62105263,7.77083333 6.97894737,7.4375 L7.91842105,6.5625 C8.43289474,6.08333333 9.12631579,5.8125 9.84210526,5.8125 C10.5578947,5.8125 11.2513158,6.08333333 11.7657895,6.5625 L14.3381579,8.95833333 C15.4118421,9.95833333 15.4118421,11.5625 14.3381579,12.5625 C13.2644737,13.5625 11.5421053,13.5625 10.4684211,12.5625 L9.64078947,11.7916667 C9.28289474,11.4583333 8.72368421,11.4583333 8.36578947,11.7916667 C8.00789474,12.125 8.00789474,12.6458333 8.36578947,12.9791667 L9.19342105,13.75 C10.0657895,14.5625 11.2289474,14.9791667 12.3921053,14.9791667 C13.5552632,14.9791667 14.6960526,14.5625 15.5907895,13.75 C17.3578947,12.1041667 17.3578947,9.4375 15.5907895,7.79166667 L13.0407895,5.35416667 C12.1907895,4.5625 11.05,4.125 9.84210526,4.125 C8.63421053,4.125 7.49342105,4.5625 6.64342105,5.35416667 L5.70394737,6.25 Z" id="Shape"></path>
+			</g>
+		</g>
+	</g>
+</svg>
+</b> Share
+					</a>
+				</div>
+				<nav class="nav nav--primary header__nav"><ul class="nav__menu nav__menu--depth0 menu"><li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-692"><a href="../economy-jobs/index.html" class="nav__link">Economy</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-693"><a href="../national-security-defense/index.html" class="nav__link">National Insecurity</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-16229"><a href="../budget-spending/index.html" class="nav__link">Budget</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-16236"><a href="../immigration/index.html" class="nav__link">Immigration</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 nav__menu-item--active menu-item menu-item-type-post_type menu-item-object-issue current-menu-item menu-item-688"><a href="index.html" class="nav__link">Healthcare</a></li>
+</ul></nav>			</div>
+			<a href="../../search/index.html%3Fs=.html"  class="header__search">
+								<b class="svg svg--search" data-svg-url="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/search.svg" data-img-url="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/search.png" data-icon="search"><svg aria-label="Search WhiteHouse.gov" role="img" width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>search-whitehouse-gov</title>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-1336.000000, -20.000000)">
+        <g fill="#A98860" fill-rule="nonzero">
+            <path d="M1356,38.7162898 L1350.92083,33.6370653 C1353.56767,30.3475438 1353.36632,25.50849 1350.31428,22.4559611 C1348.73004,20.8721511 1346.6246,20 1344.38477,20 C1342.14539,20 1340.03973,20.8721511 1338.45616,22.4557341 C1336.87191,24.0397712 1336,26.1452374 1336,28.3848633 C1336,30.6244892 1336.87214,32.7304095 1338.45616,34.3139926 C1340.03995,35.8978026 1342.14539,36.7699537 1344.38477,36.7699537 C1346.31882,36.7699537 1348.15209,36.1182239 1349.63691,34.9207754 L1354.71608,40 L1356,38.7162898 Z M1344.50138,35 C1342.76493,35 1341.13229,34.3236864 1339.90449,33.0959448 C1338.67624,31.8682033 1338,30.236156 1338,28.4998877 C1338,26.7636194 1338.67624,25.1315721 1339.90449,23.9038305 C1341.13229,22.6760889 1342.76493,22 1344.50138,22 C1346.23804,22 1347.87091,22.6760889 1349.09916,23.9038305 C1351.63361,26.4381533 1351.63361,30.5618467 1349.09916,33.0959448 C1347.87091,34.3239111 1346.23804,35 1344.50138,35 Z" id="Search"></path>
+        </g>
+    </g>
+</svg></b>			</a>
+		</div>
+	</div>
+</header>
+
+<main id="main-content">
+
+<div class="page-header page-header--issue page-header--blue">
+	<div class="page-header__content">
+		<div class="page-header__wrap">
+			<h1 class="page-header__title">Healthcare</h1>
+			<span class="divider"><hr><hr></span>
+							<p class="page-header__subtitle">
+					Obamacare is hurting American families, farmers, and small businesses with skyrocketing health insurance costs. Moreover, soaring deductibles and copays have made already unaffordable plans unusable. Close to half of U.S. counties are projected to have only one health insurer on their exchanges in 2018. Replacing Obamacare will force insurance companies to compete for their customers with lower costs and higher-quality service. In the meantime, the President is using his executive authority to reduce barriers to more affordable options for Americans and U.S. businesses. 				</p>
+					</div>
+	</div>
+
+			<div class="page-header__image">
+			<figure class="image">
+	<div class="image__container">
+
+		
+			<picture>
+
+															<source srcset="https://www.whitehouse.gov/wp-content/uploads/2017/11/Healthcare-600x648.jpg" media="(max-width: 599px)">											<source srcset="https://www.whitehouse.gov/wp-content/uploads/2017/11/Healthcare-900x600.jpg" media="(max-width: 899px)">									
+									<img width="1250" height="648" src="https://www.whitehouse.gov/wp-content/uploads/2017/11/Healthcare-1250x648.jpg" class="attachment-header-max size-header-max" alt="" srcset="https://www.whitehouse.gov/wp-content/uploads/2017/11/Healthcare.jpg 1250w, https://www.whitehouse.gov/wp-content/uploads/2017/11/Healthcare-300x156.jpg 300w, https://www.whitehouse.gov/wp-content/uploads/2017/11/Healthcare-768x398.jpg 768w, https://www.whitehouse.gov/wp-content/uploads/2017/11/Healthcare-1024x531.jpg 1024w, https://www.whitehouse.gov/wp-content/uploads/2017/11/Healthcare-620x321.jpg 620w, https://www.whitehouse.gov/wp-content/uploads/2017/11/Healthcare-820x425.jpg 820w" />				
+			</picture>
+
+			<div class="image__overlay"></div>
+
+		
+		
+	</div>
+
+	
+	
+</figure>
+		</div>
+	</div>
+
+
+
+<div class="page-results page-results--section">
+	<div class="page-results__wrap" data-results-label="Filed Under Healthcare">
+		<article class="briefing-statement briefing-statement--results">
+	<div class="briefing-statement__content">
+					<p class="briefing-statement__type">
+				Statements &amp; Releases			</p>
+		
+		<h2 class="briefing-statement__title"><a href="https://www.whitehouse.gov/briefings-statements/readout-second-lady-karen-pence-visits-young-patients-gives-coloring-books-crayons/">Readout: Second Lady Karen Pence Visits with Young Patients; Gives Coloring Books and Crayons</a></h2>
+
+		<div class="meta meta--left">
+							<div class="meta__issue">
+					<p class="issue-flag issue-flag--left">
+			<a href="index.html">
+			Healthcare		</a>
+		</p>
+				</div>
+						<p class="meta__date">
+				<time>Dec 12, 2017</time>
+			</p>
+		</div>
+	</div>
+</article>
+<article class="article article--results">
+	
+	<div class="article__content">
+		<p class="issue-flag issue-flag--left">
+			<a href="index.html">
+			Healthcare		</a>
+		</p>
+
+		<h2 class="article__title"><a href="https://www.whitehouse.gov/articles/american-leadership-brink-controlling-aids/">With American Leadership, We Are on the Brink of Controlling AIDS</a></h2>
+
+				<div class="meta meta--left">
+			
+			<p class="meta__date">
+				<time>Dec 1, 2017</time>
+			</p>
+		</div>
+	</div>
+</article>
+<article class="article article--results">
+	
+	<div class="article__content">
+		<p class="issue-flag issue-flag--left">
+			<a href="index.html">
+			Healthcare		</a>
+		</p>
+
+		<h2 class="article__title"><a href="https://www.whitehouse.gov/articles/art-therapy-provides-inspiration/">Art Therapy Provides Inspiration</a></h2>
+
+				<div class="meta meta--left">
+				<div class="author">
+					<div class="author__label">By:&nbsp;</div>
+		
+		
+		<div class="author__byline">
+			<p class="author__name">
+									<a href="https://www.whitehouse.gov/people/karen-pence/" rel="author">
+								Karen Pence									</a>
+							</p>
+					</div>
+	</div>
+
+			<p class="meta__date">
+				<time>Nov 28, 2017</time>
+			</p>
+		</div>
+	</div>
+</article>
+<article class="briefing-statement briefing-statement--results">
+	<div class="briefing-statement__content">
+					<p class="briefing-statement__type">
+				Statements &amp; Releases			</p>
+		
+		<h2 class="briefing-statement__title"><a href="https://www.whitehouse.gov/briefings-statements/cea-report-underestimated-cost-opioid-crisis/">CEA Report: the Underestimated Cost of the Opioid Crisis</a></h2>
+
+		<div class="meta meta--left">
+							<div class="meta__issue">
+					<p class="issue-flag issue-flag--left">
+			<a href="index.html">
+			Healthcare		</a>
+		</p>
+				</div>
+						<p class="meta__date">
+				<time>Nov 20, 2017</time>
+			</p>
+		</div>
+	</div>
+</article>
+<article class="article article--results">
+	
+	<div class="article__content">
+		<p class="issue-flag issue-flag--left">
+			<a href="index.html">
+			Healthcare		</a>
+		</p>
+
+		<h2 class="article__title"><a href="https://www.whitehouse.gov/articles/art-therapy-provides-healing-young-patients/">Art Therapy Provides Healing for Young Patients</a></h2>
+
+				<div class="meta meta--left">
+				<div class="author">
+					<div class="author__label">By:&nbsp;</div>
+		
+		
+		<div class="author__byline">
+			<p class="author__name">
+									<a href="https://www.whitehouse.gov/people/karen-pence/" rel="author">
+								Karen Pence									</a>
+							</p>
+					</div>
+	</div>
+
+			<p class="meta__date">
+				<time>Nov 20, 2017</time>
+			</p>
+		</div>
+	</div>
+</article>
+<article class="briefing-statement briefing-statement--results">
+	<div class="briefing-statement__content">
+					<p class="briefing-statement__type">
+				Fact Sheets			</p>
+		
+		<h2 class="briefing-statement__title"><a href="https://www.whitehouse.gov/briefings-statements/crisis-next-door-president-donald-j-trump-confronting-opioid-crisis-severe-original-expectations/">The Crisis Next Door: President Donald J. Drumpf is Confronting an Opioid Crisis More Severe Than Original Expectations</a></h2>
+
+		<div class="meta meta--left">
+							<div class="meta__issue">
+					<p class="issue-flag issue-flag--left">
+			<a href="index.html">
+			Healthcare		</a>
+		</p>
+				</div>
+						<p class="meta__date">
+				<time>Nov 20, 2017</time>
+			</p>
+		</div>
+	</div>
+</article>
+<article class="briefing-statement briefing-statement--results">
+	<div class="briefing-statement__content">
+					<p class="briefing-statement__type">
+				Statements &amp; Releases			</p>
+		
+		<h2 class="briefing-statement__title"><a href="https://www.whitehouse.gov/briefings-statements/second-lady-karen-pence-provides-art-supply-kits-childrens-hospitals/">Second Lady Karen Pence Provides Art Supply Kits for Children’s Hospitals</a></h2>
+
+		<div class="meta meta--left">
+							<div class="meta__issue">
+					<p class="issue-flag issue-flag--left">
+			<a href="index.html">
+			Healthcare		</a>
+		</p>
+				</div>
+						<p class="meta__date">
+				<time>Nov 14, 2017</time>
+			</p>
+		</div>
+	</div>
+</article>
+<article class="article article--results">
+	
+	<div class="article__content">
+		<p class="issue-flag issue-flag--left">
+			<a href="index.html">
+			Healthcare		</a>
+		</p>
+
+		<h2 class="article__title"><a href="https://www.whitehouse.gov/articles/second-lady-provides-art-supply-kits-childrens-hospitals/">The Second Lady Provides Art Supply Kits to Children&#8217;s Hospitals</a></h2>
+
+				<div class="meta meta--left">
+				<div class="author">
+					<div class="author__label">By:&nbsp;</div>
+		
+		
+		<div class="author__byline">
+			<p class="author__name">
+									<a href="https://www.whitehouse.gov/people/karen-pence/" rel="author">
+								Karen Pence									</a>
+							</p>
+					</div>
+	</div>
+
+			<p class="meta__date">
+				<time>Nov 14, 2017</time>
+			</p>
+		</div>
+	</div>
+</article>
+<article class="article article--results">
+	
+	<div class="article__content">
+		<p class="issue-flag issue-flag--left">
+			<a href="index.html">
+			Healthcare		</a>
+		</p>
+
+		<h2 class="article__title"><a href="https://www.whitehouse.gov/articles/research-shows-art-therapy-helps-brain-heal/">Research Shows Art Therapy Helps the Brain to Heal</a></h2>
+
+				<div class="meta meta--left">
+				<div class="author">
+					<div class="author__label">By:&nbsp;</div>
+		
+		
+		<div class="author__byline">
+			<p class="author__name">
+									<a href="https://www.whitehouse.gov/people/karen-pence/" rel="author">
+								Karen Pence									</a>
+							</p>
+					</div>
+	</div>
+
+			<p class="meta__date">
+				<time>Nov 13, 2017</time>
+			</p>
+		</div>
+	</div>
+</article>
+<article class="briefing-statement briefing-statement--results">
+	<div class="briefing-statement__content">
+					<p class="briefing-statement__type">
+				Statements &amp; Releases			</p>
+		
+		<h2 class="briefing-statement__title"><a href="https://www.whitehouse.gov/briefings-statements/presidential-message-antibiotic-awareness-week-2017/">Presidential Message on Antibiotic Awareness Week, 2017</a></h2>
+
+		<div class="meta meta--left">
+							<div class="meta__issue">
+					<p class="issue-flag issue-flag--left">
+			<a href="index.html">
+			Healthcare		</a>
+		</p>
+				</div>
+						<p class="meta__date">
+				<time>Nov 13, 2017</time>
+			</p>
+		</div>
+	</div>
+</article>
+
+	<div class="pagination">
+					<span class="pagination__prev pagination__prev--disabled">
+				Previous
+			</span>
+		
+		<span class='page-numbers current'>1</span>
+<a class='page-numbers' href='https://www.whitehouse.gov/issues/healthcare/page/2/'>2</a>
+<a class='page-numbers' href='https://www.whitehouse.gov/issues/healthcare/page/3/'>3</a>
+<span class="page-numbers dots">&hellip;</span>
+<a class='page-numbers' href='https://www.whitehouse.gov/issues/healthcare/page/12/'>12</a>
+					<a class="pagination__next" href="https://www.whitehouse.gov/issues/healthcare/page/2/">
+				Next
+			</a>
+			</div>
+
+	</div>
+
+	</main><!-- end main -->
+
+<footer class="footer">
+	<div class="footer__wrap">
+		<div class="footer__logo">
+			<a href="../../index.html">
+				<img class="footer__img" src="dhAssets/WHlogo_trumpdoor.png" srcset="dhAssets/WHlogo_trumpdoor.png 1x, https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/white-house-logo-footer-md.png 2x, https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/white-house-logo-footer-lg.png 3x" alt="White House Logo">
+			</a>
+		</div>
+		<div class="footer__site-title">The Drumpf House</div>
+		<span class="footer__divider divider"><hr><hr></span>
+		<div class="footer__nav">
+			<nav class="nav nav--footer"><ul class="nav__menu nav__menu--depth0 menu"><li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-17230"><a href="https://www.youtube.com/watch?v=oEwrsf02L_c" target=_blank class="nav__link">Live</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-custom menu-item-object-custom menu-item-8288"><a href="https://apply.whitehouse.gov/" class="nav__link">Jobs</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-8093"><a href="../../get-involved/index.html" class="nav__link">Get Involved</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-8092"><a href="../../copyright/index.html" class="nav__link">Copyright Policy</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-8095"><a href="../../privacy-policy/index.html" class="nav__link">Privacy Policy</a></li>
+</ul></nav>		</div>
+	</div>
+	<div class="footer__social">
+		<nav class="nav nav--social-links-menu"><ul class="nav__menu nav__menu--depth0 menu"><li class="nav__menu-item nav__menu-item--depth0 footer__social-link__twitter menu-item menu-item-type-custom menu-item-object-custom menu-item-21"><a target="_blank" href="https://twitter.com/drumpfhouse" class="nav__link"><span>Twitter</span></a></li>
+<li class="nav__menu-item nav__menu-item--depth0 footer__social-link__facebook menu-item menu-item-type-custom menu-item-object-custom menu-item-20"><a target="_blank" href="https://www.facebook.com/WhiteHouse/" class="nav__link"><span>Facebook</span></a></li>
+<li class="nav__menu-item nav__menu-item--depth0 footer__social-link__instagram menu-item menu-item-type-custom menu-item-object-custom menu-item-22"><a target="_blank" href="https://www.instagram.com/whitehouse/" class="nav__link"><span>Instagram</span></a></li>
+<li class="nav__menu-item nav__menu-item--depth0 footer__social-link__email menu-item menu-item-type-custom menu-item-object-custom menu-item-23"><a href="../../contact/index.html" class="nav__link"><span>Contact</span></a></li>
+</ul></nav>	</div>
+</footer>
+
+</div><!-- end .body-overflow -->
+
+<section id="wp-footer">
+	
+
+
+
+<script type="text/javascript" src="../../wp-content/cache/minify/10cc5.js"></script>
+
+<script type='text/javascript'>
+window.site = new Site.default();
+</script>
+</section>
+
+<div class="popover popover--seal">
+	<div class="wrap">
+		<div class="close">
+			<a href="index.html#"><img src="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/close.svg" alt="close" /></a>
+		</div>
+		<div class="popover__box">
+			<div class="popover__nav">
+				<nav class="nav nav--popover"><ul class="nav__menu nav__menu--depth0 menu"><li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-658"><a href="../../news/index.html" class="nav__link">News</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-659"><a href="../index.html" class="nav__link">Issues</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-795"><a href="../../the-trump-administration/index.html" class="nav__link">The Administration</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-1548"><a href="../../about-the-white-house/index.html" class="nav__link">About The Drumpf House</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-5738"><a href="../../get-involved/index.html" class="nav__link">Get Involved</a></li>
+</ul></nav>				<div class="popover__mobile">
+					<nav class="nav nav--primary"><ul class="nav__menu nav__menu--depth0 menu"><li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-692"><a href="../economy-jobs/index.html" class="nav__link">Economy</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-693"><a href="../national-security-defense/index.html" class="nav__link">National Insecurity</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-16229"><a href="../budget-spending/index.html" class="nav__link">Budget</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-16236"><a href="../immigration/index.html" class="nav__link">Immigration</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 nav__menu-item--active menu-item menu-item-type-post_type menu-item-object-issue current-menu-item menu-item-688"><a href="index.html" class="nav__link">Healthcare</a></li>
+</ul></nav>				</div>
+			</div>
+			<div class="popover__seal">
+				<img src="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/presidential-crest.svg" alt="Presidential Crest" />
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="search-overlay">
+	<img src="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/white-house-logo-sm-wh.png" srcset="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/white-house-logo-sm-wh.png 1x, https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/white-house-logo-md-wh.png 2x, https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/white-house-logo-lg-wh.png 3x" alt="White House Logo" class="logo--white" />
+
+	<a href="index.html#" class="search-overlay__hamburger header__hamburger">
+		<b class="svg svg--hamburger" data-svg-url="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/hamburger.svg" data-img-url="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/hamburger.png" data-icon="hamburger"><svg aria-label="Open Menu" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 14"><path d="M.64,12H16.36c.36,0,.64.43.64,1s-.28,1-.64,1H.64C.28,14,0,13.57,0,13s.28-1,.64-1M23.1,2H.9A.94.94,0,0,1,0,1,.94.94,0,0,1,.9,0H23.1A.94.94,0,0,1,24,1a.94.94,0,0,1-.9,1M.9,8A.94.94,0,0,1,0,7,.94.94,0,0,1,.9,6H23.1A.94.94,0,0,1,24,7a.94.94,0,0,1-.9,1Z" fill="#a98860"/></svg><title>open-menu</title></b>	</a>
+
+	<button type="button" class="search-overlay__close">
+		<b class="svg svg--close" data-svg-url="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/close.svg" data-icon="close">
+<svg aria-label="Close Search" role="img" width="19px" height="18px" viewBox="0 0 19 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<g transform="translate(-180.000000, -525.000000)" fill="#A98860">
+		<g transform="translate(20.000000, 478.000000)">
+			<path d="M177.668897,62.0337349 L171.050973,55.5 L177.648216,48.9662651 L177.668897,48.9457831 C178.041362,48.5361446 178.041362,47.9012048 177.648216,47.5325301 C177.441406,47.3277108 177.172759,47.2253012 176.883018,47.2253012 C176.614165,47.2253012 176.365993,47.3481928 176.180071,47.5325301 L169.582621,54.0662651 L162.778567,47.3072289 C162.571757,47.1024096 162.302904,47 162.01337,47 C161.744516,47 161.496344,47.1228916 161.310215,47.3072289 C161.124086,47.5120482 161,47.7781084 161.020681,48.0445783 C161.020681,48.3108434 161.144974,48.5566265 161.330896,48.7409639 L168.13495,55.5 L161.310215,62.2590361 C161.103405,62.4638554 161,62.7299157 161,63.0168675 C161,63.2831325 161.124086,63.5289157 161.310215,63.7130482 C161.455189,63.8361446 161.682473,64 162.034051,64 C162.406309,64 162.6338,63.8361446 162.778567,63.7130482 L169.603302,56.9542169 L176.200545,63.4879518 C176.345519,63.6313253 176.572803,63.7746988 176.945061,63.7746988 C177.317527,63.7746988 177.544811,63.6106386 177.689785,63.4879518 C177.896595,63.2831325 178,63.0168675 178,62.7299157 C177.979112,62.4638554 177.875707,62.2178675 177.668897,62.0337349" transform="translate(169.500000, 55.500000) rotate(-1.000000) translate(-169.500000, -55.500000) "></path>
+		</g>
+	</g>
+</svg>
+</b>		<span class="visually-hidden">Close Search</span>
+	</button>
+
+	<form class="search-overlay__form" action="https://www.whitehouse.gov/search/">
+		<label class="visually-hidden" for="search-overlay__input">
+			Type Your Search
+		</label>
+		<input type="text" id="search-overlay__input" class="search-overlay__input" name="s" placeholder="Type Your Search..." autocomplete="off">
+		<button type="submit" class="search-overlay__submit">Press enter to search</button>
+	</form>
+</div>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"9360826e15","applicationID":"80795461","transactionName":"MVNbZhQFXEAEVBBfWQgZeFESDV1dSkQNWFEKUxRbFRdHVg==","queueTime":0,"applicationTime":386,"atts":"HRRYEFwfT04=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
+
+<!--
+Performance optimized by W3 Total Cache. Learn more: https://www.w3-edge.com/products/
+
+Object Caching 2219/115 objects using memcached
+Minified using memcached
+
+Served from: www.whitehouse.gov @ 2017-12-19 03:21:14 by W3 Total Cache
+-->

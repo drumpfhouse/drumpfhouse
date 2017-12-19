@@ -6,7 +6,7 @@ import sys
 
 def setup():
     try:
-        subprocess.call(['torify wget -E -k -p https://www.whitehouse.gov'],
+        subprocess.call(['torify wget -E -k -p -r -l 1 --exclude-directories=wp-content/uploads,wp-content/themes,live https://www.whitehouse.gov'],
                         shell=True);
     except Exception as err:
         sys.stderr.write(type(err))  # the exception instance
@@ -40,6 +40,19 @@ def manageReplacement(fileList):
 
 def _replaceLine(line):
     replacementPatterns = [
+        # Transient
+        ('A New National Security Strategy for a New Era',
+         'A New National Security Strategy for a New Era: Piss everyone off'),
+        ('>National Security<', '>National Insecurity<'),
+        ('The Closing Argument for Tax Reform', 'Fuck the poor. Vive la rich!'),
+        ('Inside President Trump’s Trip to Asia', 'Buying Asian Sweat-shop Workers'),
+        ('America Will Once Again Reach for the Moon—and Beyond',
+         'The Administration Will Carve Drumpf\'s Face Onto the Moon'),
+        ('Budget That Puts America First', 'Budget That Puts Money in His Pockets'),
+        ('pay respect to 200 years of holiday traditions at the White House',
+         'pay respect to 200 years of white privilege'),
+        ('getting #2059more back in the pockets of everyday Americans', 'selling out everyday Americans'),
+
         # Persistent
         ('Trump', 'Drumpf'),
         ('whitehouse.gov</title>', 'drumpfhouse.gov</title>'),
@@ -48,17 +61,10 @@ def _replaceLine(line):
         ('content="whitehouse.gov"', 'content="drumpfhouse.com"'),
         ('twitter.com/POTUS', 'twitter.com/drumpfhouse'),
         ('twitter.com/whitehouse', 'twitter.com/drumpfhouse'),
-        ('wp-content/themes/whitehouse/assets/img/white-house-logo-footer-sm.png', 'dhAssets/WHlogo_trumpdoor.png'),
-        ('wp-content/themes/whitehouse/assets/img/white-house-logo-sm-bl.png', 'dhAssets/WHlogo_trumpdoor.png'),
+        ('https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/white-house-logo-footer-sm.png', 'dhAssets/WHlogo_trumpdoor.png'),
+        ('https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/white-house-logo-sm-bl.png', 'dhAssets/WHlogo_trumpdoor.png'),
         ('href="https://www.whitehouse.gov/live/"', 'href="https://www.youtube.com/watch?v=oEwrsf02L_c" target=_blank'),
 
-        # Transient
-        ('A new National Security Strategy for a New Era', 'A new National Security Strategy for a New Era: Piss everyone off'),
-        ('National Security', 'National inSecurity'),
-        ('The Closing Argument for Tax Reform', 'Fuck the poor. Vive la rich!'),
-        ('Budget That Puts America First', 'Budget That Puts Money in His Pockets'),
-        ('pay respect to 200 years of holiday traditions at the White House', 'pay respect to 200 years of white privilege'),
-        ('getting #2059more back in the pockets of everyday Americans', 'selling out everyday Americans')
     ]
     for orig, new in replacementPatterns:
         line = line.replace(orig, new)
