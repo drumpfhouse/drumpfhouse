@@ -8,21 +8,21 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>A New National Security Strategy for a New Era: Piss everyone off | The Drumpf House</title>
+	<title>Alienating Our Friends, Provoking Our Adversaries | The Drumpf House</title>
 
 <!-- This site is optimized with the Yoast SEO Premium plugin v5.9.4 - https://yoast.com/wordpress/plugins/seo/ -->
 <link rel="canonical" href="index.html" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="A New National Security Strategy for a New Era: Piss everyone off | The Drumpf House" />
+<meta property="og:title" content="Alienating Our Friends, Provoking Our Adversaries | The Drumpf House" />
 <meta property="og:description" content="The publication of the National Security Strategy (NSS) is a milestone for any presidency. A statutorily mandated document, the NSS explains to the American people, U.S. allies and partners, and federal agencies how the President intends to put his national security vision into practice on behalf of fellow citizens. First and foremost, President Donald J. Drumpf&#8217;s NSS &hellip;" />
 <meta property="og:url" content="https://www.whitehouse.gov/articles/new-national-security-strategy-new-era/" />
 <meta property="og:site_name" content="The Drumpf House" />
 <meta property="article:publisher" content="https://facebook.com/whitehouse" />
 <meta property="article:section" content="Uncategorized" />
 <meta property="article:published_time" content="2017-12-18T12:37:29-05:00" />
-<meta property="article:modified_time" content="2017-12-18T15:41:55-05:00" />
-<meta property="og:updated_time" content="2017-12-18T15:41:55-05:00" />
+<meta property="article:modified_time" content="2017-12-19T09:05:33-05:00" />
+<meta property="og:updated_time" content="2017-12-19T09:05:33-05:00" />
 <meta property="og:image" content="https://www.whitehouse.gov/wp-content/uploads/2017/12/DJT-AF-Hanger-1.jpg" />
 <meta property="og:image:secure_url" content="https://www.whitehouse.gov/wp-content/uploads/2017/12/DJT-AF-Hanger-1.jpg" />
 <meta property="og:image:width" content="1800" />
@@ -30,11 +30,11 @@
 <meta property="og:image:type" content="image/jpeg" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:description" content="The publication of the National Security Strategy (NSS) is a milestone for any presidency. A statutorily mandated document, the NSS explains to the American people, U.S. allies and partners, and federal agencies how the President intends to put his national security vision into practice on behalf of fellow citizens. First and foremost, President Donald J. Drumpf&#8217;s NSS [&hellip;]" />
-<meta name="twitter:title" content="A New National Security Strategy for a New Era: Piss everyone off | The Drumpf House" />
+<meta name="twitter:title" content="Alienating Our Friends, Provoking Our Adversaries | The Drumpf House" />
 <meta name="twitter:site" content="@drumpfhouse" />
 <meta name="twitter:image" content="https://www.whitehouse.gov/wp-content/uploads/2017/12/DJT-AF-Hanger-1.jpg" />
 <meta name="twitter:creator" content="@drumpfhouse" />
-<meta name="twitter:image:alt" content="A New National Security Strategy for a New Era: Piss everyone off" />
+<meta name="twitter:image:alt" content="Alienating Our Friends, Provoking Our Adversaries" />
 <script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"https:\/\/www.whitehouse.gov\/","name":"The Drumpf House","alternateName":"White House","potentialAction":{"@type":"SearchAction","target":"https:\/\/www.whitehouse.gov\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
 <script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"Organization","url":"https:\/\/www.whitehouse.gov\/articles\/new-national-security-strategy-new-era\/","sameAs":["https:\/\/facebook.com\/whitehouse","https:\/\/instagram.com\/whitehouse","https:\/\/www.youtube.com\/user\/whitehouse","https:\/\/twitter.com\/whitehouse"],"@id":"#organization","name":"The Drumpf House","logo":"https:\/\/www.whitehouse.gov\/wp-content\/uploads\/2017\/12\/cropped-WH.gov_favicon_512X512.png"}</script>
 <!-- / Yoast SEO Premium plugin. -->
@@ -71,8 +71,8 @@
 </script>
 <!-- / Google Analytics by MonsterInsights -->
 <link rel='stylesheet' id='google-fonts-css'  href='https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i|Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i&#038;subset=latin-ext' type='text/css' media='screen' />
-<link rel='stylesheet' id='animate-css-css'  href='https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/vendor/animate.css/animate.min.css?ver=1513126535' type='text/css' media='screen' />
-<link rel='stylesheet' id='site-css'  href='https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/dist/site.css?ver=1513664315' type='text/css' media='screen' />
+<link rel='stylesheet' id='animate-css-css'  href='https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/vendor/animate.css/animate.min.css?ver=1513128783' type='text/css' media='screen' />
+<link rel='stylesheet' id='site-css'  href='https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/dist/site.css?ver=1513664341' type='text/css' media='screen' />
 <script type='text/javascript'>
 /* <![CDATA[ */
 var monsterinsights_frontend = {"js_events_tracking":"true","is_debug_mode":"false","download_extensions":"doc,exe,js,pdf,ppt,tgz,zip,xls,jpg,jpeg","inbound_paths":"","home_url":"https:\/\/www.whitehouse.gov","track_download_as":"event","internal_label":"int","hash_tracking":"false"};
@@ -82,10 +82,10 @@ var monsterinsights_frontend = {"js_events_tracking":"true","is_debug_mode":"fal
 
 
 
-<link rel="icon" href="https://www.whitehouse.gov/wp-content/uploads/2017/12/cropped-WH.gov_favicon_512X512-1-32x32.png" sizes="32x32" />
-<link rel="icon" href="https://www.whitehouse.gov/wp-content/uploads/2017/12/cropped-WH.gov_favicon_512X512-1-192x192.png" sizes="192x192" />
-<link rel="apple-touch-icon-precomposed" href="https://www.whitehouse.gov/wp-content/uploads/2017/12/cropped-WH.gov_favicon_512X512-1-180x180.png" />
-<meta name="msapplication-TileImage" content="https://www.whitehouse.gov/wp-content/uploads/2017/12/cropped-WH.gov_favicon_512X512-1-270x270.png" />
+<link rel="icon" href="http://www.drumpfhouse.com/dhAssets/WHlogo_trumpdoor.png" sizes="32x32" />
+<link rel="icon" href="http://www.drumpfhouse.com/dhAssets/WHlogo_trumpdoor.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="http://www.drumpfhouse.com/dhAssets/WHlogo_trumpdoor.png" />
+<meta name="msapplication-TileImage" content="http://www.drumpfhouse.com/dhAssets/WHlogo_trumpdoor.png" />
 </head>
 
 <body class="post-template-default single single-post postid-17622 has-featured-image">
@@ -102,7 +102,7 @@ var monsterinsights_frontend = {"js_events_tracking":"true","is_debug_mode":"fal
 			<div class="header__wrap">
 				<div class="header__logo">
 					<a href="../../index.html">
-						<img src="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/white-house-logo-sm-wh.png" srcset="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/white-house-logo-sm-wh.png 1x, https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/white-house-logo-md-wh.png 2x, https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/white-house-logo-lg-wh.png 3x" alt="White House Logo" class="logo--white" />
+						<img src="dhAssets/WHlogo_trumpdoor.png" srcset="dhAssets/WHlogo_trumpdoor.png 1x, https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/white-house-logo-md-wh.png 2x, https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/white-house-logo-lg-wh.png 3x" alt="White House Logo" class="logo--white" />
 						<img src="dhAssets/WHlogo_trumpdoor.png" srcset="dhAssets/WHlogo_trumpdoor.png 1x, https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/white-house-logo-md-bl.png 2x, https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/white-house-logo-lg-bl.png 3x" alt="White House Logo" class="logo--blue" />
 												<span class="visually-hidden">White House Logo</span>
 					</a>
@@ -152,7 +152,7 @@ var monsterinsights_frontend = {"js_events_tracking":"true","is_debug_mode":"fal
 			National Security &#038; Defense		</a>
 		</p>
 
-			<h1 class="page-header__title">A New National Security Strategy for a New Era: Piss everyone off</h1>
+			<h1 class="page-header__title">Alienating Our Friends, Provoking Our Adversaries</h1>
 
 			<div class="meta meta--left">
 				<p class="meta__date">
@@ -270,7 +270,7 @@ var monsterinsights_frontend = {"js_events_tracking":"true","is_debug_mode":"fal
 <p>The strategy is realist because it is clear-eyed about global competition: It acknowledges the central role of power in world affairs, affirms that sovereign states are the best hope for a peaceful world, and clearly defines our national interests. It is principled because it is grounded in the knowledge that promoting American values is key to spreading peace and prosperity around the globe.</p>
 <p>President Drumpf&#8217;s ultimate goal is to leave our children and grandchildren a Nation that is stronger, better, freer, prouder, and greater than ever before.</p>
 <p><a href="https://www.whitehouse.gov/briefings-statements/president-donald-j-trump-announces-national-security-strategy-advance-americas-interests/">Read a summary of the President&#8217;s National Security Strategy here.</a></p>
-<p><a href="https://www.whitehouse.gov/wp-content/uploads/2017/12/NSS-Final-12-18-2017-0905.pdf">The full NSS report is available for download here.</a></p>
+<p><a href="https://www.whitehouse.gov/wp-content/uploads/2017/12/NSS-Final-12-18-2017-0905-1.pdf">The full NSS report is available for download here.</a></p>
 		</div>
 	</div>
 </div>
@@ -344,7 +344,7 @@ window.site = new Site.default();
 </div>
 
 <div class="search-overlay">
-	<img src="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/white-house-logo-sm-wh.png" srcset="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/white-house-logo-sm-wh.png 1x, https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/white-house-logo-md-wh.png 2x, https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/white-house-logo-lg-wh.png 3x" alt="White House Logo" class="logo--white" />
+	<img src="dhAssets/WHlogo_trumpdoor.png" srcset="dhAssets/WHlogo_trumpdoor.png 1x, https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/white-house-logo-md-wh.png 2x, https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/white-house-logo-lg-wh.png 3x" alt="White House Logo" class="logo--white" />
 
 	<a href="index.html#" class="search-overlay__hamburger header__hamburger">
 		<b class="svg svg--hamburger" data-svg-url="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/hamburger.svg" data-img-url="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/hamburger.png" data-icon="hamburger"><svg aria-label="Open Menu" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 14"><path d="M.64,12H16.36c.36,0,.64.43.64,1s-.28,1-.64,1H.64C.28,14,0,13.57,0,13s.28-1,.64-1M23.1,2H.9A.94.94,0,0,1,0,1,.94.94,0,0,1,.9,0H23.1A.94.94,0,0,1,24,1a.94.94,0,0,1-.9,1M.9,8A.94.94,0,0,1,0,7,.94.94,0,0,1,.9,6H23.1A.94.94,0,0,1,24,7a.94.94,0,0,1-.9,1Z" fill="#a98860"/></svg><title>open-menu</title></b>	</a>
@@ -370,14 +370,14 @@ window.site = new Site.default();
 	</form>
 </div>
 
-<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"9360826e15","applicationID":"80795461","transactionName":"MVNbZhQFXEAEVBBfWQgZeFESDV1dSkQNWFEKUxRCCRdG","queueTime":0,"applicationTime":318,"atts":"HRRYEFwfT04=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"9360826e15","applicationID":"81062413","transactionName":"MVNbZhQFXEAEVBBfWQgZeFESDV1dSkQNWFEKUxRCCRdG","queueTime":0,"applicationTime":546,"atts":"HRRYEFwfT04=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
 </html>
 
 <!--
 Performance optimized by W3 Total Cache. Learn more: https://www.w3-edge.com/products/
 
-Object Caching 1696/82 objects using memcached
+Object Caching 1697/83 objects using memcached
 Minified using memcached
 
-Served from: www.whitehouse.gov @ 2017-12-19 03:14:58 by W3 Total Cache
+Served from: www.whitehouse.gov @ 2017-12-19 09:09:57 by W3 Total Cache
 -->
