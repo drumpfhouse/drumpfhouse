@@ -41,18 +41,18 @@ def manageReplacement(fileList):
 def _replaceLine(line):
     replacementPatterns = [
         # Transient, front page
-        ('A New National Security Strategy for a New Era',
-         'Alienating Our Friends, Provoking Our Adversaries'),
+        ('The Tax Cuts Act Delivers on President Trump’s Promise to the Middle Class',
+         'The Tax Cuts Act Delivers on President Trump’s Promise to Cripple the Middle Class'),
         ('>National Security<', '>National Insecurity<'),
-        ('The Closing Argument for Tax Reform', 'Fuck the poor. Vive la rich!'),
+        ('One Intern’s Path from Farm Town to the White House', 'Here\'s Some Fluff News About an Intern'),
         ('Inside President Trump’s Trip to Asia', 'Buying Asian Sweatshop Workers'),
         ('America Will Once Again Reach for the Moon—and Beyond',
          'The Administration Will Carve Drumpf\'s Face Onto the Moon'),
         ('Budget That Puts America First', 'Budget That Puts Money in His Pockets'),
         ('pay respect to 200 years of holiday traditions at the White House',
          'pay respect to 200 years of white privilege'),
-        ('Stocks and the economy have a long way to go after the Tax Cut Bill is totally understood and appreciated in scope and size. Immediate expensing will have a big impact. Biggest Tax Cuts and Reform EVER passed. Enjoy, and create many beautiful JOBS',
-         'Get out the lube, working class. Me and the @GOP are about to stump you in the pooper'),
+        ('House Democrats want a SHUTDOWN for the holidays in order to distract from the very popular, just passed, Tax Cuts. House Republicans, don’t let this happen. Pass the C.R. TODAY and keep our Government OPEN!',
+         'The just passed Tax Cuts are going to save me a ton of money so I DON\'T CARE if the government shuts down!'),
 
         # Immigration page
         ('an immigration system that serves the national interest', 'an immigration system that keeps brown people out'),

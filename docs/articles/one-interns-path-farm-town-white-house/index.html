@@ -8,29 +8,35 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Economy &amp; Jobs | The Drumpf House</title>
+	<title>Here's Some Fluff News About an Intern | The Drumpf House</title>
 
 <!-- This site is optimized with the Yoast SEO Premium plugin v5.9.4 - https://yoast.com/wordpress/plugins/seo/ -->
 <link rel="canonical" href="index.html" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="Economy &amp; Jobs | The Drumpf House" />
-<meta property="og:url" content="https://www.whitehouse.gov/issues/economy-jobs/" />
+<meta property="og:title" content="Here's Some Fluff News About an Intern | The Drumpf House" />
+<meta property="og:description" content="My path to the White House did not begin in a traditional way. Last fall, I was waitressing at a bakery in my college town. A woman called me over as I was cleaning tables, and I expected her to ask for a drink refill. But the first four words out of her mouth startled &hellip;" />
+<meta property="og:url" content="https://www.whitehouse.gov/articles/one-interns-path-farm-town-white-house/" />
 <meta property="og:site_name" content="The Drumpf House" />
 <meta property="article:publisher" content="https://facebook.com/whitehouse" />
-<meta property="og:image" content="https://www.whitehouse.gov/wp-content/uploads/2017/11/35949678806_3fa3a52da9_k.jpg" />
-<meta property="og:image:secure_url" content="https://www.whitehouse.gov/wp-content/uploads/2017/11/35949678806_3fa3a52da9_k.jpg" />
-<meta property="og:image:width" content="2048" />
-<meta property="og:image:height" content="1365" />
+<meta property="article:section" content="Uncategorized" />
+<meta property="article:published_time" content="2017-12-21T10:25:54-05:00" />
+<meta property="article:modified_time" content="2017-12-21T10:27:59-05:00" />
+<meta property="og:updated_time" content="2017-12-21T10:27:59-05:00" />
+<meta property="og:image" content="https://www.whitehouse.gov/wp-content/uploads/2017/12/P20170614JB-0303-2.jpg" />
+<meta property="og:image:secure_url" content="https://www.whitehouse.gov/wp-content/uploads/2017/12/P20170614JB-0303-2.jpg" />
+<meta property="og:image:width" content="5760" />
+<meta property="og:image:height" content="3840" />
 <meta property="og:image:type" content="image/jpeg" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Economy &amp; Jobs | The Drumpf House" />
+<meta name="twitter:description" content="My path to the White House did not begin in a traditional way. Last fall, I was waitressing at a bakery in my college town. A woman called me over as I was cleaning tables, and I expected her to ask for a drink refill. But the first four words out of her mouth startled [&hellip;]" />
+<meta name="twitter:title" content="Here's Some Fluff News About an Intern | The Drumpf House" />
 <meta name="twitter:site" content="@drumpfhouse" />
-<meta name="twitter:image" content="https://www.whitehouse.gov/wp-content/uploads/2017/11/35949678806_3fa3a52da9_k.jpg" />
+<meta name="twitter:image" content="https://www.whitehouse.gov/wp-content/uploads/2017/12/P20170614JB-0303-2.jpg" />
 <meta name="twitter:creator" content="@drumpfhouse" />
-<meta name="twitter:image:alt" content="Economy &#038; Jobs" />
+<meta name="twitter:image:alt" content="Here's Some Fluff News About an Intern" />
 <script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"https:\/\/www.whitehouse.gov\/","name":"The Drumpf House","alternateName":"White House","potentialAction":{"@type":"SearchAction","target":"https:\/\/www.whitehouse.gov\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
-<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"Organization","url":"https:\/\/www.whitehouse.gov\/issues\/economy-jobs\/","sameAs":["https:\/\/facebook.com\/whitehouse","https:\/\/instagram.com\/whitehouse","https:\/\/www.youtube.com\/user\/whitehouse","https:\/\/twitter.com\/whitehouse"],"@id":"#organization","name":"The Drumpf House","logo":"https:\/\/www.whitehouse.gov\/wp-content\/uploads\/2017\/12\/wh.gov-share-img_03.png"}</script>
+<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"Organization","url":"https:\/\/www.whitehouse.gov\/articles\/one-interns-path-farm-town-white-house\/","sameAs":["https:\/\/facebook.com\/whitehouse","https:\/\/instagram.com\/whitehouse","https:\/\/www.youtube.com\/user\/whitehouse","https:\/\/twitter.com\/whitehouse"],"@id":"#organization","name":"The Drumpf House","logo":"https:\/\/www.whitehouse.gov\/wp-content\/uploads\/2017\/12\/wh.gov-share-img_03.png"}</script>
 <!-- / Yoast SEO Premium plugin. -->
 
 <!-- This site uses the Google Analytics by MonsterInsights plugin v6.2.6 - Using Analytics tracking - https://www.monsterinsights.com/ -->
@@ -65,8 +71,8 @@
 </script>
 <!-- / Google Analytics by MonsterInsights -->
 <link rel='stylesheet' id='google-fonts-css'  href='https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i|Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i&#038;subset=latin-ext' type='text/css' media='screen' />
-<link rel='stylesheet' id='animate-css-css'  href='../../wp-content/themes/whitehouse/assets/vendor/animate.css/animate.min.css%3Fver=1513128783.css' type='text/css' media='screen' />
-<link rel='stylesheet' id='site-css'  href='../../wp-content/themes/whitehouse/assets/dist/site.css%3Fver=1513664341.css' type='text/css' media='screen' />
+<link rel='stylesheet' id='animate-css-css'  href='../../wp-content/themes/whitehouse/assets/vendor/animate.css/animate.min.css%3Fver=1513126535.css' type='text/css' media='screen' />
+<link rel='stylesheet' id='site-css'  href='../../wp-content/themes/whitehouse/assets/dist/site.css%3Fver=1513664315.css' type='text/css' media='screen' />
 <script type='text/javascript'>
 /* <![CDATA[ */
 var monsterinsights_frontend = {"js_events_tracking":"true","is_debug_mode":"false","download_extensions":"doc,exe,js,pdf,ppt,tgz,zip,xls,jpg,jpeg","inbound_paths":"","home_url":"https:\/\/www.whitehouse.gov","track_download_as":"event","internal_label":"int","hash_tracking":"false"};
@@ -82,7 +88,7 @@ var monsterinsights_frontend = {"js_events_tracking":"true","is_debug_mode":"fal
 <meta name="msapplication-TileImage" content="http://www.drumpfhouse.com/dhAssets/WHlogo_trumpdoor.png" />
 </head>
 
-<body class="issue-template-default single single-issue postid-526 has-transparent-header has-featured-image">
+<body class="post-template-default single single-post postid-19351 has-featured-image">
 <a class="skip-link" href="index.html#main-content"><span>Skip to content</span></a>
 
 <div class="body-overflow">
@@ -103,7 +109,7 @@ var monsterinsights_frontend = {"js_events_tracking":"true","is_debug_mode":"fal
 				</div>
 
 								<div class="header__share">
-					<a class="header__share--copy" data-clipboard-text="https://www.whitehouse.gov/issues/economy-jobs/?utm_source=link" href="https://www.whitehouse.gov/issues/economy-jobs/?utm_source=link">
+					<a class="header__share--copy" data-clipboard-text="https://www.whitehouse.gov/articles/one-interns-path-farm-town-white-house/?utm_source=link" href="https://www.whitehouse.gov/articles/one-interns-path-farm-town-white-house/?utm_source=link">
 						<b class="svg svg--share-link" data-svg-url="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/share-link.svg" data-icon="share-link"><svg aria-label="Copy this url to the clipboard" role="img" width="17px" height="15px" viewBox="0 0 17 15"><title>copy-this-url-to-the-clipboard</title>
 	<g transform="translate(-324.000000, -1439.000000)" fill-rule="nonzero" fill="#30669B">
 		<g transform="translate(114.000000, 1437.000000)">
@@ -117,11 +123,11 @@ var monsterinsights_frontend = {"js_events_tracking":"true","is_debug_mode":"fal
 </b> Share
 					</a>
 				</div>
-				<nav class="nav nav--primary header__nav"><ul class="nav__menu nav__menu--depth0 menu"><li class="nav__menu-item nav__menu-item--depth0 nav__menu-item--active menu-item menu-item-type-post_type menu-item-object-issue current-menu-item menu-item-692"><a href="index.html" class="nav__link">Economy</a></li>
-<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-693"><a href="../national-security-defense/index.html" class="nav__link">National Insecurity</a></li>
-<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-16229"><a href="../budget-spending/index.html" class="nav__link">Budget</a></li>
-<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-16236"><a href="../immigration/index.html" class="nav__link">Immigration</a></li>
-<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-688"><a href="../healthcare/index.html" class="nav__link">Healthcare</a></li>
+				<nav class="nav nav--primary header__nav"><ul class="nav__menu nav__menu--depth0 menu"><li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-692"><a href="../../issues/economy-jobs/index.html" class="nav__link">Economy</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-693"><a href="../../issues/national-security-defense/index.html" class="nav__link">National Insecurity</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-16229"><a href="../../issues/budget-spending/index.html" class="nav__link">Budget</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-16236"><a href="../../issues/immigration/index.html" class="nav__link">Immigration</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-688"><a href="../../issues/healthcare/index.html" class="nav__link">Healthcare</a></li>
 </ul></nav>			</div>
 			<a href="../../search/index.html%3Fs=.html"  class="header__search">
 								<b class="svg svg--search" data-svg-url="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/search.svg" data-img-url="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/search.png" data-icon="search"><svg aria-label="Search WhiteHouse.gov" role="img" width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>search-whitehouse-gov</title>
@@ -137,25 +143,31 @@ var monsterinsights_frontend = {"js_events_tracking":"true","is_debug_mode":"fal
 
 <main id="main-content">
 
-<div class="page-header page-header--issue page-header--blue">
-	<div class="page-header__content">
-		<div class="page-header__wrap">
-			<h1 class="page-header__title">Economy &#038; Jobs</h1>
-			<span class="divider"><hr><hr></span>
-							<p class="page-header__subtitle">
-					The economy has come roaring back to life under President Drumpf. The stock market has hit record high after record high, exactly as we would expect with a President who willingly sacrifices the people and the environment in the name of god money. 				</p>
-					</div>
+<div class="page-header page-header--article page-header--small-title">
+	<div class="page-header__wrap">
+		<div class="page-header__main">
+
+			
+			<h1 class="page-header__title">Here's Some Fluff News About an Intern</h1>
+
+			<div class="meta meta--left">
+				<p class="meta__date">
+					<time>December 21, 2017</time>
+				</p>
+									<p class="meta__read">3 minute read</p>
+							</div>
+		</div>
 	</div>
 
-			<div class="page-header__image">
-			<figure class="image">
+	<div class="page-header__image">
+		<figure class="image image--full-width-mobile image--full-width-tablet">
 	<div class="image__container">
 
 		
 			<picture>
 
-															<source srcset="https://www.whitehouse.gov/wp-content/uploads/2017/11/35949678806_3fa3a52da9_k-600x685.jpg" media="(max-width: 599px)">											<source srcset="https://www.whitehouse.gov/wp-content/uploads/2017/11/35949678806_3fa3a52da9_k-900x600.jpg 900w, https://www.whitehouse.gov/wp-content/uploads/2017/11/35949678806_3fa3a52da9_k-300x200.jpg 300w, https://www.whitehouse.gov/wp-content/uploads/2017/11/35949678806_3fa3a52da9_k-768x512.jpg 768w, https://www.whitehouse.gov/wp-content/uploads/2017/11/35949678806_3fa3a52da9_k-1024x683.jpg 1024w, https://www.whitehouse.gov/wp-content/uploads/2017/11/35949678806_3fa3a52da9_k-620x413.jpg 620w, https://www.whitehouse.gov/wp-content/uploads/2017/11/35949678806_3fa3a52da9_k-820x547.jpg 820w" media="(max-width: 899px)">									
-									<img width="1920" height="720" src="https://www.whitehouse.gov/wp-content/uploads/2017/11/35949678806_3fa3a52da9_k-1920x720.jpg" class="attachment-header-max size-header-max" alt="" />				
+															<source srcset="https://www.whitehouse.gov/wp-content/uploads/2017/12/P20170614JB-0303-2-600x685.jpg" media="(max-width: 599px)">											<source srcset="https://www.whitehouse.gov/wp-content/uploads/2017/12/P20170614JB-0303-2-900x600.jpg 900w, https://www.whitehouse.gov/wp-content/uploads/2017/12/P20170614JB-0303-2-300x200.jpg 300w, https://www.whitehouse.gov/wp-content/uploads/2017/12/P20170614JB-0303-2-768x512.jpg 768w, https://www.whitehouse.gov/wp-content/uploads/2017/12/P20170614JB-0303-2-1024x683.jpg 1024w, https://www.whitehouse.gov/wp-content/uploads/2017/12/P20170614JB-0303-2-620x413.jpg 620w, https://www.whitehouse.gov/wp-content/uploads/2017/12/P20170614JB-0303-2-820x547.jpg 820w" media="(max-width: 899px)">									
+									<img width="1920" height="720" src="https://www.whitehouse.gov/wp-content/uploads/2017/12/P20170614JB-0303-2-1920x720.jpg" class="attachment-header-max size-header-max" alt="" />				
 			</picture>
 
 			<div class="image__overlay"></div>
@@ -167,228 +179,93 @@ var monsterinsights_frontend = {"js_events_tracking":"true","is_debug_mode":"fal
 	
 	
 </figure>
-		</div>
 	</div>
+</div>
 
-
-
-<div class="page-results page-results--section">
-	<div class="page-results__wrap" data-results-label="Lies About Economy &#038; Jobs">
-		<article class="briefing-statement briefing-statement--results">
-	<div class="briefing-statement__content">
-					<p class="briefing-statement__type">
-				News Clips			</p>
-		
-		<h2 class="briefing-statement__title"><a href="https://www.whitehouse.gov/briefings-statements/wall-street-journal-economy-revs/">The Wall Street Journal: &#8220;The Economy Revs Up&#8221;</a></h2>
-
-		<div class="meta meta--left">
-							<div class="meta__issue">
-					<p class="issue-flag issue-flag--left">
-			<a href="index.html">
-			Economy &#038; Jobs		</a>
-		</p>
-				</div>
-						<p class="meta__date">
-				<time>Dec 11, 2017</time>
-			</p>
-		</div>
-	</div>
-</article>
-<article class="article article--results">
-	
-	<div class="article__content">
-		<p class="issue-flag issue-flag--left">
-			<a href="index.html">
-			Economy &#038; Jobs		</a>
-		</p>
-
-		<h2 class="article__title"><a href="https://www.whitehouse.gov/articles/continued-good-news-jobs/">Continued Good News on Jobs: Manufacturing Unemployment Lowest in 17 Years; Hispanic Unemployment Lowest in History</a></h2>
-
-				<div class="meta meta--left">
+<div class="page-content">
+	<div class="page-content__wrap">
+		<div class="page-content__content editor">
+			<aside class="editor__module editor__module--left editor__module--named editor__module-share"><div class="share">
+	<ul>
+		<li class="share__label">
+			Share:
+		</li>
+		<li>
+			<a class="share__link share__link--facebook" href="https://www.facebook.com/sharer.php?url=https%3A%2F%2Fwww.whitehouse.gov%2Farticles%2Fone-interns-path-farm-town-white-house%2F%3Futm_source%3Dfacebook" target="_blank">
+				<b class="svg svg--share-facebook" data-svg-url="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/share-facebook.svg" data-icon="share-facebook"><svg aria-label="Share this page on Facebook" role="img" width="10" height="18" viewBox="0 0 10 18"><title>share-this-page-on-facebook</title>
+	<g transform="translate(-235.000000, -1438.000000)" fill="#30669B">
+		<g transform="translate(114.000000, 1437.000000)">
+			<path d="M123.8611,7.5566 L123.8611,5.9384 C123.8611,5.34319702 123.963399,4.7852026 124.168,4.2644 C124.372601,3.7435974 124.651598,3.29255191 125.005,2.91125 C125.358402,2.52994809 125.772248,2.22770112 126.24655,2.0045 C126.720852,1.78129888 127.227697,1.6697 127.7671,1.6697 L130.3897,1.6697 L130.3897,4.8782 L127.7671,4.8782 C127.618299,4.8782 127.474151,4.97584902 127.33465,5.17115 C127.195149,5.36645098 127.1254,5.6035986 127.1254,5.8826 L127.1254,7.5566 L130.3897,7.5566 L130.3897,10.8209 L127.1254,10.8209 L127.1254,18.7445 L123.8611,18.7445 L123.8611,10.8209 L121.2385,10.8209 L121.2385,7.5566 L123.8611,7.5566 Z" id="Path"></path>
+		</g>
+	</g>
+</svg>
+</b>			</a>
+		</li>
+		<li>
+			<a class="share__link share__link--twitter" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.whitehouse.gov%2Farticles%2Fone-interns-path-farm-town-white-house%2F%3Futm_source%3Dtwitter&#038;text=One+Intern%E2%80%99s+Path+from+Farm+Town+to+the+White+House&#038;via=whitehouse" target="_blank">
+				<b class="svg svg--share-twitter" data-svg-url="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/share-twitter.svg" data-icon="share-twitter"><svg aria-label="Share this page on Twitter" role="img" width="17" height="14" viewBox="0 0 17 14"><title>share-this-page-on-twitter</title>
+	<g transform="translate(-186.000000, -1440.000000)" fill="#30669B">
+		<g transform="translate(114.000000, 1437.000000)">
+			<path d="M88.7532,5.1293 C88.3067978,5.78030325 87.7488033,6.3661974 87.0792,6.887 L87.0792,7.2776 C87.0792,8.39360558 86.8699521,9.52354428 86.45145,10.66745 C86.0329479,11.8113557 85.419154,12.8436454 84.61005,13.76435 C83.800946,14.6850546 82.8058559,15.4336971 81.62475,16.0103 C80.4436441,16.5869029 79.0812077,16.8752 77.5374,16.8752 C76.5887953,16.8752 75.6820543,16.7403513 74.81715,16.47065 C73.9522457,16.2009487 73.1385038,15.8243024 72.3759,15.3407 C72.5061007,15.3593001 72.6362993,15.3686 72.7665,15.3686 L73.185,15.3686 C74.784608,15.3686 76.1702941,14.8943047 77.3421,13.9457 C76.5980963,13.9270999 75.9424528,13.6992522 75.37515,13.26215 C74.8078472,12.8250478 74.421901,12.2717033 74.2173,11.6021 C74.4405011,11.6579003 74.6450991,11.6858 74.8311,11.6858 C74.9985008,11.6858 75.1519493,11.6765001 75.29145,11.6579 C75.4309507,11.6392999 75.5750993,11.6114002 75.7239,11.5742 C74.9426961,11.4067992 74.2963526,11.020853 73.78485,10.41635 C73.2733474,9.81184698 73.0176,9.10040409 73.0176,8.282 L73.0176,8.2541 C73.2408011,8.36570056 73.4779487,8.45869963 73.72905,8.5331 C73.9801513,8.60750037 74.2637984,8.6447 74.58,8.6447 C74.0963976,8.34709851 73.7244013,7.95650242 73.464,7.4729 C73.2035987,6.98929758 73.0734,6.44990298 73.0734,5.8547 C73.0734,5.25949702 73.2221985,4.6922027 73.5198,4.1528 C74.3568042,5.19440521 75.370494,6.02674688 76.5609,6.64985 C77.751306,7.27295312 79.043993,7.61239972 80.439,7.6682 C80.3831997,7.44499888 80.3553,7.2032013 80.3553,6.9428 C80.3553,6.47779767 80.4436491,6.03605209 80.62035,5.61755 C80.7970509,5.19904791 81.0388485,4.83635153 81.34575,4.52945 C81.6526515,4.22254847 82.006048,3.98075088 82.40595,3.80405 C82.805852,3.62734912 83.2382977,3.539 83.7033,3.539 C84.2055025,3.539 84.661198,3.63664902 85.0704,3.83195 C85.479602,4.02725098 85.8422984,4.28299842 86.1585,4.5992 C86.5305019,4.54339972 86.9024981,4.44110074 87.2745,4.2923 C87.6465019,4.14349926 87.9905984,3.98540084 88.3068,3.818 C88.0091985,4.59920391 87.5163034,5.21299777 86.8281,5.6594 C87.1815018,5.62219981 87.5162984,5.55710046 87.8325,5.4641 C88.1487016,5.37109953 88.4555985,5.25950065 88.7532,5.1293 Z" ></path>
+		</g>
+	</g>
+</svg>
+</b>			</a>
+		</li>
+		<li>
+			<a class="share__link share__link--copy" data-clipboard-text="https://www.whitehouse.gov/articles/one-interns-path-farm-town-white-house/?utm_source=link" href="https://www.whitehouse.gov/articles/one-interns-path-farm-town-white-house/?utm_source=link">
+				<b class="svg svg--share-link" data-svg-url="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/share-link.svg" data-icon="share-link"><svg aria-label="Copy this url to the clipboard" role="img" width="17px" height="15px" viewBox="0 0 17 15"><title>copy-this-url-to-the-clipboard</title>
+	<g transform="translate(-324.000000, -1439.000000)" fill-rule="nonzero" fill="#30669B">
+		<g transform="translate(114.000000, 1437.000000)">
+			<g transform="translate(210.000000, 2.000000)">
+				<path d="M3.95921053,9.64583333 C4.80921053,10.4375 5.95,10.875 7.15789474,10.875 C8.36578947,10.875 9.50657895,10.4375 10.3565789,9.64583333 L11.2960526,8.77083333 C11.6539474,8.4375 11.6539474,7.91666667 11.2960526,7.58333333 C10.9381579,7.25 10.3789474,7.25 10.0210526,7.58333333 L9.08157895,8.45833333 C8.56710526,8.9375 7.87368421,9.20833333 7.15789474,9.20833333 C6.41973684,9.20833333 5.74868421,8.9375 5.23421053,8.45833333 L2.66184211,6.08333333 C1.58815789,5.08333333 1.58815789,3.47916667 2.66184211,2.47916667 C2.66184211,2.47916667 2.66184211,2.47916667 2.66184211,2.47916667 C3.73552632,1.5 5.45789474,1.5 6.50921053,2.47916667 L7.33684211,3.25 C7.69473684,3.58333333 8.25394737,3.58333333 8.61184211,3.25 C8.96973684,2.91666667 8.96973684,2.39583333 8.61184211,2.0625 L7.78421053,1.29166667 C6.01710526,-0.354166667 3.15394737,-0.354166667 1.38684211,1.29166667 C1.38684211,1.29166667 1.38684211,1.29166667 1.38684211,1.29166667 C-0.357894737,2.9375 -0.357894737,5.60416667 1.38684211,7.22916667 L3.95921053,9.64583333 Z" id="Shape"></path>
+				<path d="M5.70394737,6.25 C5.34605263,6.58333333 5.34605263,7.10416667 5.70394737,7.4375 C6.06184211,7.77083333 6.62105263,7.77083333 6.97894737,7.4375 L7.91842105,6.5625 C8.43289474,6.08333333 9.12631579,5.8125 9.84210526,5.8125 C10.5578947,5.8125 11.2513158,6.08333333 11.7657895,6.5625 L14.3381579,8.95833333 C15.4118421,9.95833333 15.4118421,11.5625 14.3381579,12.5625 C13.2644737,13.5625 11.5421053,13.5625 10.4684211,12.5625 L9.64078947,11.7916667 C9.28289474,11.4583333 8.72368421,11.4583333 8.36578947,11.7916667 C8.00789474,12.125 8.00789474,12.6458333 8.36578947,12.9791667 L9.19342105,13.75 C10.0657895,14.5625 11.2289474,14.9791667 12.3921053,14.9791667 C13.5552632,14.9791667 14.6960526,14.5625 15.5907895,13.75 C17.3578947,12.1041667 17.3578947,9.4375 15.5907895,7.79166667 L13.0407895,5.35416667 C12.1907895,4.5625 11.05,4.125 9.84210526,4.125 C8.63421053,4.125 7.49342105,4.5625 6.64342105,5.35416667 L5.70394737,6.25 Z" id="Shape"></path>
+			</g>
+		</g>
+	</g>
+</svg>
+</b>			</a>
+		</li>
+	</ul>
+</div>
+</aside>
 			
-			<p class="meta__date">
-				<time>Dec 8, 2017</time>
-			</p>
-		</div>
-	</div>
-</article>
-<article class="presidential-action presidential-action--results">
-	<div class="presidential-action__content">
-					<p class="presidential-action__type">
-				Presidential Memoranda			</p>
-		
-		<h2 class="presidential-action__title"><a href="https://www.whitehouse.gov/presidential-actions/presidential-memorandum-chief-counsel-advocacy-small-business-administration/">Presidential Memorandum for the Chief Counsel for Advocacy of the Small Business Administration</a></h2>
-
-		<div class="meta meta--left">
-							<div class="meta__issue">
-					<p class="issue-flag issue-flag--left">
-			<a href="index.html">
-			Economy &#038; Jobs		</a>
-		</p>
-				</div>
-						<p class="meta__date">
-				<time>Dec 8, 2017</time>
-			</p>
-		</div>
-	</div>
-</article>
-<article class="briefing-statement briefing-statement--results">
-	<div class="briefing-statement__content">
-					<p class="briefing-statement__type">
-				Statements &amp; Releases			</p>
-		
-		<h2 class="briefing-statement__title"><a href="https://www.whitehouse.gov/briefings-statements/statement-cea-chairman-kevin-hassett-joint-committee-taxation-score/">Statement from CEA Chairman Kevin Hassett on the Joint Committee on Taxation Score</a></h2>
-
-		<div class="meta meta--left">
-							<div class="meta__issue">
-					<p class="issue-flag issue-flag--left">
-			<a href="index.html">
-			Economy &#038; Jobs		</a>
-		</p>
-				</div>
-						<p class="meta__date">
-				<time>Dec 5, 2017</time>
-			</p>
-		</div>
-	</div>
-</article>
-<article class="briefing-statement briefing-statement--results">
-	<div class="briefing-statement__content">
-					<p class="briefing-statement__type">
-				News Clips			</p>
-		
-		<h2 class="briefing-statement__title"><a href="https://www.whitehouse.gov/briefings-statements/las-vegas-review-journal-economy-showing-major-progress-president-donald-trump/">Las Vegas Review-Journal: &#8220;Economy showing major progress under President Donald Drumpf&#8221;</a></h2>
-
-		<div class="meta meta--left">
-							<div class="meta__issue">
-					<p class="issue-flag issue-flag--left">
-			<a href="index.html">
-			Economy &#038; Jobs		</a>
-		</p>
-				</div>
-						<p class="meta__date">
-				<time>Dec 4, 2017</time>
-			</p>
-		</div>
-	</div>
-</article>
-<article class="article article--results">
-	
-	<div class="article__content">
-		<p class="issue-flag issue-flag--left">
-			<a href="index.html">
-			Economy &#038; Jobs		</a>
-		</p>
-
-		<h2 class="article__title"><a href="https://www.whitehouse.gov/articles/effects-hurricanes-harvey-irma-employment-industrial-production-real-gdp-growth-q3/">Effects of Hurricanes Harvey and Irma on Employment, Industrial Production, &#038; Real GDP Growth in Q3</a></h2>
-
-				<div class="meta meta--left">
 			
-			<p class="meta__date">
-				<time>Nov 30, 2017</time>
-			</p>
-		</div>
+			<aside class="editor__module editor__module--left editor__module--named editor__module-allNews"><div class="allnews">
+	<div class="allnews__button">
+		<a href="../../news/index.html"><img src="../../wp-content/themes/whitehouse/assets/img/menu-large.svg" alt="menu" />All News</a>
 	</div>
-</article>
-<article class="briefing-statement briefing-statement--results">
-	<div class="briefing-statement__content">
-					<p class="briefing-statement__type">
-				Fact Sheets			</p>
-		
-		<h2 class="briefing-statement__title"><a href="https://www.whitehouse.gov/briefings-statements/president-donald-j-trump-promotes-american-entrepreneurship/">President Donald J. Drumpf Promotes American Entrepreneurship</a></h2>
-
-		<div class="meta meta--left">
-							<div class="meta__issue">
-					<p class="issue-flag issue-flag--left">
-			<a href="index.html">
-			Economy &#038; Jobs		</a>
-		</p>
+</div>
+</aside>
+			<!-- The Content -->
+			<p class="editor__dropcap">My path to the White House did not begin in a traditional way. Last fall, I was waitressing at a bakery in my college town. A woman called me over as I was cleaning tables, and I expected her to ask for a drink refill. But the first four words out of her mouth startled me.</p>
+<p>“Do you like politics?”</p>
+<p>She was a stranger, and that was an unexpected conversation starter. After a few minutes of chatting about the news, she offered me her business card and told me to send her my resume. While doing some research later that evening, I discovered the woman in question was the president of a major policy think tank in Illinois. I was surprised she took the time to talk to me—let alone offer her business card.</p>
+<p>Shortly after sending along my resume, I received an internship offer. I spent this past spring at that think tank and followed my boss’s passion for policies affecting Illinoisans. In late May, just weeks after finishing the internship, I opened my email to find a link to the open application for the Fall 2017 White House Internship Program.</p>
+<p>It came from the same woman who saw something in me at that bakery.</p>
+<p>I did not see how I could possibly get accepted into the prestigious White House program. I grew up on a farm in a village with a population of 1,600; my last name does not lead me anywhere outside of my home county; my college is not Ivy League; and I am not majoring in politics or policy. I did not fit my own stereotype of what a White House intern looked like.</p>
+<p>I took a chance and applied, but I quickly forgot all about it, assuming I would never be accepted. Imagine my surprise when I received a congratulatory email offering me a spot in the latest class of White House interns!</p>
+<p>The lesson I took away from my experience is that it’s impossible to know where one’s path will lead. A short conversation with a stranger ultimately led me to walk through the gates of the White House complex just 10 months later.</p>
+<p>Learn from that story. Pursue whatever opportunities are presented to you—even if you think there is no way you can succeed. Put your best foot forward and always do your best work.</p>
+<p>Who knows? A stranger may notice and lead you to the opportunity of a lifetime.</p>
+<aside class="editor__module editor__module--content"><div class="module module_type_call-to-action">
+	<div class="module__wrap">
+		<div class="module__content">
+					<h2 class="module__title">Want to be a White House intern?</h2>
+			<span class="divider"><hr><hr></span>
+							<p class="excerpt">
+				The Summer 2018 White House Internship Program application is now open through January 12.			</p>
+							<a class="button button--white" href="https://www.whitehouse.gov/get-involved/internships/apply/">Apply Now</a>
 				</div>
-						<p class="meta__date">
-				<time>Nov 29, 2017</time>
-			</p>
+	</div>
+</div>
+</aside>
+<p><em>Lea Thoele is a junior studying social work at the University of Illinois, Springfield. Lea was a member of the Fall 2017 White House Internship Program in the Office of Presidential Advance.</em></p>
 		</div>
 	</div>
-</article>
-<article class="briefing-statement briefing-statement--results">
-	<div class="briefing-statement__content">
-					<p class="briefing-statement__type">
-				Fact Sheets			</p>
-		
-		<h2 class="briefing-statement__title"><a href="https://www.whitehouse.gov/briefings-statements/president-donald-j-trump-giving-small-businesses-boost/">President Donald J. Drumpf is Giving Small Businesses a Boost</a></h2>
+</div>
 
-		<div class="meta meta--left">
-							<div class="meta__issue">
-					<p class="issue-flag issue-flag--left">
-			<a href="index.html">
-			Economy &#038; Jobs		</a>
-		</p>
-				</div>
-						<p class="meta__date">
-				<time>Nov 29, 2017</time>
-			</p>
-		</div>
-	</div>
-</article>
-<article class="briefing-statement briefing-statement--results">
-	<div class="briefing-statement__content">
-					<p class="briefing-statement__type">
-				News Clips			</p>
-		
-		<h2 class="briefing-statement__title"><a href="https://www.whitehouse.gov/briefings-statements/dow-jones-u-s-gdp-growth-revised-3-3-rate-third-quarter/">Dow Jones: &#8220;U.S. GDP growth revised up to 3.3% rate in third quarter&#8221;</a></h2>
-
-		<div class="meta meta--left">
-							<div class="meta__issue">
-					<p class="issue-flag issue-flag--left">
-			<a href="index.html">
-			Economy &#038; Jobs		</a>
-		</p>
-				</div>
-						<p class="meta__date">
-				<time>Nov 29, 2017</time>
-			</p>
-		</div>
-	</div>
-</article>
-<article class="briefing-statement briefing-statement--results">
-	<div class="briefing-statement__content">
-					<p class="briefing-statement__type">
-				News Clips			</p>
-		
-		<h2 class="briefing-statement__title"><a href="https://www.whitehouse.gov/briefings-statements/hill-unemployment-rate-hit-record-low-13-states-year/">The Hill: &#8220;Unemployment rate hit record low in 13 states this year&#8221;</a></h2>
-
-		<div class="meta meta--left">
-							<div class="meta__issue">
-					<p class="issue-flag issue-flag--left">
-			<a href="index.html">
-			Economy &#038; Jobs		</a>
-		</p>
-				</div>
-						<p class="meta__date">
-				<time>Nov 17, 2017</time>
-			</p>
-		</div>
-	</div>
-</article>
-
-	<div class="pagination">
-					<span class="pagination__prev pagination__prev--disabled">
-				Previous
-			</span>
-		
-		<span class='page-numbers current'>1</span>
-<a class='page-numbers' href='https://www.whitehouse.gov/issues/economy-jobs/page/2/'>2</a>
-<a class='page-numbers' href='https://www.whitehouse.gov/issues/economy-jobs/page/3/'>3</a>
-<span class="page-numbers dots">&hellip;</span>
-<a class='page-numbers' href='https://www.whitehouse.gov/issues/economy-jobs/page/14/'>14</a>
-					<a class="pagination__next" href="https://www.whitehouse.gov/issues/economy-jobs/page/2/">
-				Next
-			</a>
-			</div>
-
-	</div>
-
-	</main><!-- end main -->
+</main><!-- end main -->
 
 <footer class="footer">
 	<div class="footer__wrap">
@@ -437,16 +314,16 @@ window.site = new Site.default();
 		<div class="popover__box">
 			<div class="popover__nav">
 				<nav class="nav nav--popover"><ul class="nav__menu nav__menu--depth0 menu"><li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-658"><a href="../../news/index.html" class="nav__link">News</a></li>
-<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-659"><a href="../index.html" class="nav__link">Issues</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-659"><a href="../../issues/index.html" class="nav__link">Issues</a></li>
 <li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-795"><a href="../../the-trump-administration/index.html" class="nav__link">The Administration</a></li>
 <li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-1548"><a href="../../about-the-white-house/index.html" class="nav__link">About The Drumpf House</a></li>
 <li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-5738"><a href="../../get-involved/index.html" class="nav__link">Get Involved</a></li>
 </ul></nav>				<div class="popover__mobile">
-					<nav class="nav nav--primary"><ul class="nav__menu nav__menu--depth0 menu"><li class="nav__menu-item nav__menu-item--depth0 nav__menu-item--active menu-item menu-item-type-post_type menu-item-object-issue current-menu-item menu-item-692"><a href="index.html" class="nav__link">Economy</a></li>
-<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-693"><a href="../national-security-defense/index.html" class="nav__link">National Insecurity</a></li>
-<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-16229"><a href="../budget-spending/index.html" class="nav__link">Budget</a></li>
-<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-16236"><a href="../immigration/index.html" class="nav__link">Immigration</a></li>
-<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-688"><a href="../healthcare/index.html" class="nav__link">Healthcare</a></li>
+					<nav class="nav nav--primary"><ul class="nav__menu nav__menu--depth0 menu"><li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-692"><a href="../../issues/economy-jobs/index.html" class="nav__link">Economy</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-693"><a href="../../issues/national-security-defense/index.html" class="nav__link">National Insecurity</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-16229"><a href="../../issues/budget-spending/index.html" class="nav__link">Budget</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-16236"><a href="../../issues/immigration/index.html" class="nav__link">Immigration</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-688"><a href="../../issues/healthcare/index.html" class="nav__link">Healthcare</a></li>
 </ul></nav>				</div>
 			</div>
 			<div class="popover__seal">
@@ -483,14 +360,14 @@ window.site = new Site.default();
 	</form>
 </div>
 
-<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"9360826e15","applicationID":"81062413","transactionName":"MVNbZhQFXEAEVBBfWQgZeFESDV1dSkQNWFEKUxRbFRdHVg==","queueTime":0,"applicationTime":471,"atts":"HRRYEFwfT04=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"9360826e15","applicationID":"80795461","transactionName":"MVNbZhQFXEAEVBBfWQgZeFESDV1dSkQNWFEKUxRCCRdG","queueTime":0,"applicationTime":298,"atts":"HRRYEFwfT04=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
 </html>
 
 <!--
 Performance optimized by W3 Total Cache. Learn more: https://www.w3-edge.com/products/
 
-Object Caching 2152/97 objects using memcached
+Object Caching 1687/79 objects using memcached
 Minified using memcached
 
-Served from: www.whitehouse.gov @ 2017-12-21 10:12:29 by W3 Total Cache
+Served from: www.whitehouse.gov @ 2017-12-21 10:52:34 by W3 Total Cache
 -->
