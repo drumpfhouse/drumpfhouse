@@ -1,0 +1,138 @@
+/*!
+ * DO NOT OVERRIDE THIS FILE.
+ * Generated with `npm run build`
+ *
+ * whitehouse-theme - WordPress Theme for whitehouse.gov
+ * @version 45.0.0
+ * @author White House
+ * @link https://www.whitehouse.gov/
+ */
+
+/**
+ * Colors from WH style guide
+ * Updated: 2017-03-28
+ */
+/**
+ * Global Colors
+ */
+/**
+ * Tiny MCE editor variables
+ */
+/**
+ * Media Queries
+ */
+meta.mq--start {
+  display: none;
+}
+
+meta.mq-xsmall {
+  font-family: "0";
+}
+
+meta.mq-small {
+  font-family: "400";
+}
+
+meta.mq-medium {
+  font-family: "700";
+}
+
+meta.mq-large {
+  font-family: "1000";
+}
+
+meta.mq-xlarge {
+  font-family: "1400";
+}
+
+meta.mq-xsmall-gutter {
+  font-family: "24px";
+}
+
+meta.mq-small-gutter {
+  font-family: "40px";
+}
+
+meta.mq-medium-gutter {
+  font-family: "40px";
+}
+
+meta.mq-large-gutter {
+  font-family: "40px";
+}
+
+meta.mq-xlarge-gutter {
+  font-family: "40px";
+}
+
+meta.mq-small-up {
+  font-family: "(min-width: 400px)";
+}
+
+meta.mq-medium-up {
+  font-family: "(min-width: 700px)";
+}
+
+meta.mq-large-up {
+  font-family: "(min-width: 1000px)";
+}
+
+meta.mq-xlarge-up {
+  font-family: "(min-width: 1400px)";
+}
+
+meta.mq-small-down {
+  font-family: "(max-width: 699px)";
+}
+
+meta.mq-medium-down {
+  font-family: "(max-width: 999px)";
+}
+
+meta.mq-large-down {
+  font-family: "(max-width: 1399px)";
+}
+
+meta.mq-xsmall-only {
+  font-family: "(min-width: 0px) and (max-width: 399px)";
+}
+
+meta.mq-small-only {
+  font-family: "(min-width: 400px) and (max-width: 699px)";
+}
+
+meta.mq-medium-only {
+  font-family: "(min-width: 700px) and (max-width: 999px)";
+}
+
+meta.mq-large-only {
+  font-family: "(min-width: 1000px) and (max-width: 1399px)";
+}
+
+meta.mq-xlarge-only {
+  font-family: "(min-width: 1400px)";
+}
+
+meta.mq--end {
+  display: none;
+}
+
+.search .page-header__wrap {
+  position: static;
+}
+
+.search .page-header__title {
+  font-size: 4.8125em;
+  margin: 0 0 1em 0;
+  word-break: break-all;
+}
+
+.search .page-results {
+  margin-top: 50px;
+}
+
+.search .footer {
+  margin-top: 0;
+}
+
+/*# sourceMappingURL=search.css.map */

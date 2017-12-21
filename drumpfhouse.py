@@ -41,8 +41,8 @@ def manageReplacement(fileList):
 def _replaceLine(line):
     replacementPatterns = [
         # Transient, front page
-        ('The Tax Cuts Act Delivers on President Trump’s Promise to the Middle Class',
-         'The Tax Cuts Act Delivers on President Trump’s Promise to Cripple the Middle Class'),
+        ('What Tax Cuts Have to Do with Making America Great Again',
+         'What Tax Cuts Have to Do with Making Corporations Great Again'),
         ('>National Security<', '>National Insecurity<'),
         ('One Intern’s Path from Farm Town to the White House', 'Here\'s Some Fluff News About an Intern'),
         ('Inside President Trump’s Trip to Asia', 'Buying Asian Sweatshop Workers'),
@@ -53,6 +53,7 @@ def _replaceLine(line):
          'pay respect to 200 years of white privilege'),
         ('House Democrats want a SHUTDOWN for the holidays in order to distract from the very popular, just passed, Tax Cuts. House Republicans, don’t let this happen. Pass the C.R. TODAY and keep our Government OPEN!',
          'The just passed Tax Cuts are going to save me a ton of money so I DON\'T CARE if the government shuts down!'),
+        ('Sign Up for White House Updates', 'Sign Up for White House Propaganda'),
 
         # Immigration page
         ('an immigration system that serves the national interest', 'an immigration system that keeps brown people out'),
