@@ -44,15 +44,15 @@ def _replaceLine(line):
         ('What Tax Cuts Have to Do with Making America Great Again',
          'What Tax Cuts Have to Do with Making Corporations Great Again'),
         ('>National Security<', '>National Insecurity<'),
-        ('One Intern’s Path from Farm Town to the White House', 'Here\'s Some Fluff News About an Intern'),
+        ('Christmas for Military and Secret Service Families at the Naval Observatory', 'VP Dunce Meets a Brown Person; is Confused'),
         ('Inside President Trump’s Trip to Asia', 'Buying Asian Sweatshop Workers'),
         ('America Will Once Again Reach for the Moon—and Beyond',
          'The Administration Will Carve Drumpf\'s Face Onto the Moon'),
         ('Budget That Puts America First', 'Budget That Puts Money in His Pockets'),
         ('pay respect to 200 years of holiday traditions at the White House',
          'pay respect to 200 years of white privilege'),
-        ('House Democrats want a SHUTDOWN for the holidays in order to distract from the very popular, just passed, Tax Cuts. House Republicans, don’t let this happen. Pass the C.R. TODAY and keep our Government OPEN!',
-         'The just passed Tax Cuts are going to save me a ton of money so I DON\'T CARE if the government shuts down!'),
+        ('During President Trump’s first year, nearly 1.7M new jobs have been created and the unemployment rate has fallen to 4.1%, the lowest rate in nearly 17 years. Read more: http://45.wh.gov/KAqaNQ',
+         'During President Trump’s first year, nearly 1.7M have wished they\'d voted for someone other than Drumpf.'),
         ('Sign Up for White House Updates', 'Sign Up for White House Propaganda'),
 
         # Immigration page
@@ -68,6 +68,7 @@ def _replaceLine(line):
 
         # Persistent
         ('Trump', 'Drumpf'),
+        ('Pence', 'Dunce'),
         ('whitehouse.gov</title>', 'drumpfhouse.gov</title>'),
         ('The White House', 'The Drumpf House'),
         ('@whitehouse', '@drumpfhouse'),
