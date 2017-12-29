@@ -44,16 +44,15 @@ def _replaceLine(line):
         ('What Tax Cuts Have to Do with Making America Great Again',
          'What Tax Cuts Have to Do with Making Corporations Great Again'),
         ('>National Security<', '>National Insecurity<'),
-        ('Christmas for Military and Secret Service Families at the Naval Observatory', 'VP Dunce Meets a Brown Person; is Confused'),
-        ('Inside President Trump’s Trip to Asia', 'Buying Asian Sweatshop Workers'),
+        ('Christmas for Military Families at the Naval Observatory', 'VP Dunce Meets a Brown Person; is Confused'),
         ('America Will Once Again Reach for the Moon—and Beyond',
          'The Administration Will Carve Drumpf\'s Face Onto the Moon'),
-        ('Budget That Puts America First', 'Budget That Puts Money in His Pockets'),
+        ('Of Taxes, Math, and Intellectual Honesty', 'Of Taxes, Math, and Congressional Dishonesty'),
         ('pay respect to 200 years of holiday traditions at the White House',
          'pay respect to 200 years of white privilege'),
-        ('During President Trump’s first year, nearly 1.7M new jobs have been created and the unemployment rate has fallen to 4.1%, the lowest rate in nearly 17 years. Read more: http://45.wh.gov/KAqaNQ',
-         'During President Trump’s first year, nearly 1.7M have wished they\'d voted for someone other than Drumpf.'),
         ('Sign Up for White House Updates', 'Sign Up for White House Propaganda'),
+        ('Retail sales are at record numbers. We’ve got the economy going better than anyone ever dreamt &#8211; and you haven’t seen anything yet!',
+         'There\'s important work to be done, but I\'m going to go play golf instead.'),
 
         # Immigration page
         ('an immigration system that serves the national interest', 'an immigration system that keeps brown people out'),
@@ -91,9 +90,12 @@ def _replaceLine(line):
 
     return line
 
-
-if __name__ == '__main__':
+def rebuild():
+    setup()
     WGETDIR = 'www.whitehouse.gov'
 
     fileList = getHTMLFileList(WGETDIR)
     manageReplacement(fileList)
+
+if __name__ == '__main__':
+    rebuild()
