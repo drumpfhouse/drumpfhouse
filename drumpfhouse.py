@@ -51,8 +51,8 @@ def _replaceLine(line):
         ('pay respect to 200 years of holiday traditions at the White House',
          'pay respect to 200 years of white privilege'),
         ('Sign Up for White House Updates', 'Sign Up for White House Propaganda'),
-        ('Retail sales are at record numbers. We’ve got the economy going better than anyone ever dreamt &#8211; and you haven’t seen anything yet!',
-         'There\'s important work to be done, but I\'m going to go play golf instead.'),
+        ('Many reports of peaceful protests by Iranian citizens fed up with regime’s corruption &amp; its squandering of the nation’s wealth to fund terrorism abroad. Iranian govt should respect their people’s rights, including right to express themselves. The world is watching!',
+         'I wish I could crush protests like they\'re doing in Iran.'),
 
         # Immigration page
         ('an immigration system that serves the national interest', 'an immigration system that keeps brown people out'),
