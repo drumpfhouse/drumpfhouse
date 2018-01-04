@@ -8,25 +8,29 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>News | The Drumpf House</title>
+	<title>Energy &amp; Environment | The Drumpf House</title>
 
 <!-- This site is optimized with the Yoast SEO Premium plugin v5.9.4 - https://yoast.com/wordpress/plugins/seo/ -->
 <link rel="canonical" href="index.html" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="News | The Drumpf House" />
-<meta property="og:url" content="https://www.whitehouse.gov/news/" />
+<meta property="og:title" content="Energy &amp; Environment | The Drumpf House" />
+<meta property="og:url" content="https://www.whitehouse.gov/issues/energy-environment/" />
 <meta property="og:site_name" content="The Drumpf House" />
 <meta property="article:publisher" content="https://facebook.com/whitehouse" />
-<meta property="og:image" content="https://www.whitehouse.gov/wp-content/uploads/2017/12/wh.gov-share-img_03.png" />
-<meta property="og:image:secure_url" content="https://www.whitehouse.gov/wp-content/uploads/2017/12/wh.gov-share-img_03.png" />
+<meta property="og:image" content="https://www.whitehouse.gov/wp-content/uploads/2017/11/energy-and-environment.jpg" />
+<meta property="og:image:secure_url" content="https://www.whitehouse.gov/wp-content/uploads/2017/11/energy-and-environment.jpg" />
+<meta property="og:image:width" content="1250" />
+<meta property="og:image:height" content="648" />
+<meta property="og:image:type" content="image/jpeg" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="News | The Drumpf House" />
+<meta name="twitter:title" content="Energy &amp; Environment | The Drumpf House" />
 <meta name="twitter:site" content="@drumpfhouse" />
-<meta name="twitter:image" content="https://www.whitehouse.gov/wp-content/uploads/2017/12/wh.gov-share-img_03.png" />
+<meta name="twitter:image" content="https://www.whitehouse.gov/wp-content/uploads/2017/11/energy-and-environment.jpg" />
 <meta name="twitter:creator" content="@drumpfhouse" />
+<meta name="twitter:image:alt" content="Energy &#038; Environment" />
 <script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"https:\/\/www.whitehouse.gov\/","name":"The Drumpf House","alternateName":"White House","potentialAction":{"@type":"SearchAction","target":"https:\/\/www.whitehouse.gov\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
-<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"Organization","url":"https:\/\/www.whitehouse.gov\/news\/","sameAs":["https:\/\/facebook.com\/whitehouse","https:\/\/instagram.com\/whitehouse","https:\/\/www.youtube.com\/user\/whitehouse","https:\/\/twitter.com\/whitehouse"],"@id":"#organization","name":"The Drumpf House","logo":"https:\/\/www.whitehouse.gov\/wp-content\/uploads\/2017\/12\/wh.gov-share-img_03.png"}</script>
+<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"Organization","url":"https:\/\/www.whitehouse.gov\/issues\/energy-environment\/","sameAs":["https:\/\/facebook.com\/whitehouse","https:\/\/instagram.com\/whitehouse","https:\/\/www.youtube.com\/user\/whitehouse","https:\/\/twitter.com\/whitehouse"],"@id":"#organization","name":"The Drumpf House","logo":"https:\/\/www.whitehouse.gov\/wp-content\/uploads\/2017\/12\/wh.gov-share-img_03.png"}</script>
 <!-- / Yoast SEO Premium plugin. -->
 
 <!-- This site uses the Google Analytics by MonsterInsights plugin v6.2.6 - Using Analytics tracking - https://www.monsterinsights.com/ -->
@@ -61,14 +65,14 @@
 </script>
 <!-- / Google Analytics by MonsterInsights -->
 <link rel='stylesheet' id='google-fonts-css'  href='https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i|Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i&#038;subset=latin-ext' type='text/css' media='screen' />
-<link rel='stylesheet' id='animate-css-css'  href='../wp-content/themes/whitehouse/assets/vendor/animate.css/animate.min.css%3Fver=94b139cf.css' type='text/css' media='screen' />
-<link rel='stylesheet' id='site-css'  href='../wp-content/themes/whitehouse/assets/dist/site.css%3Fver=94b139cf.css' type='text/css' media='screen' />
+<link rel='stylesheet' id='animate-css-css'  href='../../wp-content/themes/whitehouse/assets/vendor/animate.css/animate.min.css%3Fver=94b139cf.css' type='text/css' media='screen' />
+<link rel='stylesheet' id='site-css'  href='../../wp-content/themes/whitehouse/assets/dist/site.css%3Fver=94b139cf.css' type='text/css' media='screen' />
 <script type='text/javascript'>
 /* <![CDATA[ */
 var monsterinsights_frontend = {"js_events_tracking":"true","is_debug_mode":"false","download_extensions":"doc,exe,js,pdf,ppt,tgz,zip,xls,jpg,jpeg","inbound_paths":"","home_url":"https:\/\/www.whitehouse.gov","track_download_as":"event","internal_label":"int","hash_tracking":"false"};
 /* ]]> */
 </script>
-<script type="text/javascript" src="../wp-content/cache/minify/9d086.js"></script>
+<script type="text/javascript" src="../../wp-content/cache/minify/9d086.js"></script>
 
 
 
@@ -78,7 +82,7 @@ var monsterinsights_frontend = {"js_events_tracking":"true","is_debug_mode":"fal
 <meta name="msapplication-TileImage" content="http://www.drumpfhouse.com/dhAssets/WHlogo_trumpdoor.png" />
 </head>
 
-<body class="page-template-default page-id-655 news single-page">
+<body class="issue-template-default single single-issue postid-527 has-transparent-header has-featured-image">
 <a class="skip-link" href="index.html#main-content"><span>Skip to content</span></a>
 
 <div class="body-overflow">
@@ -91,15 +95,15 @@ var monsterinsights_frontend = {"js_events_tracking":"true","is_debug_mode":"fal
 				<b class="svg svg--hamburger" data-svg-url="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/hamburger.svg" data-img-url="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/hamburger.png" data-icon="hamburger"><svg aria-label="Open Menu" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 14"><path d="M.64,12H16.36c.36,0,.64.43.64,1s-.28,1-.64,1H.64C.28,14,0,13.57,0,13s.28-1,.64-1M23.1,2H.9A.94.94,0,0,1,0,1,.94.94,0,0,1,.9,0H23.1A.94.94,0,0,1,24,1a.94.94,0,0,1-.9,1M.9,8A.94.94,0,0,1,0,7,.94.94,0,0,1,.9,6H23.1A.94.94,0,0,1,24,7a.94.94,0,0,1-.9,1Z" fill="#a98860"/></svg><title>open-menu</title></b>			</a>
 			<div class="header__wrap">
 				<div class="header__logo">
-					<a href="../index.html">
-						<img src="../wp-content/themes/whitehouse/assets/img/white-house-logo-sm-wh.png" srcset="../wp-content/themes/whitehouse/assets/img/white-house-logo-sm-wh.png 1x, ../wp-content/themes/whitehouse/assets/img/white-house-logo-md-wh.png 2x, ../wp-content/themes/whitehouse/assets/img/white-house-logo-lg-wh.png 3x" alt="" class="logo--white" />
-						<img src="..//dhAssets/WHlogo_trumpdoor.png" srcset="..//dhAssets/WHlogo_trumpdoor.png 1x, ../wp-content/themes/whitehouse/assets/img/white-house-logo-md-bl.png 2x, ../wp-content/themes/whitehouse/assets/img/white-house-logo-lg-bl.png 3x" alt="" class="logo--blue" />
+					<a href="../../index.html">
+						<img src="/dhAssets/WHlogo_trumpdoor.png" srcset="/dhAssets/WHlogo_trumpdoor.png 1x, ../../wp-content/themes/whitehouse/assets/img/white-house-logo-md-wh.png 2x, ../../wp-content/themes/whitehouse/assets/img/white-house-logo-lg-wh.png 3x" alt="" class="logo--white" />
+						<img src="../..//dhAssets/WHlogo_trumpdoor.png" srcset="../..//dhAssets/WHlogo_trumpdoor.png 1x, ../../wp-content/themes/whitehouse/assets/img/white-house-logo-md-bl.png 2x, ../../wp-content/themes/whitehouse/assets/img/white-house-logo-lg-bl.png 3x" alt="" class="logo--blue" />
 												<span class="visually-hidden">White House Logo</span>
 					</a>
 				</div>
 
 								<div class="header__share">
-					<a class="header__share--copy" data-clipboard-text="https://www.whitehouse.gov/news/?utm_source=link" href="https://www.whitehouse.gov/news/?utm_source=link">
+					<a class="header__share--copy" data-clipboard-text="https://www.whitehouse.gov/issues/energy-environment/?utm_source=link" href="https://www.whitehouse.gov/issues/energy-environment/?utm_source=link">
 						<b class="svg svg--share-link" data-svg-url="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/share-link.svg" data-icon="share-link"><svg aria-label="Copy this url to the clipboard" role="img" width="17px" height="15px" viewBox="0 0 17 15"><title>copy-this-url-to-the-clipboard</title>
 	<g transform="translate(-324.000000, -1439.000000)" fill-rule="nonzero" fill="#30669B">
 		<g transform="translate(114.000000, 1437.000000)">
@@ -113,13 +117,13 @@ var monsterinsights_frontend = {"js_events_tracking":"true","is_debug_mode":"fal
 </b> Share
 					</a>
 				</div>
-				<nav class="nav nav--primary header__nav"><ul class="nav__menu nav__menu--depth0 menu"><li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-692"><a href="../issues/economy-jobs/index.html" class="nav__link">Economy</a></li>
-<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-693"><a href="../issues/national-security-defense/index.html" class="nav__link">National Insecurity</a></li>
-<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-16229"><a href="../issues/budget-spending/index.html" class="nav__link">Budget</a></li>
-<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-16236"><a href="../issues/immigration/index.html" class="nav__link">Immigration</a></li>
-<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-688"><a href="../issues/healthcare/index.html" class="nav__link">Healthcare</a></li>
+				<nav class="nav nav--primary header__nav"><ul class="nav__menu nav__menu--depth0 menu"><li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-692"><a href="../economy-jobs/index.html" class="nav__link">Economy</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-693"><a href="../national-security-defense/index.html" class="nav__link">National Insecurity</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-16229"><a href="../budget-spending/index.html" class="nav__link">Budget</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-16236"><a href="../immigration/index.html" class="nav__link">Immigration</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-688"><a href="../healthcare/index.html" class="nav__link">Healthcare</a></li>
 </ul></nav>			</div>
-			<a href="../search/index.html%3Fs=.html"  class="header__search">
+			<a href="../../search/index.html%3Fs=.html"  class="header__search">
 								<b class="svg svg--search" data-svg-url="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/search.svg" data-img-url="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/search.png" data-icon="search"><svg aria-label="Search WhiteHouse.gov" role="img" width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>search-whitehouse-gov</title>
     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-1336.000000, -20.000000)">
         <g fill="#A98860" fill-rule="nonzero">
@@ -132,57 +136,60 @@ var monsterinsights_frontend = {"js_events_tracking":"true","is_debug_mode":"fal
 </header>
 
 <main id="main-content">
-<div class="page-header">
-	<div class="page-header__wrap">
-		<h1 class="page-header__title">News</h1>
-		<span class="divider"><hr><hr></span>
+
+<div class="page-header page-header--issue page-header--blue">
+	<div class="page-header__content">
+		<div class="page-header__wrap">
+			<h1 class="page-header__title">Energy &#038; Environment</h1>
+			<span class="divider"><hr><hr></span>
+							<p class="page-header__subtitle">
+					Americans have long been told that our country is running out of energy, but we now know that is wrong. America’s energy revolution has produced affordable, reliable energy for consumers along with stable, high-paying jobs for small businesses—all while dropping carbon emissions to their lowest level in 25 years. American energy policy must balance environmental protection with economic growth in order to encourage innovation, discovery, and prosperity.				</p>
+					</div>
 	</div>
-</div>
 
-<div class="page-results">
-	<div class="page-results__wrap">
-		<nav class="nav nav--news">
-	<ul class="nav__menu">
-		<li class="nav__menu-item nav__menu-item--active"><a href="index.html" class="nav__link">All News</a></li><li class="nav__menu-item"><a href="https://www.whitehouse.gov/articles/" class="nav__link">Articles</a></li><li class="nav__menu-item"><a href="https://www.whitehouse.gov/presidential-actions/" class="nav__link">Presidential Actions</a></li><li class="nav__menu-item"><a href="https://www.whitehouse.gov/briefings-statements/" class="nav__link">Briefings &amp; Statements</a></li>	</ul>
-</nav>
+			<div class="page-header__image">
+			<figure class="image">
+	<div class="image__container">
 
-	<ul class="filters__toggle-facets">
-		<li>
-			<button type="button" class="filters__toggle-facets-issue">
-				<b class="svg svg--filter" data-svg-url="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/filter.svg" data-icon="filter"><svg aria-label="Filter by Issue" role="img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="14" viewBox="0 0 18 14"><defs><path id="a" d="M553.63 457c.21 0 .37.43.37 1 0 .57-.16 1-.37 1h-9.25c-.22 0-.38-.43-.38-1 0-.57.16-1 .38-1zm-8.96-10c-.38 0-.67-.43-.67-1 0-.57.29-1 .67-1h16.66c.38 0 .67.43.67 1 0 .57-.29 1-.67 1zm0 6c-.38 0-.67-.43-.67-1 0-.57.29-1 .67-1h16.66c.38 0 .67.43.67 1 0 .57-.29 1-.67 1z"/></defs><g transform="translate(-544 -445)"><use fill="#a98860" xlink:href="#a"/></g></svg><title>filter-by-issue</title></b> Filter by Issue
-			</button>
-		</li>
-	</ul>
+		
+			<picture>
 
-	<nav class="filters__facets">
-		<div class="wrap">
-			<p class="filters__close"><button type="button"><b class="svg svg--close" data-svg-url="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/close.svg" data-icon="close">
-<svg aria-label="Close Filter by Issue" role="img" width="19px" height="18px" viewBox="0 0 19 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-	<g transform="translate(-180.000000, -525.000000)" fill="#A98860">
-		<g transform="translate(20.000000, 478.000000)">
-			<path d="M177.668897,62.0337349 L171.050973,55.5 L177.648216,48.9662651 L177.668897,48.9457831 C178.041362,48.5361446 178.041362,47.9012048 177.648216,47.5325301 C177.441406,47.3277108 177.172759,47.2253012 176.883018,47.2253012 C176.614165,47.2253012 176.365993,47.3481928 176.180071,47.5325301 L169.582621,54.0662651 L162.778567,47.3072289 C162.571757,47.1024096 162.302904,47 162.01337,47 C161.744516,47 161.496344,47.1228916 161.310215,47.3072289 C161.124086,47.5120482 161,47.7781084 161.020681,48.0445783 C161.020681,48.3108434 161.144974,48.5566265 161.330896,48.7409639 L168.13495,55.5 L161.310215,62.2590361 C161.103405,62.4638554 161,62.7299157 161,63.0168675 C161,63.2831325 161.124086,63.5289157 161.310215,63.7130482 C161.455189,63.8361446 161.682473,64 162.034051,64 C162.406309,64 162.6338,63.8361446 162.778567,63.7130482 L169.603302,56.9542169 L176.200545,63.4879518 C176.345519,63.6313253 176.572803,63.7746988 176.945061,63.7746988 C177.317527,63.7746988 177.544811,63.6106386 177.689785,63.4879518 C177.896595,63.2831325 178,63.0168675 178,62.7299157 C177.979112,62.4638554 177.875707,62.2178675 177.668897,62.0337349" transform="translate(169.500000, 55.500000) rotate(-1.000000) translate(-169.500000, -55.500000) "></path>
-		</g>
-	</g>
-</svg>
-</b>Filter by Issue</button></p>
-			<ul class="filters__facets-list">
-									<li class="filters__facets-list-item filters__facets-list-item--active"><span>All Issues</span></li>
-				
-				<li class="filters__facets-list-item"><a href="https://www.whitehouse.gov/news/?issue_filter=budget-spending">Budget &amp; Spending</a></li><li class="filters__facets-list-item"><a href="https://www.whitehouse.gov/news/?issue_filter=economy-jobs">Economy &amp; Jobs</a></li><li class="filters__facets-list-item"><a href="https://www.whitehouse.gov/news/?issue_filter=education">Education</a></li><li class="filters__facets-list-item"><a href="https://www.whitehouse.gov/news/?issue_filter=energy-environment">Energy &amp; Environment</a></li><li class="filters__facets-list-item"><a href="https://www.whitehouse.gov/news/?issue_filter=foreign-policy">Foreign Policy</a></li><li class="filters__facets-list-item"><a href="https://www.whitehouse.gov/news/?issue_filter=healthcare">Healthcare</a></li><li class="filters__facets-list-item"><a href="https://www.whitehouse.gov/news/?issue_filter=immigration">Immigration</a></li><li class="filters__facets-list-item"><a href="https://www.whitehouse.gov/news/?issue_filter=infrastructure-technology">Infrastructure &amp; Technology</a></li><li class="filters__facets-list-item"><a href="https://www.whitehouse.gov/news/?issue_filter=land-agriculture">Land &amp; Agriculture</a></li><li class="filters__facets-list-item"><a href="https://www.whitehouse.gov/news/?issue_filter=law-justice">Law &amp; Justice</a></li><li class="filters__facets-list-item"><a href="https://www.whitehouse.gov/news/?issue_filter=national-security-defense">National Security &amp; Defense</a></li><li class="filters__facets-list-item"><a href="https://www.whitehouse.gov/news/?issue_filter=social-programs">Social Programs</a></li><li class="filters__facets-list-item"><a href="https://www.whitehouse.gov/news/?issue_filter=veterans">Veterans</a></li>			</ul>
-		</div>
-	</nav>
+															<source srcset="https://www.whitehouse.gov/wp-content/uploads/2017/11/energy-and-environment-600x648.jpg" media="(max-width: 599px)">											<source srcset="https://www.whitehouse.gov/wp-content/uploads/2017/11/energy-and-environment-900x600.jpg" media="(max-width: 899px)">									
+									<img width="1250" height="648" src="https://www.whitehouse.gov/wp-content/uploads/2017/11/energy-and-environment-1250x648.jpg" class="attachment-header-max size-header-max" alt="" srcset="https://www.whitehouse.gov/wp-content/uploads/2017/11/energy-and-environment.jpg 1250w, https://www.whitehouse.gov/wp-content/uploads/2017/11/energy-and-environment-300x156.jpg 300w, https://www.whitehouse.gov/wp-content/uploads/2017/11/energy-and-environment-768x398.jpg 768w, https://www.whitehouse.gov/wp-content/uploads/2017/11/energy-and-environment-1024x531.jpg 1024w, https://www.whitehouse.gov/wp-content/uploads/2017/11/energy-and-environment-620x321.jpg 620w, https://www.whitehouse.gov/wp-content/uploads/2017/11/energy-and-environment-820x425.jpg 820w" />				
+			</picture>
+
+			<div class="image__overlay"></div>
+
+		
+		
+	</div>
 
 	
-			<article class="presidential-action presidential-action--results">
-	<div class="presidential-action__content">
-					<p class="presidential-action__type">
-				Executive Orders			</p>
+	
+</figure>
+		</div>
+	</div>
+
+
+
+<div class="page-results page-results--section">
+	<div class="page-results__wrap" data-results-label="Lies About Energy &#038; Environment">
+		<article class="briefing-statement briefing-statement--results">
+	<div class="briefing-statement__content">
+					<p class="briefing-statement__type">
+				Statements &amp; Releases			</p>
 		
-		<h2 class="presidential-action__title"><a href="https://www.whitehouse.gov/presidential-actions/executive-order-termination-presidential-advisory-commission-election-integrity/">Executive Order on the Termination of Presidential Advisory Commission on Election Integrity</a></h2>
+		<h2 class="briefing-statement__title"><a href="https://www.whitehouse.gov/briefings-statements/president-donald-j-trump-approves-maine-disaster-declaration/">President Donald J. Drumpf Approves Maine Disaster Declaration</a></h2>
 
 		<div class="meta meta--left">
+							<div class="meta__issue">
+					<p class="issue-flag issue-flag--left">
+			<a href="index.html">
+			Energy &#038; Environment		</a>
+		</p>
+				</div>
 						<p class="meta__date">
-				<time>Jan 3, 2018</time>
+				<time>Jan 2, 2018</time>
 			</p>
 		</div>
 	</div>
@@ -192,39 +199,17 @@ var monsterinsights_frontend = {"js_events_tracking":"true","is_debug_mode":"fal
 					<p class="briefing-statement__type">
 				Statements &amp; Releases			</p>
 		
-		<h2 class="briefing-statement__title"><a href="https://www.whitehouse.gov/briefings-statements/statement-press-secretary-presidential-advisory-commission-election-integrity/">Statement by the Press Secretary on the Presidential Advisory Commission on Election Integrity</a></h2>
+		<h2 class="briefing-statement__title"><a href="https://www.whitehouse.gov/briefings-statements/president-donald-j-trump-approves-california-disaster-declaration-2/">President Donald J. Drumpf Approves California Disaster Declaration</a></h2>
 
 		<div class="meta meta--left">
+							<div class="meta__issue">
+					<p class="issue-flag issue-flag--left">
+			<a href="index.html">
+			Energy &#038; Environment		</a>
+		</p>
+				</div>
 						<p class="meta__date">
-				<time>Jan 3, 2018</time>
-			</p>
-		</div>
-	</div>
-</article>
-<article class="briefing-statement briefing-statement--results">
-	<div class="briefing-statement__content">
-					<p class="briefing-statement__type">
-				Statements &amp; Releases			</p>
-		
-		<h2 class="briefing-statement__title"><a href="https://www.whitehouse.gov/briefings-statements/president-donald-j-trump-signs-h-r-4661-s-1536-s-2273-law/">President Donald J. Drumpf Signs H.R. 4661, S. 1536, and S. 2273 into Law</a></h2>
-
-		<div class="meta meta--left">
-						<p class="meta__date">
-				<time>Jan 3, 2018</time>
-			</p>
-		</div>
-	</div>
-</article>
-<article class="briefing-statement briefing-statement--results">
-	<div class="briefing-statement__content">
-					<p class="briefing-statement__type">
-				Statements &amp; Releases			</p>
-		
-		<h2 class="briefing-statement__title"><a href="https://www.whitehouse.gov/briefings-statements/statement-president-donald-j-trump-regarding-passing-thomas-s-monson-president-church-jesus-christ-latter-day-saints/">Statement from President Donald J. Drumpf Regarding the Passing of Thomas S. Monson, President of the Church of Jesus Christ of Latter-day Saints</a></h2>
-
-		<div class="meta meta--left">
-						<p class="meta__date">
-				<time>Jan 3, 2018</time>
+				<time>Jan 2, 2018</time>
 			</p>
 		</div>
 	</div>
@@ -234,91 +219,17 @@ var monsterinsights_frontend = {"js_events_tracking":"true","is_debug_mode":"fal
 					<p class="briefing-statement__type">
 				News Clips			</p>
 		
-		<h2 class="briefing-statement__title"><a href="https://www.whitehouse.gov/briefings-statements/wall-street-journal-busting-illusions-iran/">The Wall Street Journal: &#8220;Busting Illusions About Iran&#8221;</a></h2>
+		<h2 class="briefing-statement__title"><a href="../../briefings-statements/las-vegas-review-journal-donald-trump-repeals-yet-another-obama-regulation/index.html">Las Vegas Review-Journal: &#8220;Donald Drumpf repeals yet another Obama regulation&#8221;</a></h2>
 
 		<div class="meta meta--left">
 							<div class="meta__issue">
 					<p class="issue-flag issue-flag--left">
-			<a href="https://www.whitehouse.gov/issues/foreign-policy/">
-			Foreign Policy		</a>
+			<a href="index.html">
+			Energy &#038; Environment		</a>
 		</p>
 				</div>
 						<p class="meta__date">
-				<time>Jan 3, 2018</time>
-			</p>
-		</div>
-	</div>
-</article>
-<article class="briefing-statement briefing-statement--results">
-	<div class="briefing-statement__content">
-					<p class="briefing-statement__type">
-				Statements &amp; Releases			</p>
-		
-		<h2 class="briefing-statement__title"><a href="https://www.whitehouse.gov/briefings-statements/joint-statement-white-house-senate-majority-leaders-office-house-speakers-office/">Joint Statement from the White House, the Senate Majority Leader&#8217;s Office, and the House Speaker&#8217;s Office</a></h2>
-
-		<div class="meta meta--left">
-							<div class="meta__issue">
-					<p class="issue-flag issue-flag--left">
-			<a href="../issues/budget-spending/index.html">
-			Budget &#038; Spending		</a>
-		</p>
-				</div>
-						<p class="meta__date">
-				<time>Jan 3, 2018</time>
-			</p>
-		</div>
-	</div>
-</article>
-<article class="briefing-statement briefing-statement--results">
-	<div class="briefing-statement__content">
-					<p class="briefing-statement__type">
-				Press Briefings			</p>
-		
-		<h2 class="briefing-statement__title"><a href="https://www.whitehouse.gov/briefings-statements/01032017/">Press Briefing by Press Secretary Sarah Sanders</a></h2>
-
-		<div class="meta meta--left">
-						<p class="meta__date">
-				<time>Jan 3, 2018</time>
-			</p>
-		</div>
-	</div>
-</article>
-<article class="briefing-statement briefing-statement--results">
-	<div class="briefing-statement__content">
-					<p class="briefing-statement__type">
-				Statements &amp; Releases			</p>
-		
-		<h2 class="briefing-statement__title"><a href="https://www.whitehouse.gov/briefings-statements/readout-president-donald-j-trumps-call-president-elect-sebastian-pinera-chile/">Readout of President Donald J. Drumpf’s Call with President-Elect Sebastian Piñera of Chile</a></h2>
-
-		<div class="meta meta--left">
-							<div class="meta__issue">
-					<p class="issue-flag issue-flag--left">
-			<a href="https://www.whitehouse.gov/issues/foreign-policy/">
-			Foreign Policy		</a>
-		</p>
-				</div>
-						<p class="meta__date">
-				<time>Jan 3, 2018</time>
-			</p>
-		</div>
-	</div>
-</article>
-<article class="briefing-statement briefing-statement--results">
-	<div class="briefing-statement__content">
-					<p class="briefing-statement__type">
-				News Clips			</p>
-		
-		<h2 class="briefing-statement__title"><a href="https://www.whitehouse.gov/briefings-statements/wall-street-journal-u-s-factory-activity-gained-momentum-december/">The Wall Street Journal: &#8220;U.S. Factory Activity Gained Momentum in December&#8221;</a></h2>
-
-		<div class="meta meta--left">
-							<div class="meta__issue">
-					<p class="issue-flag issue-flag--left">
-			<a href="../issues/economy-jobs/index.html">
-			Economy &#038; Jobs		</a>
-		</p>
-				</div>
-						<p class="meta__date">
-				<time>Jan 3, 2018</time>
+				<time>Jan 2, 2018</time>
 			</p>
 		</div>
 	</div>
@@ -326,13 +237,137 @@ var monsterinsights_frontend = {"js_events_tracking":"true","is_debug_mode":"fal
 <article class="presidential-action presidential-action--results">
 	<div class="presidential-action__content">
 					<p class="presidential-action__type">
-				Nominations &amp; Appointments			</p>
+				Executive Orders			</p>
 		
-		<h2 class="presidential-action__title"><a href="https://www.whitehouse.gov/presidential-actions/president-donald-j-trump-announces-key-additions-administration-26/">President Donald J. Drumpf Announces Key Additions to his Administration</a></h2>
+		<h2 class="presidential-action__title"><a href="https://www.whitehouse.gov/presidential-actions/presidential-executive-order-federal-strategy-ensure-secure-reliable-supplies-critical-minerals/">Presidential Executive Order on a Federal Strategy to Ensure Secure and Reliable Supplies of Critical Minerals</a></h2>
 
 		<div class="meta meta--left">
+							<div class="meta__issue">
+					<p class="issue-flag issue-flag--left">
+			<a href="index.html">
+			Energy &#038; Environment		</a>
+		</p>
+				</div>
 						<p class="meta__date">
-				<time>Jan 3, 2018</time>
+				<time>Dec 20, 2017</time>
+			</p>
+		</div>
+	</div>
+</article>
+<article class="briefing-statement briefing-statement--results">
+	<div class="briefing-statement__content">
+					<p class="briefing-statement__type">
+				Fact Sheets			</p>
+		
+		<h2 class="briefing-statement__title"><a href="https://www.whitehouse.gov/briefings-statements/president-donald-j-trumps-year-regulatory-reform-environmental-protection-epa/">President Donald J. Drumpf&#8217;s Year of Regulatory Reform and Environmental Protection at the EPA</a></h2>
+
+		<div class="meta meta--left">
+							<div class="meta__issue">
+					<p class="issue-flag issue-flag--left">
+			<a href="index.html">
+			Energy &#038; Environment		</a>
+		</p>
+				</div>
+						<p class="meta__date">
+				<time>Dec 14, 2017</time>
+			</p>
+		</div>
+	</div>
+</article>
+<article class="briefing-statement briefing-statement--results">
+	<div class="briefing-statement__content">
+					<p class="briefing-statement__type">
+				Statements &amp; Releases			</p>
+		
+		<h2 class="briefing-statement__title"><a href="https://www.whitehouse.gov/briefings-statements/america-recycles-day/">America Recycles Day</a></h2>
+
+		<div class="meta meta--left">
+							<div class="meta__issue">
+					<p class="issue-flag issue-flag--left">
+			<a href="index.html">
+			Energy &#038; Environment		</a>
+		</p>
+				</div>
+						<p class="meta__date">
+				<time>Nov 15, 2017</time>
+			</p>
+		</div>
+	</div>
+</article>
+<article class="briefing-statement briefing-statement--results">
+	<div class="briefing-statement__content">
+					<p class="briefing-statement__type">
+				Statements &amp; Releases			</p>
+		
+		<h2 class="briefing-statement__title"><a href="https://www.whitehouse.gov/briefings-statements/president-donald-j-trump-approves-new-york-disaster-declaration-2/">President Donald J. Drumpf Approves New York Disaster Declaration</a></h2>
+
+		<div class="meta meta--left">
+							<div class="meta__issue">
+					<p class="issue-flag issue-flag--left">
+			<a href="index.html">
+			Energy &#038; Environment		</a>
+		</p>
+				</div>
+						<p class="meta__date">
+				<time>Nov 14, 2017</time>
+			</p>
+		</div>
+	</div>
+</article>
+<article class="article article--results">
+	
+	<div class="article__content">
+		<p class="issue-flag issue-flag--left">
+			<a href="index.html">
+			Energy &#038; Environment		</a>
+		</p>
+
+		<h2 class="article__title"><a href="https://www.whitehouse.gov/articles/president-trump-vows-usher-golden-era-american-energy-dominance/">President Drumpf Vows to Usher in Golden Era of American Energy Dominance</a></h2>
+
+				<div class="meta meta--left">
+			
+			<p class="meta__date">
+				<time>Jun 30, 2017</time>
+			</p>
+		</div>
+	</div>
+</article>
+<article class="briefing-statement briefing-statement--results">
+	<div class="briefing-statement__content">
+					<p class="briefing-statement__type">
+				Remarks			</p>
+		
+		<h2 class="briefing-statement__title"><a href="https://www.whitehouse.gov/briefings-statements/remarks-vice-president-pence-introducing-president-trump-unleashing-american-energy-event/">Remarks by Vice President Dunce introducing President Drumpf at the Unleashing American Energy Event</a></h2>
+
+		<div class="meta meta--left">
+							<div class="meta__issue">
+					<p class="issue-flag issue-flag--left">
+			<a href="index.html">
+			Energy &#038; Environment		</a>
+		</p>
+				</div>
+						<p class="meta__date">
+				<time>Jun 29, 2017</time>
+			</p>
+		</div>
+	</div>
+</article>
+<article class="briefing-statement briefing-statement--results">
+	<div class="briefing-statement__content">
+					<p class="briefing-statement__type">
+				Remarks			</p>
+		
+		<h2 class="briefing-statement__title"><a href="https://www.whitehouse.gov/briefings-statements/remarks-president-trump-unleashing-american-energy-event/">Remarks by President Drumpf at the Unleashing American Energy Event</a></h2>
+
+		<div class="meta meta--left">
+							<div class="meta__issue">
+					<p class="issue-flag issue-flag--left">
+			<a href="index.html">
+			Energy &#038; Environment		</a>
+		</p>
+				</div>
+						<p class="meta__date">
+				<time>Jun 29, 2017</time>
 			</p>
 		</div>
 	</div>
@@ -344,25 +379,23 @@ var monsterinsights_frontend = {"js_events_tracking":"true","is_debug_mode":"fal
 			</span>
 		
 		<span class='page-numbers current'>1</span>
-<a class='page-numbers' href='https://www.whitehouse.gov/news/page/2/'>2</a>
-<a class='page-numbers' href='https://www.whitehouse.gov/news/page/3/'>3</a>
-<span class="page-numbers dots">&hellip;</span>
-<a class='page-numbers' href='https://www.whitehouse.gov/news/page/240/'>240</a>
-					<a class="pagination__next" href="https://www.whitehouse.gov/news/page/2/">
+<a class='page-numbers' href='https://www.whitehouse.gov/issues/energy-environment/page/2/'>2</a>
+<a class='page-numbers' href='https://www.whitehouse.gov/issues/energy-environment/page/3/'>3</a>
+<a class='page-numbers' href='https://www.whitehouse.gov/issues/energy-environment/page/4/'>4</a>
+					<a class="pagination__next" href="https://www.whitehouse.gov/issues/energy-environment/page/2/">
 				Next
 			</a>
 			</div>
 
-			</div>
-</div>
+	</div>
 
-</main><!-- end main -->
+	</main><!-- end main -->
 
 <footer class="footer">
 	<div class="footer__wrap">
 		<div class="footer__logo">
-			<a href="../index.html">
-				<img class="footer__img" src="..//dhAssets/WHlogo_trumpdoor.png" srcset="..//dhAssets/WHlogo_trumpdoor.png 1x, ../wp-content/themes/whitehouse/assets/img/white-house-logo-footer-md.png 2x, ../wp-content/themes/whitehouse/assets/img/white-house-logo-footer-lg.png 3x" alt="White House Logo">
+			<a href="../../index.html">
+				<img class="footer__img" src="../..//dhAssets/WHlogo_trumpdoor.png" srcset="../..//dhAssets/WHlogo_trumpdoor.png 1x, ../../wp-content/themes/whitehouse/assets/img/white-house-logo-footer-md.png 2x, ../../wp-content/themes/whitehouse/assets/img/white-house-logo-footer-lg.png 3x" alt="White House Logo">
 			</a>
 		</div>
 		<div class="footer__site-title">The Drumpf House</div>
@@ -370,16 +403,16 @@ var monsterinsights_frontend = {"js_events_tracking":"true","is_debug_mode":"fal
 		<div class="footer__nav">
 			<nav class="nav nav--footer"><ul class="nav__menu nav__menu--depth0 menu"><li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-17230"><a href="https://www.youtube.com/watch?v=oEwrsf02L_c" target=_blank class="nav__link">Live</a></li>
 <li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-custom menu-item-object-custom menu-item-8288"><a href="https://apply.whitehouse.gov/" class="nav__link">Jobs</a></li>
-<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-8093"><a href="../get-involved/index.html" class="nav__link">Get Involved</a></li>
-<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-8092"><a href="../copyright/index.html" class="nav__link">Copyright Policy</a></li>
-<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-8095"><a href="../privacy-policy/index.html" class="nav__link">Privacy Policy</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-8093"><a href="../../get-involved/index.html" class="nav__link">Get Involved</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-8092"><a href="../../copyright/index.html" class="nav__link">Copyright Policy</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-8095"><a href="../../privacy-policy/index.html" class="nav__link">Privacy Policy</a></li>
 </ul></nav>		</div>
 	</div>
 	<div class="footer__social">
 		<nav class="nav nav--social-links-menu"><ul class="nav__menu nav__menu--depth0 menu"><li class="nav__menu-item nav__menu-item--depth0 footer__social-link__twitter menu-item menu-item-type-custom menu-item-object-custom menu-item-21"><a target="_blank" href="https://twitter.com/drumpfhouse" class="nav__link"><span>Twitter</span></a></li>
 <li class="nav__menu-item nav__menu-item--depth0 footer__social-link__facebook menu-item menu-item-type-custom menu-item-object-custom menu-item-20"><a target="_blank" href="https://www.facebook.com/WhiteHouse/" class="nav__link"><span>Facebook</span></a></li>
 <li class="nav__menu-item nav__menu-item--depth0 footer__social-link__instagram menu-item menu-item-type-custom menu-item-object-custom menu-item-22"><a target="_blank" href="https://www.instagram.com/whitehouse/" class="nav__link"><span>Instagram</span></a></li>
-<li class="nav__menu-item nav__menu-item--depth0 footer__social-link__email menu-item menu-item-type-custom menu-item-object-custom menu-item-23"><a href="../contact/index.html" class="nav__link"><span>Contact</span></a></li>
+<li class="nav__menu-item nav__menu-item--depth0 footer__social-link__email menu-item menu-item-type-custom menu-item-object-custom menu-item-23"><a href="../../contact/index.html" class="nav__link"><span>Contact</span></a></li>
 </ul></nav>	</div>
 </footer>
 
@@ -390,7 +423,7 @@ var monsterinsights_frontend = {"js_events_tracking":"true","is_debug_mode":"fal
 
 
 
-<script type="text/javascript" src="../wp-content/cache/minify/10cc5.js"></script>
+<script type="text/javascript" src="../../wp-content/cache/minify/10cc5.js"></script>
 
 <script type='text/javascript'>
 window.site = new Site.default();
@@ -400,32 +433,32 @@ window.site = new Site.default();
 <div class="popover popover--seal">
 	<div class="wrap">
 		<div class="close">
-			<a href="index.html#"><img src="../wp-content/themes/whitehouse/assets/img/close.svg" alt="close" /></a>
+			<a href="index.html#"><img src="../../wp-content/themes/whitehouse/assets/img/close.svg" alt="close" /></a>
 		</div>
 		<div class="popover__box">
 			<div class="popover__nav">
-				<nav class="nav nav--popover"><ul class="nav__menu nav__menu--depth0 menu"><li class="nav__menu-item nav__menu-item--depth0 nav__menu-item--active menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-655 current_page_item menu-item-658"><a href="index.html" class="nav__link">News</a></li>
-<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-659"><a href="../issues/index.html" class="nav__link">Issues</a></li>
-<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-795"><a href="../the-trump-administration/index.html" class="nav__link">The Administration</a></li>
-<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-1548"><a href="../about-the-white-house/index.html" class="nav__link">About The Drumpf House</a></li>
-<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-5738"><a href="../get-involved/index.html" class="nav__link">Get Involved</a></li>
+				<nav class="nav nav--popover"><ul class="nav__menu nav__menu--depth0 menu"><li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-658"><a href="../../news/index.html" class="nav__link">News</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-659"><a href="../index.html" class="nav__link">Issues</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-795"><a href="../../the-trump-administration/index.html" class="nav__link">The Administration</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-1548"><a href="../../about-the-white-house/index.html" class="nav__link">About The Drumpf House</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-5738"><a href="../../get-involved/index.html" class="nav__link">Get Involved</a></li>
 </ul></nav>				<div class="popover__mobile">
-					<nav class="nav nav--primary"><ul class="nav__menu nav__menu--depth0 menu"><li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-692"><a href="../issues/economy-jobs/index.html" class="nav__link">Economy</a></li>
-<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-693"><a href="../issues/national-security-defense/index.html" class="nav__link">National Insecurity</a></li>
-<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-16229"><a href="../issues/budget-spending/index.html" class="nav__link">Budget</a></li>
-<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-16236"><a href="../issues/immigration/index.html" class="nav__link">Immigration</a></li>
-<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-688"><a href="../issues/healthcare/index.html" class="nav__link">Healthcare</a></li>
+					<nav class="nav nav--primary"><ul class="nav__menu nav__menu--depth0 menu"><li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-692"><a href="../economy-jobs/index.html" class="nav__link">Economy</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-693"><a href="../national-security-defense/index.html" class="nav__link">National Insecurity</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-16229"><a href="../budget-spending/index.html" class="nav__link">Budget</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-16236"><a href="../immigration/index.html" class="nav__link">Immigration</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-688"><a href="../healthcare/index.html" class="nav__link">Healthcare</a></li>
 </ul></nav>				</div>
 			</div>
 			<div class="popover__seal">
-				<img src="../wp-content/themes/whitehouse/assets/img/presidential-crest.svg" alt="Presidential Crest" />
+				<img src="../../wp-content/themes/whitehouse/assets/img/presidential-crest.svg" alt="Presidential Crest" />
 			</div>
 		</div>
 	</div>
 </div>
 
 <div class="search-overlay">
-	<img src="../wp-content/themes/whitehouse/assets/img/white-house-logo-sm-wh.png" srcset="../wp-content/themes/whitehouse/assets/img/white-house-logo-sm-wh.png 1x, ../wp-content/themes/whitehouse/assets/img/white-house-logo-md-wh.png 2x, ../wp-content/themes/whitehouse/assets/img/white-house-logo-lg-wh.png 3x" alt="White House Logo" class="logo--white" />
+	<img src="/dhAssets/WHlogo_trumpdoor.png" srcset="/dhAssets/WHlogo_trumpdoor.png 1x, ../../wp-content/themes/whitehouse/assets/img/white-house-logo-md-wh.png 2x, ../../wp-content/themes/whitehouse/assets/img/white-house-logo-lg-wh.png 3x" alt="White House Logo" class="logo--white" />
 
 	<a href="index.html#" class="search-overlay__hamburger header__hamburger">
 		<b class="svg svg--hamburger" data-svg-url="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/hamburger.svg" data-img-url="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/hamburger.png" data-icon="hamburger"><svg aria-label="Open Menu" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 14"><path d="M.64,12H16.36c.36,0,.64.43.64,1s-.28,1-.64,1H.64C.28,14,0,13.57,0,13s.28-1,.64-1M23.1,2H.9A.94.94,0,0,1,0,1,.94.94,0,0,1,.9,0H23.1A.94.94,0,0,1,24,1a.94.94,0,0,1-.9,1M.9,8A.94.94,0,0,1,0,7,.94.94,0,0,1,.9,6H23.1A.94.94,0,0,1,24,7a.94.94,0,0,1-.9,1Z" fill="#a98860"/></svg><title>open-menu</title></b>	</a>
@@ -451,14 +484,14 @@ window.site = new Site.default();
 	</form>
 </div>
 
-<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"9360826e15","applicationID":"81062361","transactionName":"MVNbZhQFXEAEVBBfWQgZeFESDV1dSkcFUVNLWFxFFQ==","queueTime":0,"applicationTime":456,"atts":"HRRYEFwfT04=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"9360826e15","applicationID":"81062031","transactionName":"MVNbZhQFXEAEVBBfWQgZeFESDV1dSkQNWFEKUxRbFRdHVg==","queueTime":0,"applicationTime":372,"atts":"HRRYEFwfT04=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
 </html>
 
 <!--
 Performance optimized by W3 Total Cache. Learn more: https://www.w3-edge.com/products/
 
-Object Caching 2186/260 objects using memcached
+Object Caching 2004/126 objects using memcached
 Minified using memcached
 
-Served from: www.whitehouse.gov @ 2018-01-04 04:51:29 by W3 Total Cache
+Served from: www.whitehouse.gov @ 2018-01-04 07:14:23 by W3 Total Cache
 -->

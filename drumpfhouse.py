@@ -41,18 +41,19 @@ def manageReplacement(fileList):
 def _replaceLine(line):
     replacementPatterns = [
         # Transient, front page
-        ('What Tax Cuts Have to Do with Making America Great Again',
-         'What Tax Cuts Have to Do with Making Corporations Great Again'),
-        ('>National Security<', '>National Insecurity<'),
-        ('Christmas for Military Families at the Naval Observatory', 'VP Dunce Meets a Brown Person; is Confused'),
-        ('America Will Once Again Reach for the Moon—and Beyond',
-         'The Administration Will Carve Drumpf\'s Face Onto the Moon'),
-        ('Of Taxes, Math, and Intellectual Honesty', 'Of Taxes, Math, and Congressional Dishonesty'),
-        ('pay respect to 200 years of holiday traditions at the White House',
-         'pay respect to 200 years of white privilege'),
+        ('&#039;The Rising Tide That Will Lift All Americans&#039; Boats&#039;',
+         'All Your Money Are Belong To Me'),
+        ('Las Vegas Review-Journal: President Reverses Rule &#039;Intended to Punish Oil and Gas Producers&#039;',
+         'FDA: Fracking Pollution Part of a Complete Breakfast'),
+        ('Briefing by Press Secretary Sarah Sanders 1/2/18',
+         'A Verbal Train-Wreck by Press Sycophant Sarah Sanders 1/2/18'),
+        ('What Vice President Pence told American Troops in Afghanistan',
+         'What Lies Vice President Pence told American Troops in Afghanistan'),
+        ('Every president since John Adams has occupied the White House, and the history of this building extends far beyond the construction of its walls.',
+         'Every president since John Adams has occupied the White House, and they\'re all embarrassed by the current ass-clown residing there.'),
         ('Sign Up for White House Updates', 'Sign Up for White House Propaganda'),
-        ('We are MAKING AMERICA GREAT AGAIN, and much faster than anyone thought possible!',
-         'We are MAKING AMERICA A POLLUTED OLIGARCHIC POLICE STATE, and much faster than anyone thought possible!'),
+        ('You will see great support from the United States at the appropriate time!',
+         'You will see great support from the United States at the appropriate time: when you have something to off me!'),
 
         # Immigration page
         ('an immigration system that serves the national interest', 'an immigration system that keeps brown people out'),
@@ -66,8 +67,8 @@ def _replaceLine(line):
          'exactly as we would expect with a President who willingly sacrifices the people and the environment in the name of god money.'),
 
         # Persistent
-        ('Trump', 'Drumpf'),
-        ('Pence', 'Dunce'),
+        (' Trump', ' Drumpf'),
+        (' Pence', ' Dunce'),
         ('whitehouse.gov</title>', 'drumpfhouse.gov</title>'),
         ('The White House', 'The Drumpf House'),
         ('@whitehouse', '@drumpfhouse'),
@@ -84,6 +85,7 @@ def _replaceLine(line):
         ('href="https://www.whitehouse.gov/live/"', 'href="https://www.youtube.com/watch?v=oEwrsf02L_c" target=_blank'),
         ('../../wp-content/themes/whitehouse/assets/img/white-house-logo-sm-wh.png', '/dhAssets/WHlogo_trumpdoor.png'),
         ('Filed Under', 'Lies About'),
+        ('>National Security<', '>National Insecurity<'),
     ]
     for orig, new in replacementPatterns:
         line = line.replace(orig, new)

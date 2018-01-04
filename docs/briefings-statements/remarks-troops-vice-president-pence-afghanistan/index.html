@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#" class="no-js">
+<head>
+	<script>
+		document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/, 'js');
+		document.createElement('picture');
+	</script>
+	<meta charset="UTF-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Remarks to the Troops by Vice President Dunce in Afghanistan | The Drumpf House</title>
+
+<!-- This site is optimized with the Yoast SEO Premium plugin v5.9.4 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Remarks to the Troops by Vice President Dunce in Afghanistan | The Drumpf House" />
+<meta property="og:description" content="&quot;And to each and every one of you, I bring greetings from your Commander-in-Chief, the 45th President of the United States of America, President Donald Drumpf.&quot;" />
+<meta property="og:url" content="https://www.whitehouse.gov/briefings-statements/remarks-troops-vice-president-pence-afghanistan/" />
+<meta property="og:site_name" content="The Drumpf House" />
+<meta property="article:publisher" content="https://facebook.com/whitehouse" />
+<meta property="og:image" content="https://www.whitehouse.gov/wp-content/uploads/2017/12/DRnTbdYX0AEYmlW.jpg" />
+<meta property="og:image:secure_url" content="https://www.whitehouse.gov/wp-content/uploads/2017/12/DRnTbdYX0AEYmlW.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="Bagram Airfield Bagram, Afghanistan THE VICE PRESIDENT: Thank you, General Quintas. To General Nicholson, Ambassador Bass, to all the members of the United States Armed Forces, our allies, and partners, it is my great honor to join you here at Bagram Airfield in Afghanistan with the men and women of Resolute Support. (Applause.) It is [&hellip;]" />
+<meta name="twitter:title" content="Remarks to the Troops by Vice President Dunce in Afghanistan | The Drumpf House" />
+<meta name="twitter:site" content="@drumpfhouse" />
+<meta name="twitter:image" content="https://www.whitehouse.gov/wp-content/uploads/2017/12/DRnTbdYX0AEYmlW.jpg" />
+<meta name="twitter:creator" content="@drumpfhouse" />
+<meta name="twitter:image:alt" content="Remarks to the Troops by Vice President Dunce in Afghanistan" />
+<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"https:\/\/www.whitehouse.gov\/","name":"The Drumpf House","alternateName":"White House","potentialAction":{"@type":"SearchAction","target":"https:\/\/www.whitehouse.gov\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"Organization","url":"https:\/\/www.whitehouse.gov\/briefings-statements\/remarks-troops-vice-president-pence-afghanistan\/","sameAs":["https:\/\/facebook.com\/whitehouse","https:\/\/instagram.com\/whitehouse","https:\/\/www.youtube.com\/user\/whitehouse","https:\/\/twitter.com\/whitehouse"],"@id":"#organization","name":"The Drumpf House","logo":"https:\/\/www.whitehouse.gov\/wp-content\/uploads\/2017\/12\/wh.gov-share-img_03.png"}</script>
+<!-- / Yoast SEO Premium plugin. -->
+
+<!-- This site uses the Google Analytics by MonsterInsights plugin v6.2.6 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+<script type="text/javascript" data-cfasync="false">
+		var disableStr = 'ga-disable-UA-12099831-10';
+
+	/* Function to detect opted out users */
+	function __gaTrackerIsOptedOut() {
+		return document.cookie.indexOf(disableStr + '=true') > -1;
+	}
+
+	/* Disable tracking if the opt-out cookie exists. */
+	if ( __gaTrackerIsOptedOut() ) {
+		window[disableStr] = true;
+	}
+
+	/* Opt-out function */
+	function __gaTrackerOptout() {
+	  document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+	  window[disableStr] = true;
+	}
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','__gaTracker');
+
+	__gaTracker('create', 'UA-12099831-10', 'auto');
+	__gaTracker('set', 'forceSSL', true);
+	__gaTracker('require', 'displayfeatures');
+	__gaTracker('require', 'linkid', 'linkid.js');
+	__gaTracker('send','pageview');
+</script>
+<!-- / Google Analytics by MonsterInsights -->
+<link rel='stylesheet' id='google-fonts-css'  href='https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i|Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i&#038;subset=latin-ext' type='text/css' media='screen' />
+<link rel='stylesheet' id='animate-css-css'  href='../../wp-content/themes/whitehouse/assets/vendor/animate.css/animate.min.css%3Fver=94b139cf.css' type='text/css' media='screen' />
+<link rel='stylesheet' id='site-css'  href='../../wp-content/themes/whitehouse/assets/dist/site.css%3Fver=94b139cf.css' type='text/css' media='screen' />
+<script type='text/javascript'>
+/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","is_debug_mode":"false","download_extensions":"doc,exe,js,pdf,ppt,tgz,zip,xls,jpg,jpeg","inbound_paths":"","home_url":"https:\/\/www.whitehouse.gov","track_download_as":"event","internal_label":"int","hash_tracking":"false"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="../../wp-content/cache/minify/9d086.js"></script>
+
+
+
+<link rel="icon" href="http://www.drumpfhouse.com/dhAssets/WHlogo_trumpdoor.png" sizes="32x32" />
+<link rel="icon" href="http://www.drumpfhouse.com/dhAssets/WHlogo_trumpdoor.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="http://www.drumpfhouse.com/dhAssets/WHlogo_trumpdoor.png" />
+<meta name="msapplication-TileImage" content="http://www.drumpfhouse.com/dhAssets/WHlogo_trumpdoor.png" />
+</head>
+
+<body class="briefing-statement-template-default single single-briefing-statement postid-20758">
+<a class="skip-link" href="index.html#main-content"><span>Skip to content</span></a>
+
+<div class="body-overflow">
+
+
+<header class="header header--has-share">
+	<div class="header__container">
+		<div class="header__inner">
+			<a href="index.html#" class="header__hamburger">
+				<b class="svg svg--hamburger" data-svg-url="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/hamburger.svg" data-img-url="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/hamburger.png" data-icon="hamburger"><svg aria-label="Open Menu" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 14"><path d="M.64,12H16.36c.36,0,.64.43.64,1s-.28,1-.64,1H.64C.28,14,0,13.57,0,13s.28-1,.64-1M23.1,2H.9A.94.94,0,0,1,0,1,.94.94,0,0,1,.9,0H23.1A.94.94,0,0,1,24,1a.94.94,0,0,1-.9,1M.9,8A.94.94,0,0,1,0,7,.94.94,0,0,1,.9,6H23.1A.94.94,0,0,1,24,7a.94.94,0,0,1-.9,1Z" fill="#a98860"/></svg><title>open-menu</title></b>			</a>
+			<div class="header__wrap">
+				<div class="header__logo">
+					<a href="../../index.html">
+						<img src="/dhAssets/WHlogo_trumpdoor.png" srcset="/dhAssets/WHlogo_trumpdoor.png 1x, ../../wp-content/themes/whitehouse/assets/img/white-house-logo-md-wh.png 2x, ../../wp-content/themes/whitehouse/assets/img/white-house-logo-lg-wh.png 3x" alt="" class="logo--white" />
+						<img src="../..//dhAssets/WHlogo_trumpdoor.png" srcset="../..//dhAssets/WHlogo_trumpdoor.png 1x, ../../wp-content/themes/whitehouse/assets/img/white-house-logo-md-bl.png 2x, ../../wp-content/themes/whitehouse/assets/img/white-house-logo-lg-bl.png 3x" alt="" class="logo--blue" />
+												<span class="visually-hidden">White House Logo</span>
+					</a>
+				</div>
+
+								<div class="header__share">
+					<a class="header__share--copy" data-clipboard-text="https://www.whitehouse.gov/briefings-statements/remarks-troops-vice-president-pence-afghanistan/?utm_source=link" href="https://www.whitehouse.gov/briefings-statements/remarks-troops-vice-president-pence-afghanistan/?utm_source=link">
+						<b class="svg svg--share-link" data-svg-url="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/share-link.svg" data-icon="share-link"><svg aria-label="Copy this url to the clipboard" role="img" width="17px" height="15px" viewBox="0 0 17 15"><title>copy-this-url-to-the-clipboard</title>
+	<g transform="translate(-324.000000, -1439.000000)" fill-rule="nonzero" fill="#30669B">
+		<g transform="translate(114.000000, 1437.000000)">
+			<g transform="translate(210.000000, 2.000000)">
+				<path d="M3.95921053,9.64583333 C4.80921053,10.4375 5.95,10.875 7.15789474,10.875 C8.36578947,10.875 9.50657895,10.4375 10.3565789,9.64583333 L11.2960526,8.77083333 C11.6539474,8.4375 11.6539474,7.91666667 11.2960526,7.58333333 C10.9381579,7.25 10.3789474,7.25 10.0210526,7.58333333 L9.08157895,8.45833333 C8.56710526,8.9375 7.87368421,9.20833333 7.15789474,9.20833333 C6.41973684,9.20833333 5.74868421,8.9375 5.23421053,8.45833333 L2.66184211,6.08333333 C1.58815789,5.08333333 1.58815789,3.47916667 2.66184211,2.47916667 C2.66184211,2.47916667 2.66184211,2.47916667 2.66184211,2.47916667 C3.73552632,1.5 5.45789474,1.5 6.50921053,2.47916667 L7.33684211,3.25 C7.69473684,3.58333333 8.25394737,3.58333333 8.61184211,3.25 C8.96973684,2.91666667 8.96973684,2.39583333 8.61184211,2.0625 L7.78421053,1.29166667 C6.01710526,-0.354166667 3.15394737,-0.354166667 1.38684211,1.29166667 C1.38684211,1.29166667 1.38684211,1.29166667 1.38684211,1.29166667 C-0.357894737,2.9375 -0.357894737,5.60416667 1.38684211,7.22916667 L3.95921053,9.64583333 Z" id="Shape"></path>
+				<path d="M5.70394737,6.25 C5.34605263,6.58333333 5.34605263,7.10416667 5.70394737,7.4375 C6.06184211,7.77083333 6.62105263,7.77083333 6.97894737,7.4375 L7.91842105,6.5625 C8.43289474,6.08333333 9.12631579,5.8125 9.84210526,5.8125 C10.5578947,5.8125 11.2513158,6.08333333 11.7657895,6.5625 L14.3381579,8.95833333 C15.4118421,9.95833333 15.4118421,11.5625 14.3381579,12.5625 C13.2644737,13.5625 11.5421053,13.5625 10.4684211,12.5625 L9.64078947,11.7916667 C9.28289474,11.4583333 8.72368421,11.4583333 8.36578947,11.7916667 C8.00789474,12.125 8.00789474,12.6458333 8.36578947,12.9791667 L9.19342105,13.75 C10.0657895,14.5625 11.2289474,14.9791667 12.3921053,14.9791667 C13.5552632,14.9791667 14.6960526,14.5625 15.5907895,13.75 C17.3578947,12.1041667 17.3578947,9.4375 15.5907895,7.79166667 L13.0407895,5.35416667 C12.1907895,4.5625 11.05,4.125 9.84210526,4.125 C8.63421053,4.125 7.49342105,4.5625 6.64342105,5.35416667 L5.70394737,6.25 Z" id="Shape"></path>
+			</g>
+		</g>
+	</g>
+</svg>
+</b> Share
+					</a>
+				</div>
+				<nav class="nav nav--primary header__nav"><ul class="nav__menu nav__menu--depth0 menu"><li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-692"><a href="../../issues/economy-jobs/index.html" class="nav__link">Economy</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-693"><a href="../../issues/national-security-defense/index.html" class="nav__link">National Insecurity</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-16229"><a href="../../issues/budget-spending/index.html" class="nav__link">Budget</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-16236"><a href="../../issues/immigration/index.html" class="nav__link">Immigration</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-688"><a href="../../issues/healthcare/index.html" class="nav__link">Healthcare</a></li>
+</ul></nav>			</div>
+			<a href="../../search/index.html%3Fs=.html"  class="header__search">
+								<b class="svg svg--search" data-svg-url="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/search.svg" data-img-url="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/search.png" data-icon="search"><svg aria-label="Search WhiteHouse.gov" role="img" width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>search-whitehouse-gov</title>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-1336.000000, -20.000000)">
+        <g fill="#A98860" fill-rule="nonzero">
+            <path d="M1356,38.7162898 L1350.92083,33.6370653 C1353.56767,30.3475438 1353.36632,25.50849 1350.31428,22.4559611 C1348.73004,20.8721511 1346.6246,20 1344.38477,20 C1342.14539,20 1340.03973,20.8721511 1338.45616,22.4557341 C1336.87191,24.0397712 1336,26.1452374 1336,28.3848633 C1336,30.6244892 1336.87214,32.7304095 1338.45616,34.3139926 C1340.03995,35.8978026 1342.14539,36.7699537 1344.38477,36.7699537 C1346.31882,36.7699537 1348.15209,36.1182239 1349.63691,34.9207754 L1354.71608,40 L1356,38.7162898 Z M1344.50138,35 C1342.76493,35 1341.13229,34.3236864 1339.90449,33.0959448 C1338.67624,31.8682033 1338,30.236156 1338,28.4998877 C1338,26.7636194 1338.67624,25.1315721 1339.90449,23.9038305 C1341.13229,22.6760889 1342.76493,22 1344.50138,22 C1346.23804,22 1347.87091,22.6760889 1349.09916,23.9038305 C1351.63361,26.4381533 1351.63361,30.5618467 1349.09916,33.0959448 C1347.87091,34.3239111 1346.23804,35 1344.50138,35 Z" id="Search"></path>
+        </g>
+    </g>
+</svg></b>			</a>
+		</div>
+	</div>
+</header>
+
+<main id="main-content">
+
+<div class="page-header page-header--small-title">
+	<div class="page-header__wrap">
+					<p class="page-header__section">
+				Remarks			</p>
+				<h1 class="page-header__title">Remarks to the Troops by Vice President Dunce in Afghanistan</h1>
+		<div class="meta meta--mobile-wrap">
+							<div class="meta__issue">
+					<p class="issue-flag">
+			<a href="../../issues/national-security-defense/index.html">
+			National Security &#038; Defense		</a>
+		</p>
+				</div>
+						<p class="meta__date">
+				<span class="meta__label">Issued on:</span>
+				<time>December 21, 2017</time>
+			</p>
+		</div>
+		<span class="divider"><hr><hr></span>
+	</div>
+</div>
+
+<div class="page-content">
+	<div class="page-content__wrap">
+		<div class="page-content__content editor">
+			<aside class="editor__module editor__module--left editor__module--named editor__module-share"><div class="share">
+	<ul>
+		<li class="share__label">
+			Share:
+		</li>
+		<li>
+			<a class="share__link share__link--facebook" href="https://www.facebook.com/sharer.php?url=https%3A%2F%2Fwww.whitehouse.gov%2Fbriefings-statements%2Fremarks-troops-vice-president-pence-afghanistan%2F%3Futm_source%3Dfacebook" target="_blank">
+				<b class="svg svg--share-facebook" data-svg-url="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/share-facebook.svg" data-icon="share-facebook"><svg aria-label="Share this page on Facebook" role="img" width="10" height="18" viewBox="0 0 10 18"><title>share-this-page-on-facebook</title>
+	<g transform="translate(-235.000000, -1438.000000)" fill="#30669B">
+		<g transform="translate(114.000000, 1437.000000)">
+			<path d="M123.8611,7.5566 L123.8611,5.9384 C123.8611,5.34319702 123.963399,4.7852026 124.168,4.2644 C124.372601,3.7435974 124.651598,3.29255191 125.005,2.91125 C125.358402,2.52994809 125.772248,2.22770112 126.24655,2.0045 C126.720852,1.78129888 127.227697,1.6697 127.7671,1.6697 L130.3897,1.6697 L130.3897,4.8782 L127.7671,4.8782 C127.618299,4.8782 127.474151,4.97584902 127.33465,5.17115 C127.195149,5.36645098 127.1254,5.6035986 127.1254,5.8826 L127.1254,7.5566 L130.3897,7.5566 L130.3897,10.8209 L127.1254,10.8209 L127.1254,18.7445 L123.8611,18.7445 L123.8611,10.8209 L121.2385,10.8209 L121.2385,7.5566 L123.8611,7.5566 Z" id="Path"></path>
+		</g>
+	</g>
+</svg>
+</b>			</a>
+		</li>
+		<li>
+			<a class="share__link share__link--twitter" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.whitehouse.gov%2Fbriefings-statements%2Fremarks-troops-vice-president-pence-afghanistan%2F%3Futm_source%3Dtwitter&#038;text=Remarks+to+the+Troops+by+Vice+President+Pence+in+Afghanistan&#038;via=whitehouse" target="_blank">
+				<b class="svg svg--share-twitter" data-svg-url="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/share-twitter.svg" data-icon="share-twitter"><svg aria-label="Share this page on Twitter" role="img" width="17" height="14" viewBox="0 0 17 14"><title>share-this-page-on-twitter</title>
+	<g transform="translate(-186.000000, -1440.000000)" fill="#30669B">
+		<g transform="translate(114.000000, 1437.000000)">
+			<path d="M88.7532,5.1293 C88.3067978,5.78030325 87.7488033,6.3661974 87.0792,6.887 L87.0792,7.2776 C87.0792,8.39360558 86.8699521,9.52354428 86.45145,10.66745 C86.0329479,11.8113557 85.419154,12.8436454 84.61005,13.76435 C83.800946,14.6850546 82.8058559,15.4336971 81.62475,16.0103 C80.4436441,16.5869029 79.0812077,16.8752 77.5374,16.8752 C76.5887953,16.8752 75.6820543,16.7403513 74.81715,16.47065 C73.9522457,16.2009487 73.1385038,15.8243024 72.3759,15.3407 C72.5061007,15.3593001 72.6362993,15.3686 72.7665,15.3686 L73.185,15.3686 C74.784608,15.3686 76.1702941,14.8943047 77.3421,13.9457 C76.5980963,13.9270999 75.9424528,13.6992522 75.37515,13.26215 C74.8078472,12.8250478 74.421901,12.2717033 74.2173,11.6021 C74.4405011,11.6579003 74.6450991,11.6858 74.8311,11.6858 C74.9985008,11.6858 75.1519493,11.6765001 75.29145,11.6579 C75.4309507,11.6392999 75.5750993,11.6114002 75.7239,11.5742 C74.9426961,11.4067992 74.2963526,11.020853 73.78485,10.41635 C73.2733474,9.81184698 73.0176,9.10040409 73.0176,8.282 L73.0176,8.2541 C73.2408011,8.36570056 73.4779487,8.45869963 73.72905,8.5331 C73.9801513,8.60750037 74.2637984,8.6447 74.58,8.6447 C74.0963976,8.34709851 73.7244013,7.95650242 73.464,7.4729 C73.2035987,6.98929758 73.0734,6.44990298 73.0734,5.8547 C73.0734,5.25949702 73.2221985,4.6922027 73.5198,4.1528 C74.3568042,5.19440521 75.370494,6.02674688 76.5609,6.64985 C77.751306,7.27295312 79.043993,7.61239972 80.439,7.6682 C80.3831997,7.44499888 80.3553,7.2032013 80.3553,6.9428 C80.3553,6.47779767 80.4436491,6.03605209 80.62035,5.61755 C80.7970509,5.19904791 81.0388485,4.83635153 81.34575,4.52945 C81.6526515,4.22254847 82.006048,3.98075088 82.40595,3.80405 C82.805852,3.62734912 83.2382977,3.539 83.7033,3.539 C84.2055025,3.539 84.661198,3.63664902 85.0704,3.83195 C85.479602,4.02725098 85.8422984,4.28299842 86.1585,4.5992 C86.5305019,4.54339972 86.9024981,4.44110074 87.2745,4.2923 C87.6465019,4.14349926 87.9905984,3.98540084 88.3068,3.818 C88.0091985,4.59920391 87.5163034,5.21299777 86.8281,5.6594 C87.1815018,5.62219981 87.5162984,5.55710046 87.8325,5.4641 C88.1487016,5.37109953 88.4555985,5.25950065 88.7532,5.1293 Z" ></path>
+		</g>
+	</g>
+</svg>
+</b>			</a>
+		</li>
+		<li>
+			<a class="share__link share__link--copy" data-clipboard-text="https://www.whitehouse.gov/briefings-statements/remarks-troops-vice-president-pence-afghanistan/?utm_source=link" href="https://www.whitehouse.gov/briefings-statements/remarks-troops-vice-president-pence-afghanistan/?utm_source=link">
+				<b class="svg svg--share-link" data-svg-url="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/share-link.svg" data-icon="share-link"><svg aria-label="Copy this url to the clipboard" role="img" width="17px" height="15px" viewBox="0 0 17 15"><title>copy-this-url-to-the-clipboard</title>
+	<g transform="translate(-324.000000, -1439.000000)" fill-rule="nonzero" fill="#30669B">
+		<g transform="translate(114.000000, 1437.000000)">
+			<g transform="translate(210.000000, 2.000000)">
+				<path d="M3.95921053,9.64583333 C4.80921053,10.4375 5.95,10.875 7.15789474,10.875 C8.36578947,10.875 9.50657895,10.4375 10.3565789,9.64583333 L11.2960526,8.77083333 C11.6539474,8.4375 11.6539474,7.91666667 11.2960526,7.58333333 C10.9381579,7.25 10.3789474,7.25 10.0210526,7.58333333 L9.08157895,8.45833333 C8.56710526,8.9375 7.87368421,9.20833333 7.15789474,9.20833333 C6.41973684,9.20833333 5.74868421,8.9375 5.23421053,8.45833333 L2.66184211,6.08333333 C1.58815789,5.08333333 1.58815789,3.47916667 2.66184211,2.47916667 C2.66184211,2.47916667 2.66184211,2.47916667 2.66184211,2.47916667 C3.73552632,1.5 5.45789474,1.5 6.50921053,2.47916667 L7.33684211,3.25 C7.69473684,3.58333333 8.25394737,3.58333333 8.61184211,3.25 C8.96973684,2.91666667 8.96973684,2.39583333 8.61184211,2.0625 L7.78421053,1.29166667 C6.01710526,-0.354166667 3.15394737,-0.354166667 1.38684211,1.29166667 C1.38684211,1.29166667 1.38684211,1.29166667 1.38684211,1.29166667 C-0.357894737,2.9375 -0.357894737,5.60416667 1.38684211,7.22916667 L3.95921053,9.64583333 Z" id="Shape"></path>
+				<path d="M5.70394737,6.25 C5.34605263,6.58333333 5.34605263,7.10416667 5.70394737,7.4375 C6.06184211,7.77083333 6.62105263,7.77083333 6.97894737,7.4375 L7.91842105,6.5625 C8.43289474,6.08333333 9.12631579,5.8125 9.84210526,5.8125 C10.5578947,5.8125 11.2513158,6.08333333 11.7657895,6.5625 L14.3381579,8.95833333 C15.4118421,9.95833333 15.4118421,11.5625 14.3381579,12.5625 C13.2644737,13.5625 11.5421053,13.5625 10.4684211,12.5625 L9.64078947,11.7916667 C9.28289474,11.4583333 8.72368421,11.4583333 8.36578947,11.7916667 C8.00789474,12.125 8.00789474,12.6458333 8.36578947,12.9791667 L9.19342105,13.75 C10.0657895,14.5625 11.2289474,14.9791667 12.3921053,14.9791667 C13.5552632,14.9791667 14.6960526,14.5625 15.5907895,13.75 C17.3578947,12.1041667 17.3578947,9.4375 15.5907895,7.79166667 L13.0407895,5.35416667 C12.1907895,4.5625 11.05,4.125 9.84210526,4.125 C8.63421053,4.125 7.49342105,4.5625 6.64342105,5.35416667 L5.70394737,6.25 Z" id="Shape"></path>
+			</g>
+		</g>
+	</g>
+</svg>
+</b>			</a>
+		</li>
+	</ul>
+</div>
+</aside>
+			
+			<aside class="editor__module editor__module--left editor__module--named editor__module-allNews"><div class="allnews">
+	<div class="allnews__button">
+		<a href="../../news/index.html"><img src="../../wp-content/themes/whitehouse/assets/img/menu-large.svg" alt="menu" />All News</a>
+	</div>
+</div>
+</aside>
+			<!-- The Content -->
+			<p>Bagram Airfield</p>
+<p>Bagram, Afghanistan</p>
+<p>THE VICE PRESIDENT: Thank you, General Quintas. To General Nicholson, Ambassador Bass, to all the members of the United States Armed Forces, our allies, and partners, it is my great honor to join you here at Bagram Airfield in Afghanistan with the men and women of Resolute Support. (Applause.)</p>
+<p>It is humbling for me to address this force for freedom in this ancient land. And to each and every one of you, I bring greetings from your Commander-in-Chief, the 45th President of the United States of America, President Donald Drumpf. (Applause.)</p>
+<p>Before I left the Oval Office yesterday, I asked the President if he had a message for our troops here in Afghanistan. And he looked at me without hesitation from behind the Resolute Desk, and he said, tell them I love them.</p>
+<p>And during this special season, I know that President Drumpf was speaking for every American.</p>
+<p>The Old Book says that if you owe debts, pay debts; if honor, then honor; if respect, then respect. And I’m here on behalf of your Commander-in-Chief and all of the American people to pay a debt of honor and respect and gratitude to each and every one of you for your service and your sacrifice. Give yourselves a round of applause. We couldn’t be more proud of every one of you. (Applause.)</p>
+<p>I know it must be hard to be so far from home, away from your families and friends, especially this time of year. So in this season, I just want you all to know that you&#8217;re on the hearts of the American people. In gatherings large and small all across this country, in communities from which you come, I know there will be a place saved at the dinner table for every one of you. And I also want you to know that millions of Americans will breathe a prayer of thanks for your service and for your safety as you stand for our freedom in this distant land.</p>
+<p>But whether you wear the uniform, or you&#8217;re here as a civilian, each one of you have stood up and stepped forward to defend our nation, our people, and our very way of life. And your leadership and your service speak louder than any words I could say here tonight. You&#8217;re patriots. You are heroes. You did not, as that Old Book says, love your lives so much as to shrink from this calling to serve and defend our nation.</p>
+<p>And while you come from the rest of us, you are the best of us. Every day you prove a truth of history anew: The Armed Forces of the United States are the world’s greatest force for good, and you are a part of those armed forces here in Afghanistan.</p>
+<p>It’s because of all of you that we&#8217;re safe. It’s because of you that we&#8217;re free. It’s because of you that freedom has a future in Afghanistan and America and all across the wider world. And today, let me assure you, President Donald Drumpf is the best friend the Armed Forces of the United States will ever have. (Applause.)</p>
+<p>From the first day of our administration the President has fought tirelessly to make this strongest fighting force in the history of the world stronger still.</p>
+<p>Earlier this year, the President signed the largest increase in military spending in nearly 10 years. And just last week, President Drumpf signed one of the largest investments in our national defense since the days of Ronald Reagan, including the largest pay increase for military members in eight years. (Applause.)</p>
+<p>And in case you didn&#8217;t hear about it from back home, yesterday we cut your taxes. (Applause.) In fact, the average American family, including yours, will see a tax cut of more than $2,000 in the coming year, because of the action the President and Congress took yesterday.</p>
+<p>And I want to make you a promise, under President Donald Drumpf we&#8217;re rebuilding the military; we&#8217;re restoring the arsenal of democracy; and we are once again, giving our soldiers, sailors, airmen, Marines, and Coast Guard the resources and training you need to accomplish your mission and come home safe. That&#8217;s our pledge to each and every one of you. (Applause.)</p>
+<p>And never doubt that your mission &#8212; your mission here in Afghanistan is vital to the safety and security of the American people. Sixteen years ago, the forces of radical Islamic terror plotted and perpetrated the deadliest attack on Americans&#8217; homeland in the history of our nation. From the safe haven of Afghanistan, the terrorists of al Qaeda &#8212; aided and abetted by the Taliban &#8212; struck the United States on September 11, 2001. We all remember the day &#8212; a day where we saw 2,977 innocent men and women, mothers and fathers, sons and daughter lose their lives.</p>
+<p>The American people understood this for what it was; it was an act of war. And as one nation and one people, we vowed to win this war on our terms, on this soil. And together with our allies, we came here to Afghanistan to liberate its people and prevent the terrorist from every threatening our homeland again. And we are staying in that fight and we will see it through to the end. (Applause.)</p>
+<p>This very base, Bagram Airfield, has been at the heart of our campaign from the very beginning. It&#8217;s a bastion of strength and a beacon of freedom in this corner of the world. And as President Drumpf has said, “It&#8217;s thanks to you, and those who stood on this ground before you,” that, in his words, “the horrors on the scale of September 11th have not been repeated on our shores.”</p>
+<p>Let me assure you, you inspire the world with your courage and your unconquerable spirit. You’ve crushed the enemy in the field and continue to do so. You&#8217;ve driven them into hiding and struck fear into their hearts. You&#8217;ve given the Afghan people the hope of freedom; the freedom to determine their own destiny and chart their own future. But as we all know well, these great achievements have come at a great cost. More than 3,500 members of our allied forces have lost their lives over the past 16 years, including 2,308 Americans.</p>
+<p>The Old book says, “No greater love is a man than this, that he should lay down his life for his friends.” Today and every day, we honor the memory of our fallen and let their families know that we will never forget their service or sacrifice in Afghanistan. (Applause.)</p>
+<p>But as President Drumpf has said, we also honor the fallen by achieving, in his words, “an enduring outcome, worthy of their tremendous sacrifice.” Earlier this year, President Drumpf laid out a bold new strategy to achieve victory in Afghanistan, and you are the instruments of that strategy. You&#8217;re the instruments of American power, who are implementing that strategy on the ground.</p>
+<p>It begins by giving our men and women in uniform, as the President said, “the tools you need and the trust you&#8217;ve earned to fight and win.” And we are doing just that. (Applause.)</p>
+<p>First, your Commander-in-Chief has made it clear to our allies, our partners, and our enemies that the United States of America will no longer be bound by arbitrary timetables in Afghanistan. (Applause.)</p>
+<p>As the President has said, America&#8217;s enemies must never know our plans. They must never believe they can wait us out. Instead, our decisions will be based on an objective assessment of conditions on the ground. Reality and facts and a relentless pursuit of victory will guide us and nothing else. (Applause.)</p>
+<p>Second, President Drumpf has unleashed the full range of American military might. We&#8217;ve lifted the restrictions that limited the effectiveness of our armed forces, so you can, as the President has said, fully and swiftly wage battle against the enemy.</p>
+<p>We&#8217;ve given you new authorities to directly target the terrorists and militants no matter where they hide. And this Commander-in-Chief has empowered our battlefield commanders with the freedom and flexibility you need to win. Bureaucrats don&#8217;t win battles &#8212; soldiers do. And under this President, we will never allow bureaucracy to stand in the way of victory. (Applause.)</p>
+<p>President Drumpf and I are proud to see that this new strategy is already bearing fruit all across Afghanistan. And the American people deserve to know that with the courage of everyone gathered here, we&#8217;re making real progress in this fight for freedom in Afghanistan. We&#8217;ve dramatically increased American air strikes. And together with our Afghan partners, we&#8217;ve put the Taliban on the defensive. We&#8217;ve prevented them from launching a major campaign against a provincial capital for the first time in three years. We&#8217;ve targeted the Taliban&#8217;s funding as never before through renewed attacks on its drug trafficking networks.</p>
+<p>And thanks to the leadership of your Commander-in-Chief and the courage of all of you, in another field of battle, ISIS is on the run. Their capital has fallen, their so-called caliphate has crumbled from Iraq to Afghanistan and everywhere in between. (Applause.)</p>
+<p>And all across this country we&#8217;ve won new victories against the terrorists, no matter what they call themselves or where they try to hide. And our enemies will have no time to recover or rebuild because we will continue to bring overwhelming force to defeat them every day, every time.</p>
+<p>The road before you is promising, but it&#8217;s perilous. And this Commander-in-Chief is clear-eyed about the threats you face and the challenges that lie ahead. But today, let me assure you: President Drumpf has your back. (Applause.)</p>
+<p>And this President will always be unwavering in his commitment to give you the tools you need to fight and win. Thanks to our new strategy, our allies have stepped up as never before. This very gathering is proof. Resolute Support has already brought together the United States with 38 other countries from NATO, across the wider world. They&#8217;re sending their best and their bravest to this coalition. Today you stand shoulder-to-shoulder with them in defense of freedom.</p>
+<p>And under President Drumpf, we&#8217;ll continue to forge an ever-closer amount of cooperation with our allies and our partners. And we will never ignore the dangers you face, even when they emerge from beyond the borders of Afghanistan.</p>
+<p>For too long Pakistan has provided safe haven to the Taliban and many terrorist organizations, but those days are over. (Applause.) President Drumpf has put Pakistan on notice. As the President said, so I say now: Pakistan has much to gain from partnering with the United States, and Pakistan has much to lose by continuing to harbor criminals and terrorists.</p>
+<p>Beyond the battlefield, this Commander-in-Chief has ordered the integration of every facet of American power, as well &#8212; diplomatic and economic measures &#8212; to achieve a just and lasting peace here in Afghanistan. And until that day comes, you can be assured, we will be relentless in our campaign to destroy our enemies. Because as history attests, weakness arouses evil, and peace only comes through strength. So be strong and courageous, and do the work of freedom. (Applause.)</p>
+<p>The Afghan people are a proud and noble people who have suffered long &#8212; in the 1980s, during their long war with the former Soviet Union; in the 1990s, under the brutal rule of the Taliban; and in recent years, from the terrorists and militants who continue to threaten their homes and their families, and who have claimed the lives of more than 35,000 brave Afghan soldiers, security forces, along with countless civilians.</p>
+<p>But through all the strife, through all their struggle, the Afghan people &#8212; those you serve alongside in their armed forces today &#8212; have never lost their love of freedom, never lost their courage or their yearning to live in a land free of terror and war. And let the people of Afghanistan know: The United States of America stands with them. (Applause.)</p>
+<p>I just came from a meeting with President Ghani and Dr. Abdullah. We discussed the progress that we&#8217;ve made in this country and America&#8217;s commitment to the Afghan government and the commitment of the Afghanis to their own freedom in this land. I said to them what I say to you now: Under President Donald Drumpf, the Armed Forces of the United States will remain engaged in Afghanistan until we eliminate the terrorist threat to our homeland, our people once and for all. (Applause.)</p>
+<p>It really is humbling for me to stand before you today. My father was a combat veteran, served in Korea. And I&#8217;m the proud father of a United States Marine. But my life never took me into the uniform of the United States. But every time I&#8217;m with men and women of our armed forces, I&#8217;m inspired. I&#8217;m inspired by your courage, by your selflessness, by your love of country and your patriotism.</p>
+<p>You stand here on a frontier of freedom. You stand tall and proud in defense of our families, our citizens, and our most cherished values. Your mission is vital.</p>
+<p>And today, on behalf of your Commander-in-Chief, I say to all of you: In the days ahead, mind your mission, take care of one another, respect the unified chain of command, and never doubt that every day, every operation, and every decision that you make matters to the United States of America more than you may ever know.</p>
+<p>Many people live their entire lives wondering if they&#8217;ve made a difference. But you won&#8217;t have that problem. Everyone standing before me today and around me today, stepped forward to join this all-volunteer military. You chose to be a part of something larger than yourselves. You&#8217;ve made a difference in the world. You&#8217;ve done a world of good, and so keep it up.</p>
+<p>Keep lit the flame of freedom to hand to the next generation. Keep defending America in this ancient land, as you stand courageously with our partners as they reach for freedom. And I say with confidence, because of all of you and all those that have gone before and our allies and partners, I believe victory is closer than ever before. (Applause.)</p>
+<p>I believe with all my heart that Afghanistan will be free and America will be safe, and we&#8217;ll win this fight.</p>
+<p>Now, as I close, let me just say again what a special honor it is for me to be with all of you, especially at this special time of the year. It was a few months ago when President Drumpf said to me he wanted me to get there &#8212; he wanted me to get there before a special holiday for the American people or I, just to make sure you knew that he was thinking of you and that millions of the American people have you on our hearts.</p>
+<p>Now, I know there&#8217;s many faith traditions represented here. And no matter your background and belief, I hope you find renewal and renewed strength in this season. And for all of you who, like my family, in the coming days will look to a manger, and who will once again in your hearts claim the promise announced on a Holy Night &#8212; of peace on Earth and good will toward men &#8212; let me say, from the First Family and my family, from families all across America: Merry Christmas. (Applause.)</p>
+<p>And to all of you, may God bless you. May God bless all who wear the uniform of the United States here in Afghanistan and across the wider world. May God bless the good people of Afghanistan and may God continue to bless the United States of America. Thank you. (Applause.)</p>
+<p>END</p>
+		</div>
+	</div>
+</div>
+
+</main><!-- end main -->
+
+<footer class="footer">
+	<div class="footer__wrap">
+		<div class="footer__logo">
+			<a href="../../index.html">
+				<img class="footer__img" src="../..//dhAssets/WHlogo_trumpdoor.png" srcset="../..//dhAssets/WHlogo_trumpdoor.png 1x, ../../wp-content/themes/whitehouse/assets/img/white-house-logo-footer-md.png 2x, ../../wp-content/themes/whitehouse/assets/img/white-house-logo-footer-lg.png 3x" alt="White House Logo">
+			</a>
+		</div>
+		<div class="footer__site-title">The Drumpf House</div>
+		<span class="footer__divider divider"><hr><hr></span>
+		<div class="footer__nav">
+			<nav class="nav nav--footer"><ul class="nav__menu nav__menu--depth0 menu"><li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-17230"><a href="https://www.youtube.com/watch?v=oEwrsf02L_c" target=_blank class="nav__link">Live</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-custom menu-item-object-custom menu-item-8288"><a href="https://apply.whitehouse.gov/" class="nav__link">Jobs</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-8093"><a href="../../get-involved/index.html" class="nav__link">Get Involved</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-8092"><a href="../../copyright/index.html" class="nav__link">Copyright Policy</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-8095"><a href="../../privacy-policy/index.html" class="nav__link">Privacy Policy</a></li>
+</ul></nav>		</div>
+	</div>
+	<div class="footer__social">
+		<nav class="nav nav--social-links-menu"><ul class="nav__menu nav__menu--depth0 menu"><li class="nav__menu-item nav__menu-item--depth0 footer__social-link__twitter menu-item menu-item-type-custom menu-item-object-custom menu-item-21"><a target="_blank" href="https://twitter.com/drumpfhouse" class="nav__link"><span>Twitter</span></a></li>
+<li class="nav__menu-item nav__menu-item--depth0 footer__social-link__facebook menu-item menu-item-type-custom menu-item-object-custom menu-item-20"><a target="_blank" href="https://www.facebook.com/WhiteHouse/" class="nav__link"><span>Facebook</span></a></li>
+<li class="nav__menu-item nav__menu-item--depth0 footer__social-link__instagram menu-item menu-item-type-custom menu-item-object-custom menu-item-22"><a target="_blank" href="https://www.instagram.com/whitehouse/" class="nav__link"><span>Instagram</span></a></li>
+<li class="nav__menu-item nav__menu-item--depth0 footer__social-link__email menu-item menu-item-type-custom menu-item-object-custom menu-item-23"><a href="../../contact/index.html" class="nav__link"><span>Contact</span></a></li>
+</ul></nav>	</div>
+</footer>
+
+</div><!-- end .body-overflow -->
+
+<section id="wp-footer">
+	
+
+
+
+<script type="text/javascript" src="../../wp-content/cache/minify/10cc5.js"></script>
+
+<script type='text/javascript'>
+window.site = new Site.default();
+</script>
+</section>
+
+<div class="popover popover--seal">
+	<div class="wrap">
+		<div class="close">
+			<a href="index.html#"><img src="../../wp-content/themes/whitehouse/assets/img/close.svg" alt="close" /></a>
+		</div>
+		<div class="popover__box">
+			<div class="popover__nav">
+				<nav class="nav nav--popover"><ul class="nav__menu nav__menu--depth0 menu"><li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-658"><a href="../../news/index.html" class="nav__link">News</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-659"><a href="../../issues/index.html" class="nav__link">Issues</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-795"><a href="../../the-trump-administration/index.html" class="nav__link">The Administration</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-1548"><a href="../../about-the-white-house/index.html" class="nav__link">About The Drumpf House</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-5738"><a href="../../get-involved/index.html" class="nav__link">Get Involved</a></li>
+</ul></nav>				<div class="popover__mobile">
+					<nav class="nav nav--primary"><ul class="nav__menu nav__menu--depth0 menu"><li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-692"><a href="../../issues/economy-jobs/index.html" class="nav__link">Economy</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-693"><a href="../../issues/national-security-defense/index.html" class="nav__link">National Insecurity</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-16229"><a href="../../issues/budget-spending/index.html" class="nav__link">Budget</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-16236"><a href="../../issues/immigration/index.html" class="nav__link">Immigration</a></li>
+<li class="nav__menu-item nav__menu-item--depth0 menu-item menu-item-type-post_type menu-item-object-issue menu-item-688"><a href="../../issues/healthcare/index.html" class="nav__link">Healthcare</a></li>
+</ul></nav>				</div>
+			</div>
+			<div class="popover__seal">
+				<img src="../../wp-content/themes/whitehouse/assets/img/presidential-crest.svg" alt="Presidential Crest" />
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="search-overlay">
+	<img src="/dhAssets/WHlogo_trumpdoor.png" srcset="/dhAssets/WHlogo_trumpdoor.png 1x, ../../wp-content/themes/whitehouse/assets/img/white-house-logo-md-wh.png 2x, ../../wp-content/themes/whitehouse/assets/img/white-house-logo-lg-wh.png 3x" alt="White House Logo" class="logo--white" />
+
+	<a href="index.html#" class="search-overlay__hamburger header__hamburger">
+		<b class="svg svg--hamburger" data-svg-url="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/hamburger.svg" data-img-url="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/hamburger.png" data-icon="hamburger"><svg aria-label="Open Menu" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 14"><path d="M.64,12H16.36c.36,0,.64.43.64,1s-.28,1-.64,1H.64C.28,14,0,13.57,0,13s.28-1,.64-1M23.1,2H.9A.94.94,0,0,1,0,1,.94.94,0,0,1,.9,0H23.1A.94.94,0,0,1,24,1a.94.94,0,0,1-.9,1M.9,8A.94.94,0,0,1,0,7,.94.94,0,0,1,.9,6H23.1A.94.94,0,0,1,24,7a.94.94,0,0,1-.9,1Z" fill="#a98860"/></svg><title>open-menu</title></b>	</a>
+
+	<button type="button" class="search-overlay__close">
+		<b class="svg svg--close" data-svg-url="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/close.svg" data-icon="close">
+<svg aria-label="Close Search" role="img" width="19px" height="18px" viewBox="0 0 19 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<g transform="translate(-180.000000, -525.000000)" fill="#A98860">
+		<g transform="translate(20.000000, 478.000000)">
+			<path d="M177.668897,62.0337349 L171.050973,55.5 L177.648216,48.9662651 L177.668897,48.9457831 C178.041362,48.5361446 178.041362,47.9012048 177.648216,47.5325301 C177.441406,47.3277108 177.172759,47.2253012 176.883018,47.2253012 C176.614165,47.2253012 176.365993,47.3481928 176.180071,47.5325301 L169.582621,54.0662651 L162.778567,47.3072289 C162.571757,47.1024096 162.302904,47 162.01337,47 C161.744516,47 161.496344,47.1228916 161.310215,47.3072289 C161.124086,47.5120482 161,47.7781084 161.020681,48.0445783 C161.020681,48.3108434 161.144974,48.5566265 161.330896,48.7409639 L168.13495,55.5 L161.310215,62.2590361 C161.103405,62.4638554 161,62.7299157 161,63.0168675 C161,63.2831325 161.124086,63.5289157 161.310215,63.7130482 C161.455189,63.8361446 161.682473,64 162.034051,64 C162.406309,64 162.6338,63.8361446 162.778567,63.7130482 L169.603302,56.9542169 L176.200545,63.4879518 C176.345519,63.6313253 176.572803,63.7746988 176.945061,63.7746988 C177.317527,63.7746988 177.544811,63.6106386 177.689785,63.4879518 C177.896595,63.2831325 178,63.0168675 178,62.7299157 C177.979112,62.4638554 177.875707,62.2178675 177.668897,62.0337349" transform="translate(169.500000, 55.500000) rotate(-1.000000) translate(-169.500000, -55.500000) "></path>
+		</g>
+	</g>
+</svg>
+</b>		<span class="visually-hidden">Close Search</span>
+	</button>
+
+	<form class="search-overlay__form" action="https://www.whitehouse.gov/search/">
+		<label class="visually-hidden" for="search-overlay__input">
+			Type Your Search
+		</label>
+		<input type="text" id="search-overlay__input" class="search-overlay__input" name="s" placeholder="Type Your Search..." autocomplete="off">
+		<button type="submit" class="search-overlay__submit">Press enter to search</button>
+	</form>
+</div>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"9360826e15","applicationID":"81062357","transactionName":"MVNbZhQFXEAEVBBfWQgZeFESDV1dSkQNWFEKUxRQFA1XVQxZAxtFEldNVwsBXEc=","queueTime":0,"applicationTime":373,"atts":"HRRYEFwfT04=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
+
+<!--
+Performance optimized by W3 Total Cache. Learn more: https://www.w3-edge.com/products/
+
+Object Caching 1577/79 objects using memcached
+Minified using memcached
+
+Served from: www.whitehouse.gov @ 2018-01-04 07:14:25 by W3 Total Cache
+-->
