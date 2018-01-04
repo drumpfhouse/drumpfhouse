@@ -53,7 +53,7 @@ def _replaceLine(line):
          'Every president since John Adams has occupied the White House, and they\'re all embarrassed by the current ass-clown residing there.'),
         ('Sign Up for White House Updates', 'Sign Up for White House Propaganda'),
         ('You will see great support from the United States at the appropriate time!',
-         'You will see great support from the United States at the appropriate time: when you have something to off me!'),
+         'You will see great support from the United States at the appropriate time: when you have something to offer me!'),
 
         # Immigration page
         ('an immigration system that serves the national interest', 'an immigration system that keeps brown people out'),
